@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Adem Hmercha — Full Stack Developer from Tunisia. MERN stack, real-time systems, DevOps pipelines, and AI-powered tools." />
+  <meta name="author" content="Adem Hmercha" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#f8f7f4" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ademhmercha.vercel.app" />
+  <meta property="og:title" content="Adem Hmercha — Full Stack Developer" />
+  <meta property="og:description" content="Full Stack Developer passionate about building real-world web applications." />
+
+  <title>Adem Hmercha — Full Stack Developer</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ━━ NAVBAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">AH.</a>
+      <ul class="nav__links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ━━ HERO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="hero" class="hero">
+
+      <!-- Orbital rings (CSS-only decoration) -->
+      <div class="hero__rings" aria-hidden="true">
+        <div class="ring ring--1"></div>
+        <div class="ring ring--2"></div>
+        <div class="ring ring--3"></div>
+      </div>
+
+      <div class="container hero__content">
+
+        <div class="hero__badge" role="status">
+          <span class="badge__dot" aria-hidden="true"></span>
+          Available for Work
+        </div>
+
+        <h1 class="hero__name" aria-label="Adem Hmercha">
+          <span class="hero__name-row">
+            <span>Adem</span>
+          </span>
+          <span class="hero__name-row hero__name-row--accent">
+            <span>Hmercha</span>
+          </span>
+        </h1>
+
+        <p class="hero__role" aria-live="polite">
+          <span class="hero__role-prefix" aria-hidden="true">—&nbsp;</span><span class="hero__role-text"></span><span class="hero__cursor" aria-hidden="true">|</span>
+        </p>
+
+        <p class="hero__desc">
+          Building scalable web apps from <strong>Tunisia 🇹🇳</strong> — MERN stack,
+          real-time systems &amp; DevOps pipelines.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary magnetic">
+            View my work
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:ademhmerchaaa@gmail.com" class="btn btn--outline magnetic">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Get in touch
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Marquee strip -->
+      <div class="hero__marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>React</span><span class="sep">·</span>
+          <span>Node.js</span><span class="sep">·</span>
+          <span>MongoDB</span><span class="sep">·</span>
+          <span>TypeScript</span><span class="sep">·</span>
+          <span>Docker</span><span class="sep">·</span>
+          <span>Kubernetes</span><span class="sep">·</span>
+          <span>WebRTC</span><span class="sep">·</span>
+          <span>Socket.io</span><span class="sep">·</span>
+          <span>Tailwind CSS</span><span class="sep">·</span>
+          <span>GitHub Actions</span><span class="sep">·</span>
+          <span>Prometheus</span><span class="sep">·</span>
+          <span>Grafana</span><span class="sep">·</span>
+          <!-- duplicate for seamless loop -->
+          <span>React</span><span class="sep">·</span>
+          <span>Node.js</span><span class="sep">·</span>
+          <span>MongoDB</span><span class="sep">·</span>
+          <span>TypeScript</span><span class="sep">·</span>
+          <span>Docker</span><span class="sep">·</span>
+          <span>Kubernetes</span><span class="sep">·</span>
+          <span>WebRTC</span><span class="sep">·</span>
+          <span>Socket.io</span><span class="sep">·</span>
+          <span>Tailwind CSS</span><span class="sep">·</span>
+          <span>GitHub Actions</span><span class="sep">·</span>
+          <span>Prometheus</span><span class="sep">·</span>
+          <span>Grafana</span><span class="sep">·</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ━━ ABOUT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="section-tag">01 — About</span>
+          <h2 class="section-title">Who I Am</h2>
+        </header>
+
+        <div class="about__grid">
+
+          <div class="about__bio reveal">
+            <p>
+              I'm <strong>Adem Hmercha</strong>, a Full Stack Developer from Tunisia passionate
+              about building real-world web applications that solve meaningful problems.
+            </p>
+            <p>
+              I specialize in the <strong>MERN stack</strong> with experience in real-time systems,
+              DevOps pipelines, and AI-powered tools. From e-commerce platforms to enterprise
+              DevOps dashboards, I build products that are fast, scalable, and polished
+              from API to UI.
+            </p>
+            <div class="about__links">
+              <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="text-link">
+                github.com/ademhmercha
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="mailto:ademhmerchaaa@gmail.com" class="text-link">
+                ademhmerchaaa@gmail.com
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="about__tech reveal reveal--delay">
+            <p class="tech__label">Tech Stack</p>
+            <div class="tech__grid" role="list" aria-label="Technologies">
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
+                React
+              </div>
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
+                Node.js
+              </div>
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
+                MongoDB
+              </div>
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
+                TypeScript
+              </div>
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
+                Docker
+              </div>
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
+                Kubernetes
+              </div>
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
+                Tailwind
+              </div>
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" style="filter:invert(1) brightness(0.4);" />
+                Express
+              </div>
+              <div class="tech-chip" role="listitem">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
+                Git
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━ PROJECTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="projects" class="projects">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="section-tag">02 — Work</span>
+          <h2 class="section-title">Featured Projects</h2>
+        </header>
+
+        <div class="projects__grid">
+
+          <!-- ── 01: DRAPE (large card) ── -->
+          <article class="pcard pcard--large pcard--emerald reveal" aria-label="DRAPE project">
+            <div class="pcard__top">
+              <div class="pcard__meta">
+                <span class="pcard__num">01</span>
+                <span class="pcard__cat">E-Commerce</span>
+              </div>
+              <div class="pcard__deco" aria-hidden="true">
+                <div class="pcard__deco-ring"></div>
+                <div class="pcard__deco-ring pcard__deco-ring--sm"></div>
+              </div>
+            </div>
+            <div class="pcard__body">
+              <div class="pcard__header">
+                <div>
+                  <h3 class="pcard__title">DRAPE</h3>
+                  <p class="pcard__subtitle">Luxury Fashion E-Commerce Platform</p>
+                </div>
+                <div class="pcard__links">
+                  <a href="https://drape-cloth-shop.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" aria-label="Live demo">
+                    Live
+                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </a>
+                  <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
+                </div>
+              </div>
+              <p class="pcard__desc">
+                Full-stack MERN e-commerce platform for a premium Tunisian fashion brand.
+                Features JWT auth, Cloudinary image management, and automated WhatsApp
+                order notifications via Whapi.Cloud.
+              </p>
+              <div class="pcard__tags" role="list">
+                <span role="listitem">React</span>
+                <span role="listitem">Node.js</span>
+                <span role="listitem">MongoDB</span>
+                <span role="listitem">Cloudinary</span>
+                <span role="listitem">Tailwind</span>
+                <span role="listitem">JWT</span>
+                <span role="listitem">WhatsApp API</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 02: Telnet Test Manager ── -->
+          <article class="pcard pcard--indigo reveal reveal--delay" aria-label="Telnet Test Manager project">
+            <div class="pcard__top">
+              <div class="pcard__meta">
+                <span class="pcard__num">02</span>
+                <span class="pcard__cat">DevOps</span>
+              </div>
+              <div class="pcard__deco" aria-hidden="true">
+                <div class="pcard__deco-grid"></div>
+              </div>
+            </div>
+            <div class="pcard__body">
+              <div class="pcard__header">
+                <div>
+                  <h3 class="pcard__title">Telnet Test Manager</h3>
+                  <p class="pcard__subtitle">Enterprise DevOps Platform</p>
+                </div>
+                <div class="pcard__links">
+                  <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
+                </div>
+              </div>
+              <p class="pcard__desc">
+                Enterprise web platform for executing and monitoring Telnet tests on network
+                equipment in real time. WebSocket live updates, role-based access, multilingual
+                UI, and a full DevOps stack: Docker, Kubernetes, Helm, Prometheus, Grafana &amp; CI/CD.
+              </p>
+              <div class="pcard__tags" role="list">
+                <span role="listitem">React</span>
+                <span role="listitem">TypeScript</span>
+                <span role="listitem">WebSocket</span>
+                <span role="listitem">Docker</span>
+                <span role="listitem">Kubernetes</span>
+                <span role="listitem">Prometheus</span>
+                <span role="listitem">GitHub Actions</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 03: AutoReview Agent ── -->
+          <article class="pcard pcard--violet reveal" aria-label="GitHub AutoReview Agent project">
+            <div class="pcard__top">
+              <div class="pcard__meta">
+                <span class="pcard__num">03</span>
+                <span class="pcard__cat">AI Tool</span>
+              </div>
+              <div class="pcard__deco" aria-hidden="true">
+                <div class="pcard__deco-dots"></div>
+              </div>
+            </div>
+            <div class="pcard__body">
+              <div class="pcard__header">
+                <div>
+                  <h3 class="pcard__title">AutoReview Agent</h3>
+                  <p class="pcard__subtitle">GitHub AI Code Auditor</p>
+                </div>
+                <div class="pcard__links">
+                  <a href="https://github.com/ademhmercha/Github-Auto-Review" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
+                </div>
+              </div>
+              <p class="pcard__desc">
+                AI-powered tool that analyzes any public GitHub repo using 5 specialized agents:
+                Explorer → Reviewer → Doc → Reporter → Refactor.
+                Powered by Llama 3.3 70B via Groq API. 100% frontend.
+              </p>
+              <div class="pcard__tags" role="list">
+                <span role="listitem">React</span>
+                <span role="listitem">Vite</span>
+                <span role="listitem">Groq API</span>
+                <span role="listitem">Llama 3.3</span>
+                <span role="listitem">GitHub API</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 04: Matchy (large card) ── -->
+          <article class="pcard pcard--large pcard--rose reveal reveal--delay" aria-label="Matchy project">
+            <div class="pcard__top">
+              <div class="pcard__meta">
+                <span class="pcard__num">04</span>
+                <span class="pcard__cat">Real-Time App</span>
+              </div>
+              <div class="pcard__deco" aria-hidden="true">
+                <div class="pcard__deco-ring"></div>
+                <div class="pcard__deco-ring pcard__deco-ring--sm"></div>
+              </div>
+            </div>
+            <div class="pcard__body">
+              <div class="pcard__header">
+                <div>
+                  <h3 class="pcard__title">Matchy</h3>
+                  <p class="pcard__subtitle">Real-Time Dating Platform</p>
+                </div>
+                <div class="pcard__links">
+                  <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
+                </div>
+              </div>
+              <p class="pcard__desc">
+                Full-stack dating app with swipe matching, live chat, voice messages, and
+                peer-to-peer video/audio calls via WebRTC. Admin dashboard with analytics,
+                user management, and audit logs. Multilingual (EN/FR).
+              </p>
+              <div class="pcard__tags" role="list">
+                <span role="listitem">React</span>
+                <span role="listitem">Socket.io</span>
+                <span role="listitem">WebRTC</span>
+                <span role="listitem">MongoDB</span>
+                <span role="listitem">JWT</span>
+                <span role="listitem">i18next</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━ SKILLS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="skills" class="skills">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="section-tag">03 — Skills</span>
+          <h2 class="section-title">What I Build With</h2>
+        </header>
+
+        <div class="skills__grid">
+
+          <div class="skill-group reveal">
+            <div class="skill-group__head skill-group__head--emerald">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Frontend
+            </div>
+            <ul class="skill-group__list">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+              <li>Vite</li>
+              <li>React Router</li>
+              <li>i18next</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal reveal--delay">
+            <div class="skill-group__head skill-group__head--indigo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Backend
+            </div>
+            <ul class="skill-group__list">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>MongoDB</li>
+              <li>Mongoose</li>
+              <li>JWT</li>
+              <li>Socket.io</li>
+              <li>WebRTC</li>
+              <li>REST APIs</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal reveal--delay-2">
+            <div class="skill-group__head skill-group__head--violet">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              DevOps &amp; Tools
+            </div>
+            <ul class="skill-group__list">
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>Helm</li>
+              <li>GitHub Actions</li>
+              <li>Prometheus</li>
+              <li>Grafana</li>
+              <li>Cloudinary</li>
+              <li>Git</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━ CONTACT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact__inner reveal">
+
+          <span class="section-tag">04 — Contact</span>
+
+          <h2 class="contact__heading">
+            Let's build<br>
+            <em>something great.</em>
+          </h2>
+
+          <p class="contact__desc">
+            Open to full-time roles, freelance projects, and collaborations.
+            I reply fast — let's talk.
+          </p>
+
+          <div class="contact__actions">
+            <a href="mailto:ademhmerchaaa@gmail.com" class="btn btn--primary magnetic">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Send Email
+            </a>
+            <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="btn btn--outline magnetic">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ━━ FOOTER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <span class="footer__logo">AH.</span>
+      <p class="footer__copy">Designed &amp; built by Adem Hmercha — Tunisia 🇹🇳 &copy; 2026</p>
+      <a href="#" class="footer__top" aria-label="Back to top">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+        Top
+      </a>
+    </div>
+  </footer>
+
+  <!-- ━━ MOBILE BOTTOM NAV ━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <nav class="mobile-nav" aria-label="Mobile navigation" role="navigation">
+    <a href="#hero" class="mobile-nav__item" data-section="hero" aria-label="Home">
+      <div class="mobile-nav__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <span>Home</span>
+    </a>
+    <a href="#projects" class="mobile-nav__item" data-section="projects" aria-label="Work">
+      <div class="mobile-nav__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </div>
+      <span>Work</span>
+    </a>
+    <a href="#skills" class="mobile-nav__item" data-section="skills" aria-label="Skills">
+      <div class="mobile-nav__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <span>Skills</span>
+    </a>
+    <a href="#contact" class="mobile-nav__item" data-section="contact" aria-label="Contact">
+      <div class="mobile-nav__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
