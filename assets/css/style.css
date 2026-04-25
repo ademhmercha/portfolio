@@ -213,11 +213,12 @@ section { padding: 6rem 0; }
   width: 22px; height: 1.5px;
   background: var(--text-2);
   border-radius: 2px;
-  transition: transform 0.3s var(--ease-out), opacity 0.2s ease;
-  transform-origin: left;
+  transition: transform 0.35s var(--ease-out), background 0.2s ease;
+  transform-origin: center;
 }
-.nav__toggle.open span:nth-child(1) { transform: rotate(40deg); }
-.nav__toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+/* 2 spans form a proper X */
+.nav__toggle.open span:nth-child(1) { transform: translateY(3.75px) rotate(45deg); background: var(--text); }
+.nav__toggle.open span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); background: var(--text); }
 
 /* ══════════════════════════════════════════════════════════════
    HERO
@@ -995,35 +996,50 @@ section { padding: 6rem 0; }
   }
   /* Hide desktop links, show hamburger */
   .nav__links {
-    display: none;
+    display: flex;              /* always flex so opacity can transition */
+    visibility: hidden;
     position: fixed;
     top: var(--nav-h); left: 0; right: 0; bottom: 0;
-    background: rgba(248,247,244,0.98);
+    background: rgba(248,247,244,0.97);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2.5rem;
+    gap: 3rem;
     z-index: 150;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease, transform 0.35s var(--ease-out), visibility 0.3s;
   }
   .nav__links.open {
-    display: flex;
+    visibility: visible;
     opacity: 1;
     pointer-events: all;
+    transform: translateY(0);
   }
+  .nav__links li { width: 100%; text-align: center; }
   .nav__links a {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: var(--text);
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    transition: color 0.2s ease;
   }
+  .nav__links a:hover,
+  .nav__links a:active { color: var(--emerald); }
+  .nav__links a::after { display: none; } /* hide underline anim in full-screen menu */
   .nav__links .nav__cta {
-    padding: 0.7rem 2rem !important;
-    font-size: 1rem !important;
+    display: inline-flex !important;
+    padding: 0.75rem 2.5rem !important;
+    font-size: 1.1rem !important;
+    background: var(--text) !important;
+    color: var(--bg-2) !important;
+    border-radius: var(--r-pill) !important;
+    margin-top: 0.5rem;
   }
   .nav__toggle { display: flex; }
 
