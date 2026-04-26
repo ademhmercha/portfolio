@@ -130,6 +130,19 @@ section { padding: 6rem 0; }
   background: rgba(17,17,24,0.03);
 }
 
+.btn--cv {
+  background: var(--emerald-l);
+  color: var(--emerald);
+  border: 1px solid rgba(5,150,105,0.25);
+  font-weight: 600;
+}
+.btn--cv:hover {
+  background: rgba(5,150,105,0.18);
+  border-color: rgba(5,150,105,0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(5,150,105,0.18);
+}
+
 /* ══════════════════════════════════════════════════════════════
    NAVBAR
 ══════════════════════════════════════════════════════════════ */
@@ -446,6 +459,93 @@ section { padding: 6rem 0; }
   align-items: start;
 }
 
+/* ── Profile photo ──────────────────────────────────────────── */
+.about__photo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.about__photo {
+  position: relative;
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Gradient ring behind the photo */
+.about__photo::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--emerald) 0%, var(--indigo) 100%);
+  z-index: 0;
+  animation: ringSpinSlow 8s linear infinite;
+}
+@keyframes ringSpinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Fallback initials circle */
+.about__initials {
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--emerald-l), var(--indigo-l));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--emerald);
+  z-index: 1;
+  user-select: none;
+}
+
+/* Real photo on top */
+.about__photo img {
+  position: absolute;
+  inset: 3px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+/* Hide initials once photo loads */
+.about__photo.photo-loaded img  { opacity: 1; }
+.about__photo.photo-loaded .about__initials { display: none; }
+
+/* "Available" floating badge next to photo */
+.about__photo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--emerald);
+  background: var(--emerald-l);
+  border: 1px solid rgba(5,150,105,0.22);
+  border-radius: var(--r-pill);
+  padding: 0.35rem 0.85rem;
+  letter-spacing: 0.04em;
+}
+.about__photo-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--emerald);
+  animation: dotPulse 2.5s ease-in-out infinite;
+}
+
+/* Bio text */
 .about__bio p {
   font-size: 1rem;
   color: var(--text-2);
@@ -1067,6 +1167,8 @@ section { padding: 6rem 0; }
     padding: 0.9rem 1.5rem;
     font-size: 0.95rem;
   }
+  /* CV button full-width on mobile */
+  .btn--cv { order: -1; } /* show CV button first on mobile */
   /* Rings: smaller on mobile */
   .ring--1 { width: 260px; height: 260px; }
   .ring--2 { width: 380px; height: 380px; }

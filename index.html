@@ -79,6 +79,11 @@
             View my work
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+          <!-- ↓ Replace assets/cv.pdf with your actual CV file -->
+          <a href="assets/cv.pdf" download="Adem_Hmercha_CV.pdf" class="btn btn--cv magnetic">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
           <a href="mailto:ademhmerchaaa@gmail.com" class="btn btn--outline magnetic">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Get in touch
@@ -132,6 +137,24 @@
         <div class="about__grid">
 
           <div class="about__bio reveal">
+
+            <!-- Profile photo — place your photo at assets/img/photo.jpg -->
+            <div class="about__photo-wrap">
+              <div class="about__photo" id="about-photo">
+                <span class="about__initials" aria-hidden="true">AH</span>
+                <img
+                  src="assets/photp.jpg"
+                  alt="Adem Hmercha"
+                  onload="this.closest('.about__photo').classList.add('photo-loaded')"
+                  onerror="this.remove()"
+                />
+              </div>
+              <div class="about__photo-badge">
+                <span class="about__photo-badge-dot" aria-hidden="true"></span>
+                Available
+              </div>
+            </div>
+
             <p>
               I'm <strong>Adem Hmercha</strong>, a Full Stack Developer from Tunisia passionate
               about building real-world web applications that solve meaningful problems.
