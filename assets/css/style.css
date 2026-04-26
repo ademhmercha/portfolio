@@ -315,25 +315,36 @@ section { padding: 6rem 0; }
   padding: 2rem;
 }
 
-/* Badge */
-.hero__badge {
+/* Eyebrow label */
+.hero__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.6rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--emerald);
-  background: var(--emerald-l);
-  border: 1px solid rgba(5,150,105,0.25);
-  border-radius: var(--r-pill);
-  padding: 0.38rem 1rem;
-  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
   animation: fadeUp 0.6s var(--ease-out) 0.1s both;
 }
-.badge__dot {
+.hero__eyebrow-label { color: var(--text-2); }
+.hero__eyebrow-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+.hero__eyebrow-status {
+  color: var(--emerald);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.hero__eyebrow-status::before {
+  content: '';
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--emerald);
+  display: inline-block;
   animation: dotPulse 2.5s ease-in-out infinite;
 }
 @keyframes dotPulse {
@@ -341,47 +352,29 @@ section { padding: 6rem 0; }
   50%       { box-shadow: 0 0 0 5px rgba(5,150,105,0); }
 }
 
-/* Name */
+/* Name — elegant, restrained */
 .hero__name {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: var(--font-heading);
-  font-size: clamp(4rem, 11vw, 7.5rem);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
   font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
   animation: fadeUp 0.8s var(--ease-out) 0.2s both;
 }
-.hero__name-row { display: block; }
-.hero__name-row--accent {
-  position: relative;
-  display: inline-block;
-}
-.hero__name-row--accent::after {
-  content: '';
-  position: absolute;
-  bottom: 4px; left: 0; right: 0;
-  height: 6px;
-  background: linear-gradient(90deg, var(--emerald), var(--indigo));
-  border-radius: 3px;
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: underlineReveal 0.7s var(--ease-out) 0.9s forwards;
-}
-@keyframes underlineReveal {
-  to { transform: scaleX(1); }
+.hero__name em {
+  font-style: normal;
+  color: var(--emerald);
 }
 
 /* Role */
 .hero__role {
   font-family: var(--font-mono);
-  font-size: clamp(0.88rem, 2vw, 1.05rem);
+  font-size: clamp(0.82rem, 1.8vw, 0.95rem);
   color: var(--text-2);
-  animation: fadeUp 0.8s var(--ease-out) 0.4s both;
-  min-height: 1.8rem;
+  animation: fadeUp 0.8s var(--ease-out) 0.35s both;
+  min-height: 1.6rem;
 }
-.hero__role-prefix { color: var(--text-3); }
 .hero__cursor {
   display: inline-block;
   color: var(--emerald);
@@ -396,11 +389,11 @@ section { padding: 6rem 0; }
 
 /* Description */
 .hero__desc {
-  font-size: 1rem;
+  font-size: 0.97rem;
   color: var(--text-2);
-  line-height: 1.7;
-  max-width: 480px;
-  animation: fadeUp 0.8s var(--ease-out) 0.55s both;
+  line-height: 1.75;
+  max-width: 440px;
+  animation: fadeUp 0.8s var(--ease-out) 0.5s both;
 }
 .hero__desc strong { color: var(--text); font-weight: 500; }
 
@@ -543,6 +536,62 @@ section { padding: 6rem 0; }
   border-radius: 50%;
   background: var(--emerald);
   animation: dotPulse 2.5s ease-in-out infinite;
+}
+
+/* ── Education ──────────────────────────────────────────────── */
+.about__education { margin-bottom: 0; }
+
+.edu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edu__item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--bg);
+  transition: border-color 0.25s ease, transform 0.3s var(--ease-out);
+}
+.edu__item:hover {
+  border-color: rgba(5,150,105,0.3);
+  transform: translateX(4px);
+}
+
+.edu__icon {
+  width: 36px; height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--emerald-l);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--emerald);
+}
+
+.edu__body { flex: 1; }
+
+.edu__degree {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.edu__school {
+  font-size: 0.82rem;
+  color: var(--text-2);
+  margin-top: 0.2rem;
+}
+.edu__years {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--emerald);
+  margin-top: 0.3rem;
+  letter-spacing: 0.04em;
 }
 
 /* Bio text */
@@ -1151,10 +1200,9 @@ section { padding: 6rem 0; }
   }
   .hero__content { padding: 1.5rem 1.1rem; gap: 1.2rem; }
   .hero__name {
-    font-size: clamp(3.2rem, 15vw, 4.8rem);
-    letter-spacing: -0.035em;
+    font-size: clamp(2rem, 8vw, 3rem);
+    letter-spacing: -0.025em;
   }
-  .hero__name-row--accent::after { height: 4px; bottom: 2px; }
   .hero__desc { font-size: 0.93rem; }
   .hero__actions {
     flex-direction: column;
