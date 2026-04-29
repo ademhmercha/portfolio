@@ -27,6 +27,8 @@
   --rose-l:   #ffe4e6;
   --amber:    #d97706;
   --amber-l:  #fef3c7;
+  --cyan:     #0891b2;
+  --cyan-l:   #cffafe;
 
   /* Typography */
   --font:         'Inter', system-ui, sans-serif;
@@ -712,6 +714,7 @@ section { padding: 6rem 0; }
 .pcard--violet  .pcard__top { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #ddd6fe 100%); }
 .pcard--rose    .pcard__top { background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 50%, #fecdd3 100%); }
 .pcard--amber   .pcard__top { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%); }
+.pcard--cyan    .pcard__top { background: linear-gradient(135deg, #ecfeff 0%, #cffafe 50%, #a5f3fc 100%); }
 
 /* Top hover tint */
 .pcard--emerald:hover .pcard__top { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #6ee7b7 100%); }
@@ -719,6 +722,7 @@ section { padding: 6rem 0; }
 .pcard--violet:hover  .pcard__top { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 50%, #c4b5fd 100%); }
 .pcard--rose:hover    .pcard__top { background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 50%, #fda4af 100%); }
 .pcard--amber:hover   .pcard__top { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%); }
+.pcard--cyan:hover    .pcard__top { background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 50%, #67e8f9 100%); }
 
 /* Decorative shapes inside top panel */
 .pcard__deco {
@@ -791,6 +795,8 @@ section { padding: 6rem 0; }
 .pcard--rose    .pcard__cat { color: var(--rose);    background: rgba(225,29,72,0.1); }
 .pcard--amber   .pcard__num,
 .pcard--amber   .pcard__cat { color: var(--amber);   background: rgba(217,119,6,0.1); }
+.pcard--cyan    .pcard__num,
+.pcard--cyan    .pcard__cat { color: var(--cyan);    background: rgba(8,145,178,0.1); }
 
 /* Card body */
 .pcard__body {
@@ -889,11 +895,13 @@ section { padding: 6rem 0; }
 .pcard--indigo:hover  .pcard__tags span { color: var(--indigo);  border-color: rgba(79,70,229,0.25); background: rgba(79,70,229,0.04); }
 .pcard--violet:hover  .pcard__tags span { color: var(--violet);  border-color: rgba(124,58,237,0.25); background: rgba(124,58,237,0.04); }
 .pcard--rose:hover    .pcard__tags span { color: var(--rose);    border-color: rgba(225,29,72,0.25); background: rgba(225,29,72,0.04); }
-.pcard--amber:hover   .pcard__tags span { color: var(--amber);   border-color: rgba(217,119,6,0.25); background: rgba(217,119,6,0.04); }
+.pcard--amber:hover   .pcard__tags span { color: var(--amber);   border-color: rgba(217,119,6,0.25);  background: rgba(217,119,6,0.04); }
+.pcard--cyan:hover    .pcard__tags span { color: var(--cyan);    border-color: rgba(8,145,178,0.25);  background: rgba(8,145,178,0.04); }
 
-/* Mobile: always show amber tags colored */
+/* Mobile: always show tags colored */
 @media (max-width: 768px) {
-  .pcard--amber .pcard__tags span { color: var(--amber); border-color: rgba(217,119,6,0.2); background: rgba(217,119,6,0.04); }
+  .pcard--amber .pcard__tags span { color: var(--amber); border-color: rgba(217,119,6,0.2);  background: rgba(217,119,6,0.04); }
+  .pcard--cyan  .pcard__tags span { color: var(--cyan);  border-color: rgba(8,145,178,0.2);  background: rgba(8,145,178,0.04); }
 }
 
 /* ══════════════════════════════════════════════════════════════
