@@ -25,6 +25,25 @@
 </head>
 <body>
 
+  <!-- ━━ LOADER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="page-loader" aria-hidden="true">
+    <span class="page-loader__logo">AH.</span>
+  </div>
+
+  <!-- ━━ SCROLL PROGRESS ━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ━━ CUSTOM CURSOR ━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ━━ AMBIENT ORBS ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="gradient-orb gradient-orb--1" aria-hidden="true"></div>
+  <div class="gradient-orb gradient-orb--2" aria-hidden="true"></div>
+
+  <!-- ━━ NOISE TEXTURE ━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="noise" aria-hidden="true"></div>
+
   <!-- ━━ NAVBAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
@@ -665,9 +684,17 @@
 
   </main>
 
+  <!-- ━━ FOOTER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">AH.</span>
+      <p class="footer__copy">© 2026 Adem Hmercha. All rights reserved.</p>
+      <a href="#hero" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
 
   
-
   <!-- ━━ MOBILE BOTTOM NAV ━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="mobile-nav" aria-label="Mobile navigation" role="navigation">
     <a href="#hero" class="mobile-nav__item" data-section="hero" aria-label="Home">

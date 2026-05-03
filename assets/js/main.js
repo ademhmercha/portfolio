@@ -1,9 +1,118 @@
 /* ============================================================
-   Adem Hmercha — Portfolio (Light Theme)
+   Adem Hmercha — Portfolio (Light Theme, Senior Polish)
    main.js
    ============================================================ */
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ── Scroll progress bar ───────────────────────────────────── */
+(function initScrollProgress() {
+  if (reduced) return;
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = progress + '%';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+/* ── Custom cursor (desktop only) ──────────────────────────── */
+(function initCustomCursor() {
+  if (reduced) return;
+  if (window.innerWidth < 769) return;
+  if ('ontouchstart' in window) return;
+
+  const dot = document.querySelector('.cursor-dot');
+  const ring = document.querySelector('.cursor-ring');
+  if (!dot || !ring) return;
+
+  let mx = -100, my = -100, rx = -100, ry = -100;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.opacity = '1';
+    ring.style.opacity = '1';
+  }, { passive: true });
+
+  document.addEventListener('mousedown', () => ring.classList.add('clicking'));
+  document.addEventListener('mouseup', () => ring.classList.remove('clicking'));
+
+  document.addEventListener('mouseleave', () => {
+    dot.style.opacity = '0';
+    ring.style.opacity = '0';
+  });
+
+  const hoverTargets = 'a, button, .btn, .pcard, .tech-chip, .skill-group, .edu__item';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(hoverTargets)) {
+      ring.classList.add('hovering');
+    } else {
+      ring.classList.remove('hovering');
+    }
+  }, { passive: true });
+
+  function animateCursor() {
+    rx += (mx - rx) * 0.15;
+    ry += (my - ry) * 0.15;
+    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+})();
+
+/* ── Parallax on hero rings ────────────────────────────────── */
+(function initParallax() {
+  if (reduced) return;
+  const rings = document.querySelector('.hero__rings');
+  if (!rings) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        if (scrollY < window.innerHeight * 1.5) {
+          rings.style.transform = `translateY(${scrollY * 0.15}px)`;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+/* ── 3D tilt on project cards ─────────────────────────────── */
+(function initCardTilt() {
+  if (reduced) return;
+  if (window.innerWidth < 769) return;
+  if ('ontouchstart' in window) return;
+
+  document.querySelectorAll('.pcard').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const tiltX = (y - 0.5) * 8;
+      const tiltY = (x - 0.5) * -8;
+      card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+})();
 
 /* ── Typing animation ────────────────────────────────────────── */
 (function initTyping() {
@@ -48,7 +157,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   setTimeout(tick, 1000);
 })();
 
-/* ── Navbar scroll ───────────────────────────────────────────── */
+/* ── Navbar scroll + active section tracking ───────────────── */
 (function initNavbar() {
   const nav    = document.querySelector('.nav');
   const toggle = document.querySelector('.nav__toggle');
@@ -78,11 +187,32 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       a.addEventListener('click', closeMenu);
     });
 
-    /* Close on Escape key */
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeMenu();
     });
   }
+
+  /* Active section tracking in desktop nav */
+  const sections = ['hero', 'about', 'projects', 'skills', 'contact'];
+  const navAnchors = links ? links.querySelectorAll('a[href^="#"]') : [];
+
+  if (navAnchors.length > 0 && !('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navAnchors.forEach(a => {
+          const href = a.getAttribute('href');
+          a.classList.toggle('active', href === '#' + e.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
 })();
 
 /* ── Scroll reveal ───────────────────────────────────────────── */
@@ -209,7 +339,6 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   sections.forEach(s => obs.observe(s));
 
-  /* Tap feedback: add slight scale on touch */
   navItems.forEach(item => {
     item.addEventListener('touchstart', () => {
       item.style.opacity = '0.7';
