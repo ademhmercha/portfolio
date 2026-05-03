@@ -5,6 +5,24 @@
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* ── Theme Toggle ──────────────────────────────────────────── */
+(function initTheme() {
+  const stored = localStorage.getItem('theme');
+  if (stored === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+
+  const btn = document.querySelector('.nav__theme');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next === 'dark' ? '' : next);
+    localStorage.setItem('theme', next);
+  });
+})();
+
 /* ── Custom Cursor ─────────────────────────────────────────── */
 (function initCursor() {
   if (reduced) return;
