@@ -313,6 +313,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   width: 100%; left: 0;
 }
 
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav__status {
   display: inline-flex;
   align-items: center;
@@ -1238,8 +1244,7 @@ section { padding: 10rem 0; }
   }
   .nav__links a:hover { color: var(--accent-1); }
   .nav__links a::before { display: none; }
-  .nav__status { display: none; }
-  .nav__theme { display: none; }
+  .nav__actions { display: none; }
   .nav__toggle { display: flex; }
 
   /* Hero */
