@@ -12,14 +12,15 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.documentElement.setAttribute('data-theme', 'light');
   }
 
-  const btn = document.querySelector('.nav__theme');
-  if (!btn) return;
-
-  btn.addEventListener('click', () => {
+  const toggleTheme = () => {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next === 'dark' ? '' : next);
     localStorage.setItem('theme', next);
+  };
+
+  document.querySelectorAll('.nav__theme, .mobile-nav__theme').forEach(btn => {
+    if (btn) btn.addEventListener('click', toggleTheme);
   });
 })();
 

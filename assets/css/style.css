@@ -436,6 +436,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 [data-theme="light"] .nav__theme .icon-moon { display: none; }
 [data-theme="light"] .nav__theme .icon-sun { display: block; }
 
+.mobile-nav__theme svg { width: 20px; height: 20px; }
+.mobile-nav__theme .icon-moon { display: block; }
+.mobile-nav__theme .icon-sun { display: none; }
+[data-theme="light"] .mobile-nav__theme .icon-moon { display: none; }
+[data-theme="light"] .mobile-nav__theme .icon-sun { display: block; }
+
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -1327,6 +1333,17 @@ section { padding: 10rem 0; }
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
+  text-decoration: none;
+  color: var(--text-3);
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  transition: color 0.25s var(--ease-out);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
   color: var(--text-3);
   font-size: 0.6rem;
   font-weight: 500;
