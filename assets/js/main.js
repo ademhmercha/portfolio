@@ -36,8 +36,8 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       btn.classList.add('active');
 
       cards.forEach(card => {
-        const category = card.dataset.category;
-        if (filter === 'all' || category === filter) {
+        const categories = (card.dataset.category || '').split(',');
+        if (filter === 'all' || categories.includes(filter)) {
           card.classList.remove('filtered');
         } else {
           card.classList.add('filtered');
