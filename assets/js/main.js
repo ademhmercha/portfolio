@@ -26,7 +26,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ── Project Filters ──────────────────────────────────────── */
 (function initFilters() {
-  const buttons = document.querySelectorAll('.filter-btn');
+  const buttons = document.querySelectorAll('.projects .filter-btn');
   const cards = document.querySelectorAll('.pcard');
 
   buttons.forEach(btn => {
@@ -41,6 +41,29 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           card.classList.remove('filtered');
         } else {
           card.classList.add('filtered');
+        }
+      });
+    });
+  });
+})();
+
+/* ── Experience Filters ──────────────────────────────────── */
+(function initExpFilters() {
+  const buttons = document.querySelectorAll('.exp-filter-bar .filter-btn');
+  const items = document.querySelectorAll('.detail-group--experience .detail-item');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      items.forEach(item => {
+        const category = item.dataset.category;
+        if (filter === 'all' || category === filter) {
+          item.classList.remove('filtered');
+        } else {
+          item.classList.add('filtered');
         }
       });
     });
