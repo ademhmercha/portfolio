@@ -6,7 +6,7 @@
   <meta name="description" content="Adem Hmercha — Full Stack Developer from Tunisia. MERN stack, real-time systems, DevOps pipelines, and AI-powered tools." />
   <meta name="author" content="Adem Hmercha" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#f8f7f4" />
+  <meta name="theme-color" content="#0a0a0b" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ademhmercha.vercel.app" />
@@ -25,34 +25,31 @@
 </head>
 <body>
 
-  <!-- ━━ LOADER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <div class="page-loader" aria-hidden="true">
-    <span class="page-loader__logo">AH.</span>
-  </div>
-
-  <!-- ━━ SCROLL PROGRESS ━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <div id="scroll-progress" aria-hidden="true"></div>
-
-  <!-- ━━ CUSTOM CURSOR ━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <!-- ━━ CURSOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 
-  <!-- ━━ AMBIENT ORBS ━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <div class="gradient-orb gradient-orb--1" aria-hidden="true"></div>
-  <div class="gradient-orb gradient-orb--2" aria-hidden="true"></div>
-
-  <!-- ━━ NOISE TEXTURE ━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <!-- ━━ NOISE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <div class="noise" aria-hidden="true"></div>
+
+  <!-- ━━ GRADIENT MESH ━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="gradient-mesh" aria-hidden="true"></div>
 
   <!-- ━━ NAVBAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
-      <a href="#" class="nav__logo">AH.</a>
+      <a href="#hero" class="nav__logo">Adem</a>
       <ul class="nav__links" role="list">
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <span class="nav__status">
+            <span class="nav__status-dot" aria-hidden="true"></span>
+            Available
+          </span>
+        </li>
       </ul>
       <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span>
@@ -64,24 +61,13 @@
 
     <!-- ━━ HERO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section id="hero" class="hero">
-
-      <!-- Orbital rings (CSS-only decoration) -->
-      <div class="hero__rings" aria-hidden="true">
-        <div class="ring ring--1"></div>
-        <div class="ring ring--2"></div>
-        <div class="ring ring--3"></div>
-      </div>
-
       <div class="container hero__content">
 
-        <div class="hero__eyebrow">
-          <span class="hero__eyebrow-label">Full Stack Developer</span>
-          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-          <span class="hero__eyebrow-status">Available</span>
-        </div>
+        <span class="hero__label">Full Stack Developer</span>
 
         <h1 class="hero__name" aria-label="Adem Hmercha">
-          Adem <em>Hmercha</em>
+          <span class="line"><span class="line-inner">Adem</span></span>
+          <span class="line"><span class="line-inner"><em>Hmercha</em></span></span>
         </h1>
 
         <p class="hero__role" aria-live="polite">
@@ -89,66 +75,62 @@
         </p>
 
         <p class="hero__desc">
-          Building scalable web applications from <strong>Tunisia 🇹🇳</strong><br>
-          MERN stack · Real-time systems · DevOps
+          I build <strong>scalable web applications</strong> and <strong>real-time systems</strong> from Tunisia. Specialized in MERN stack, DevOps, and AI-powered tools.
         </p>
 
         <div class="hero__actions">
           <a href="#projects" class="btn btn--primary magnetic">
-            View my work
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>View my work</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="assets/cv.pdf" download="Adem_Hmercha_CV.pdf" class="btn btn--cv magnetic">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download CV
-          </a>
-          <a href="mailto:ademhmerchaaa@gmail.com" class="btn btn--outline magnetic">
-            Get in touch
+          <a href="assets/cv.pdf" download="Adem_Hmercha_CV.pdf" class="btn btn--outline magnetic">
+            <span>Download CV</span>
           </a>
         </div>
 
       </div>
 
-      <!-- Marquee strip -->
-      <div class="hero__marquee" aria-hidden="true">
-        <div class="marquee__track">
-          <span>React</span><span class="sep">·</span>
-          <span>Node.js</span><span class="sep">·</span>
-          <span>MongoDB</span><span class="sep">·</span>
-          <span>TypeScript</span><span class="sep">·</span>
-          <span>Docker</span><span class="sep">·</span>
-          <span>Kubernetes</span><span class="sep">·</span>
-          <span>WebRTC</span><span class="sep">·</span>
-          <span>Socket.io</span><span class="sep">·</span>
-          <span>React Native</span><span class="sep">·</span>
-          <span>Supabase</span><span class="sep">·</span>
-          <span>Prisma</span><span class="sep">·</span>
-          <span>Firebase</span><span class="sep">·</span>
-          <span>Tailwind CSS</span><span class="sep">·</span>
-          <span>GitHub Actions</span><span class="sep">·</span>
-          <span>Prometheus</span><span class="sep">·</span>
-          <span>Grafana</span><span class="sep">·</span>
-          <!-- duplicate for seamless loop -->
-          <span>React</span><span class="sep">·</span>
-          <span>Node.js</span><span class="sep">·</span>
-          <span>MongoDB</span><span class="sep">·</span>
-          <span>TypeScript</span><span class="sep">·</span>
-          <span>Docker</span><span class="sep">·</span>
-          <span>Kubernetes</span><span class="sep">·</span>
-          <span>WebRTC</span><span class="sep">·</span>
-          <span>Socket.io</span><span class="sep">·</span>
-          <span>React Native</span><span class="sep">·</span>
-          <span>Supabase</span><span class="sep">·</span>
-          <span>Prisma</span><span class="sep">·</span>
-          <span>Firebase</span><span class="sep">·</span>
-          <span>Tailwind CSS</span><span class="sep">·</span>
-          <span>GitHub Actions</span><span class="sep">·</span>
-          <span>Prometheus</span><span class="sep">·</span>
-          <span>Grafana</span><span class="sep">·</span>
-        </div>
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-text">Scroll</span>
+        <span class="hero__scroll-line"></span>
       </div>
-
     </section>
+
+    <!-- ━━ MARQUEE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <div class="hero__marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>React</span><span class="sep">/</span>
+        <span>TypeScript</span><span class="sep">/</span>
+        <span>Node.js</span><span class="sep">/</span>
+        <span>MongoDB</span><span class="sep">/</span>
+        <span>Docker</span><span class="sep">/</span>
+        <span>Kubernetes</span><span class="sep">/</span>
+        <span>React Native</span><span class="sep">/</span>
+        <span>Prisma</span><span class="sep">/</span>
+        <span>Socket.io</span><span class="sep">/</span>
+        <span>WebRTC</span><span class="sep">/</span>
+        <span>Supabase</span><span class="sep">/</span>
+        <span>Firebase</span><span class="sep">/</span>
+        <span>GitHub Actions</span><span class="sep">/</span>
+        <span>Tailwind</span><span class="sep">/</span>
+        <!-- duplicate -->
+        <span>React</span><span class="sep">/</span>
+        <span>TypeScript</span><span class="sep">/</span>
+        <span>Node.js</span><span class="sep">/</span>
+        <span>MongoDB</span><span class="sep">/</span>
+        <span>Docker</span><span class="sep">/</span>
+        <span>Kubernetes</span><span class="sep">/</span>
+        <span>React Native</span><span class="sep">/</span>
+        <span>Prisma</span><span class="sep">/</span>
+        <span>Socket.io</span><span class="sep">/</span>
+        <span>WebRTC</span><span class="sep">/</span>
+        <span>Supabase</span><span class="sep">/</span>
+        <span>Firebase</span><span class="sep">/</span>
+        <span>GitHub Actions</span><span class="sep">/</span>
+        <span>Tailwind</span><span class="sep">/</span>
+      </div>
+    </div>
 
     <!-- ━━ ABOUT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section id="about" class="about">
@@ -156,425 +138,222 @@
 
         <header class="section-header reveal">
           <span class="section-tag">01 — About</span>
-          <h2 class="section-title">Who I Am</h2>
+          <h2 class="section-title">A bit about <span>me.</span></h2>
         </header>
 
         <div class="about__grid">
 
           <div class="about__bio reveal">
-
-            <!-- Profile photo — place your photo at assets/img/photo.jpg -->
-            <div class="about__photo-wrap">
-              <div class="about__photo" id="about-photo">
-                <span class="about__initials" aria-hidden="true">AH</span>
-                <img
-                  src="assets/photp.jpg"
-                  alt="Adem Hmercha"
-                  onload="this.closest('.about__photo').classList.add('photo-loaded')"
-                  onerror="this.remove()"
-                />
-              </div>
-              <div class="about__photo-badge">
-                <span class="about__photo-badge-dot" aria-hidden="true"></span>
-                Available
-              </div>
-            </div>
-
             <p>
               I'm <strong>Adem Hmercha</strong>, a Full Stack Developer from Tunisia passionate
-              about building real-world web applications that solve meaningful problems.
+              about building products that solve real problems.
             </p>
             <p>
-              I specialize in the <strong>MERN stack</strong> with experience in real-time systems,
-              DevOps pipelines, and AI-powered tools. From e-commerce platforms to enterprise
-              DevOps dashboards, I build products that are fast, scalable, and polished
-              from API to UI.
+              I specialize in the <strong>MERN stack</strong> with deep experience in real-time systems,
+              DevOps pipelines, and AI-powered tools. From e-commerce to enterprise dashboards,
+              I ship products that are fast, scalable, and polished.
             </p>
+
             <div class="about__links">
-              <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="text-link">
+              <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="about__link">
                 github.com/ademhmercha
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
-              <a href="mailto:ademhmerchaaa@gmail.com" class="text-link">
+              <a href="mailto:ademhmerchaaa@gmail.com" class="about__link">
                 ademhmerchaaa@gmail.com
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
             </div>
-          </div>
 
-          <div class="about__education reveal reveal--delay">
-            <p class="tech__label">Education</p>
-            <div class="edu__list">
-
-              <div class="edu__item">
-                <div class="edu__icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                </div>
-                <div class="edu__body">
-                  <p class="edu__degree">Cycle Ingénieur — Génie Logiciel</p>
-                  <p class="edu__school">ESPRIT — Tunis</p>
-                  <p class="edu__years">2023 – En cours</p>
-                </div>
+            <div class="about__tech">
+              <p class="tech__label">Tech Stack</p>
+              <div class="tech__grid">
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">TypeScript</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">MongoDB</span>
+                <span class="tech-chip">Docker</span>
+                <span class="tech-chip">Kubernetes</span>
+                <span class="tech-chip">React Native</span>
+                <span class="tech-chip">Tailwind</span>
+                <span class="tech-chip">Prisma</span>
+                <span class="tech-chip">Supabase</span>
               </div>
-
-              <div class="edu__item">
-                <div class="edu__icon" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                </div>
-                <div class="edu__body">
-                  <p class="edu__degree">Classes Préparatoires — Mathématiques · Physique</p>
-                  <p class="edu__school">IPEÏM — Monastir</p>
-                  <p class="edu__years">2021 – 2023</p>
-                </div>
-              </div>
-
             </div>
           </div>
 
-          <div class="about__tech reveal reveal--delay">
-            <p class="tech__label">Tech Stack</p>
-            <div class="tech__grid" role="list" aria-label="Technologies">
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                React
+          <div class="about__details reveal reveal--delay">
+
+            <div class="detail-group">
+              <p class="detail-group__title">Education</p>
+              <div class="detail-item">
+                <div class="detail-item__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <div class="detail-item__body">
+                  <p class="detail-item__title">Cycle Ingenieur — Genie Logiciel</p>
+                  <p class="detail-item__sub">ESPRIT — Tunis</p>
+                  <p class="detail-item__date">2023 – En cours</p>
+                </div>
               </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                Node.js
-              </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                MongoDB
-              </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                TypeScript
-              </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                Docker
-              </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                Kubernetes
-              </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                React Native
-              </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                Tailwind
-              </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" style="filter:invert(1) brightness(0.4);" />
-                Express
-              </div>
-              <div class="tech-chip" role="listitem">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" width="18" height="18" loading="lazy" aria-hidden="true" />
-                Git
+              <div class="detail-item">
+                <div class="detail-item__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <div class="detail-item__body">
+                  <p class="detail-item__title">Classes Preparatoires — Math · Physique</p>
+                  <p class="detail-item__sub">IPEiM — Monastir</p>
+                  <p class="detail-item__date">2021 – 2023</p>
+                </div>
               </div>
             </div>
+
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- ━━ PROJECTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- ━━ PROJECTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section id="projects" class="projects">
       <div class="container">
 
         <header class="section-header reveal">
-          <span class="section-tag">02 — Work</span>
-          <h2 class="section-title">Featured Projects</h2>
+          <span class="section-tag">02 — Projects</span>
+          <h2 class="section-title">Selected <span>work.</span></h2>
         </header>
 
-        <div class="projects__grid">
+        <div class="projects__list">
 
-          <!-- ── 01: DRAPE (large card) ── -->
-          <article class="pcard pcard--large pcard--emerald reveal" aria-label="DRAPE project">
-            <div class="pcard__top">
-              <div class="pcard__meta">
-                <span class="pcard__num">01</span>
-                <span class="pcard__cat">E-Commerce</span>
+          <!-- 01: DRAPE -->
+          <a href="https://drape-cloth-shop.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard reveal" aria-label="DRAPE project">
+            <span class="pcard__num">01</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">DRAPE</h3>
+              <p class="pcard__subtitle">Luxury fashion e-commerce with JWT auth, Cloudinary image management, and automated WhatsApp order notifications.</p>
+              <div class="pcard__tags">
+                <span>React</span><span>Node.js</span><span>MongoDB</span><span>Tailwind</span><span>WhatsApp API</span>
               </div>
-              <div class="pcard__deco" aria-hidden="true">
-                <div class="pcard__deco-ring"></div>
-                <div class="pcard__deco-ring pcard__deco-ring--sm"></div>
-              </div>
-            </div>
-            <div class="pcard__body">
-              <div class="pcard__header">
-                <div>
-                  <h3 class="pcard__title">DRAPE</h3>
-                  <p class="pcard__subtitle">Luxury Fashion E-Commerce Platform</p>
-                </div>
-                <div class="pcard__links">
-                  <a href="https://drape-cloth-shop.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" aria-label="Live demo">
-                    Live
-                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </a>
-                  <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
-                </div>
-              </div>
-              <p class="pcard__desc">
-                Full-stack MERN e-commerce platform for a premium Tunisian fashion brand.
-                Features JWT auth, Cloudinary image management, and automated WhatsApp
-                order notifications via Whapi.Cloud.
-              </p>
-              <div class="pcard__tags" role="list">
-                <span role="listitem">React</span>
-                <span role="listitem">Node.js</span>
-                <span role="listitem">MongoDB</span>
-                <span role="listitem">Cloudinary</span>
-                <span role="listitem">Tailwind</span>
-                <span role="listitem">JWT</span>
-                <span role="listitem">WhatsApp API</span>
+              <div class="pcard__links">
+                <span class="pcard__link pcard__link--live">Live Demo ↗</span>
+                <span class="pcard__link">Source ↗</span>
               </div>
             </div>
-          </article>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </a>
 
-          <!-- ── 02: Telnet Test Manager ── -->
-          <article class="pcard pcard--indigo reveal reveal--delay" aria-label="Telnet Test Manager project">
-            <div class="pcard__top">
-              <div class="pcard__meta">
-                <span class="pcard__num">02</span>
-                <span class="pcard__cat">DevOps</span>
+          <!-- 02: Telnet Test Manager -->
+          <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard reveal reveal--delay" aria-label="Telnet Test Manager project">
+            <span class="pcard__num">02</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">Telnet Test Manager</h3>
+              <p class="pcard__subtitle">Enterprise DevOps platform for network equipment testing. WebSocket live updates, RBAC, and full CI/CD pipeline.</p>
+              <div class="pcard__tags">
+                <span>React</span><span>TypeScript</span><span>WebSocket</span><span>Docker</span><span>Kubernetes</span><span>Prometheus</span>
               </div>
-              <div class="pcard__deco" aria-hidden="true">
-                <div class="pcard__deco-grid"></div>
-              </div>
-            </div>
-            <div class="pcard__body">
-              <div class="pcard__header">
-                <div>
-                  <h3 class="pcard__title">Telnet Test Manager</h3>
-                  <p class="pcard__subtitle">Enterprise DevOps Platform</p>
-                </div>
-                <div class="pcard__links">
-                  <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
-                </div>
-              </div>
-              <p class="pcard__desc">
-                Enterprise web platform for executing and monitoring Telnet tests on network
-                equipment in real time. WebSocket live updates, role-based access, multilingual
-                UI, and a full DevOps stack: Docker, Kubernetes, Helm, Prometheus, Grafana &amp; CI/CD.
-              </p>
-              <div class="pcard__tags" role="list">
-                <span role="listitem">React</span>
-                <span role="listitem">TypeScript</span>
-                <span role="listitem">WebSocket</span>
-                <span role="listitem">Docker</span>
-                <span role="listitem">Kubernetes</span>
-                <span role="listitem">Prometheus</span>
-                <span role="listitem">GitHub Actions</span>
+              <div class="pcard__links">
+                <span class="pcard__link">Source ↗</span>
               </div>
             </div>
-          </article>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </a>
 
-          <!-- ── 03: AutoReview Agent ── -->
-          <article class="pcard pcard--violet reveal" aria-label="GitHub AutoReview Agent project">
-            <div class="pcard__top">
-              <div class="pcard__meta">
-                <span class="pcard__num">03</span>
-                <span class="pcard__cat">AI Tool</span>
+          <!-- 03: AutoReview Agent -->
+          <a href="https://github-auto-review.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard reveal" aria-label="GitHub AutoReview Agent project">
+            <span class="pcard__num">03</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">AutoReview Agent</h3>
+              <p class="pcard__subtitle">AI-powered code auditor powered by Llama 3.3 70B. Five specialized agents analyze any public GitHub repo.</p>
+              <div class="pcard__tags">
+                <span>React</span><span>Vite</span><span>Groq API</span><span>Llama 3.3</span><span>GitHub API</span>
               </div>
-              <div class="pcard__deco" aria-hidden="true">
-                <div class="pcard__deco-dots"></div>
-              </div>
-            </div>
-            <div class="pcard__body">
-              <div class="pcard__header">
-                <div>
-                  <h3 class="pcard__title">AutoReview Agent</h3>
-                  <p class="pcard__subtitle">GitHub AI Code Auditor</p>
-                </div>
-                <div class="pcard__links">
-                  <a href="https://github-auto-review.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" aria-label="Live demo">
-                    Live
-                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </a>
-                  <a href="https://github.com/ademhmercha/Github-Auto-Review" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
-                </div>
-              </div>
-              <p class="pcard__desc">
-                AI-powered tool that analyzes any public GitHub repo using 5 specialized agents:
-                Explorer → Reviewer → Doc → Reporter → Refactor.
-                Powered by Llama 3.3 70B via Groq API. 100% frontend.
-              </p>
-              <div class="pcard__tags" role="list">
-                <span role="listitem">React</span>
-                <span role="listitem">Vite</span>
-                <span role="listitem">Groq API</span>
-                <span role="listitem">Llama 3.3</span>
-                <span role="listitem">GitHub API</span>
+              <div class="pcard__links">
+                <span class="pcard__link pcard__link--live">Live Demo ↗</span>
+                <span class="pcard__link">Source ↗</span>
               </div>
             </div>
-          </article>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </a>
 
-          <!-- ── 04: Matchy (large card) ── -->
-          <article class="pcard pcard--large pcard--rose reveal reveal--delay" aria-label="Matchy project">
-            <div class="pcard__top">
-              <div class="pcard__meta">
-                <span class="pcard__num">04</span>
-                <span class="pcard__cat">Real-Time App</span>
+          <!-- 04: Matchy -->
+          <a href="https://matchy-delta.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard reveal reveal--delay" aria-label="Matchy project">
+            <span class="pcard__num">04</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">Matchy</h3>
+              <p class="pcard__subtitle">Real-time dating app with swipe matching, live chat, voice messages, and peer-to-peer WebRTC video calls.</p>
+              <div class="pcard__tags">
+                <span>React</span><span>Socket.io</span><span>WebRTC</span><span>MongoDB</span><span>i18next</span>
               </div>
-              <div class="pcard__deco" aria-hidden="true">
-                <div class="pcard__deco-ring"></div>
-                <div class="pcard__deco-ring pcard__deco-ring--sm"></div>
-              </div>
-            </div>
-            <div class="pcard__body">
-              <div class="pcard__header">
-                <div>
-                  <h3 class="pcard__title">Matchy</h3>
-                  <p class="pcard__subtitle">Real-Time Dating Platform</p>
-                </div>
-                <div class="pcard__links">
-                  <a href="https://matchy-delta.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" aria-label="Live demo">
-                    Live
-                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </a>
-                  <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
-                </div>
-              </div>
-              <p class="pcard__desc">
-                Full-stack dating app with swipe matching, live chat, voice messages, and
-                peer-to-peer video/audio calls via WebRTC. Admin dashboard with analytics,
-                user management, and audit logs. Multilingual (EN/FR).
-              </p>
-              <div class="pcard__tags" role="list">
-                <span role="listitem">React</span>
-                <span role="listitem">Socket.io</span>
-                <span role="listitem">WebRTC</span>
-                <span role="listitem">MongoDB</span>
-                <span role="listitem">JWT</span>
-                <span role="listitem">i18next</span>
+              <div class="pcard__links">
+                <span class="pcard__link pcard__link--live">Live Demo ↗</span>
+                <span class="pcard__link">Source ↗</span>
               </div>
             </div>
-          </article>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </a>
 
-          <!-- ── 05: Immobilier ── -->
-          <article class="pcard pcard--large pcard--amber reveal" aria-label="Immobilier project">
-            <div class="pcard__top">
-              <div class="pcard__meta">
-                <span class="pcard__num">05</span>
-                <span class="pcard__cat">Real Estate</span>
+          <!-- 05: Immobilier -->
+          <a href="https://github.com/ademhmercha/immobilier" target="_blank" rel="noopener noreferrer" class="pcard reveal" aria-label="Immobilier project">
+            <span class="pcard__num">05</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">Immobilier</h3>
+              <p class="pcard__subtitle">Full-stack real estate platform with real-time notifications, role-based auth, admin dashboard, and multilingual UI.</p>
+              <div class="pcard__tags">
+                <span>React</span><span>Node.js</span><span>MongoDB</span><span>Socket.IO</span><span>i18next</span><span>Vite</span>
               </div>
-              <div class="pcard__deco" aria-hidden="true">
-                <div class="pcard__deco-grid"></div>
-              </div>
-            </div>
-            <div class="pcard__body">
-              <div class="pcard__header">
-                <div>
-                  <h3 class="pcard__title">Immobilier</h3>
-                  <p class="pcard__subtitle">Furniture &amp; Rental Listings Platform</p>
-                </div>
-                <div class="pcard__links">
-                  <a href="https://github.com/ademhmercha/immobilier" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
-                </div>
-              </div>
-              <p class="pcard__desc">
-                Full-stack MERN platform for furniture and rental listings with real-time
-                Socket.IO notifications, role-based auth, admin dashboard, live chat,
-                multilingual UI (AR/FR/EN), and a stateless math-captcha verification gate.
-              </p>
-              <div class="pcard__tags" role="list">
-                <span role="listitem">React</span>
-                <span role="listitem">Node.js</span>
-                <span role="listitem">MongoDB</span>
-                <span role="listitem">Socket.IO</span>
-                <span role="listitem">Express</span>
-                <span role="listitem">JWT</span>
-                <span role="listitem">i18next</span>
-                <span role="listitem">Vite</span>
+              <div class="pcard__links">
+                <span class="pcard__link">Source ↗</span>
               </div>
             </div>
-          </article>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </a>
 
-          <!-- ── 06: Auto-Scaling Application ── -->
-          <article class="pcard pcard--cyan reveal reveal--delay" aria-label="Kubernetes Auto-Scaling project">
-            <div class="pcard__top">
-              <div class="pcard__meta">
-                <span class="pcard__num">06</span>
-                <span class="pcard__cat">DevOps · K8s</span>
+          <!-- 06: Auto-Scaling -->
+          <a href="https://github.com/ademhmercha/Auto-Scaling-Application" target="_blank" rel="noopener noreferrer" class="pcard reveal reveal--delay" aria-label="Kubernetes Auto-Scaling project">
+            <span class="pcard__num">06</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">K8s Auto-Scaling App</h3>
+              <p class="pcard__subtitle">Production Node.js API on Kubernetes with HPA scaling from 2 to 10 pods. Multi-stage Dockerfile, graceful shutdown.</p>
+              <div class="pcard__tags">
+                <span>Kubernetes</span><span>Docker</span><span>Node.js</span><span>HPA</span><span>Metrics Server</span>
               </div>
-              <div class="pcard__deco" aria-hidden="true">
-                <div class="pcard__deco-dots"></div>
-              </div>
-            </div>
-            <div class="pcard__body">
-              <div class="pcard__header">
-                <div>
-                  <h3 class="pcard__title">K8s Auto-Scaling App</h3>
-                  <p class="pcard__subtitle">Node.js · HPA · Metrics Server</p>
-                </div>
-                <div class="pcard__links">
-                  <a href="https://github.com/ademhmercha/Auto-Scaling-Application" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
-                </div>
-              </div>
-              <p class="pcard__desc">
-                Production-ready Node.js API on Kubernetes with Horizontal Pod Autoscaler
-                scaling from 2 to 10 pods driven by real CPU metrics. Features multi-stage
-                Dockerfile, graceful SIGTERM shutdown, liveness &amp; readiness probes,
-                and a built-in PowerShell load test — no external tools needed.
-              </p>
-              <div class="pcard__tags" role="list">
-                <span role="listitem">Kubernetes</span>
-                <span role="listitem">Docker</span>
-                <span role="listitem">Node.js</span>
-                <span role="listitem">HPA</span>
-                <span role="listitem">Metrics Server</span>
-                <span role="listitem">minikube</span>
-                <span role="listitem">Express</span>
+              <div class="pcard__links">
+                <span class="pcard__link">Source ↗</span>
               </div>
             </div>
-          </article>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </a>
 
-          <!-- ── 07: Safeguard ── -->
-          <article class="pcard pcard--large pcard--emerald reveal" aria-label="Safeguard project">
-            <div class="pcard__top">
-              <div class="pcard__meta">
-                <span class="pcard__num">07</span>
-                <span class="pcard__cat">Security</span>
+          <!-- 07: Safeguard -->
+          <a href="https://github.com/ademhmercha/safeguard" target="_blank" rel="noopener noreferrer" class="pcard reveal" aria-label="Safeguard project">
+            <span class="pcard__num">07</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">Safeguard</h3>
+              <p class="pcard__subtitle">Full-stack parental monitoring platform. Device lock/unlock, website blocking, screen time tracking, and real-time alerts.</p>
+              <div class="pcard__tags">
+                <span>React</span><span>TypeScript</span><span>React Native</span><span>Prisma</span><span>Supabase</span><span>Firebase</span>
               </div>
-              <div class="pcard__deco" aria-hidden="true">
-                <div class="pcard__deco-grid"></div>
-              </div>
-            </div>
-            <div class="pcard__body">
-              <div class="pcard__header">
-                <div>
-                  <h3 class="pcard__title">Safeguard</h3>
-                  <p class="pcard__subtitle">Parental Control Platform</p>
-                </div>
-                <div class="pcard__links">
-                  <a href="https://safeguard-frontend.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" aria-label="Live demo">
-                    Live
-                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </a>
-                  <a href="https://github.com/ademhmercha/safeguard" target="_blank" rel="noopener noreferrer" class="pcard__link" aria-label="Source code">Code</a>
-                </div>
-              </div>
-              <p class="pcard__desc">
-                Full-stack parental monitoring and control platform. Parents can lock/unlock
-                devices, block websites and apps, track screen time and browser history in
-                real time. React dashboard, Node.js + Prisma API, React Native child app,
-                Supabase Realtime, and FCM push notifications.
-              </p>
-              <div class="pcard__tags" role="list">
-                <span role="listitem">React</span>
-                <span role="listitem">TypeScript</span>
-                <span role="listitem">React Native</span>
-                <span role="listitem">Prisma</span>
-                <span role="listitem">Supabase</span>
-                <span role="listitem">Firebase</span>
-                <span role="listitem">Expo</span>
+              <div class="pcard__links">
+                <span class="pcard__link pcard__link--live">Live Demo ↗</span>
+                <span class="pcard__link">Source ↗</span>
               </div>
             </div>
-          </article>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </a>
 
         </div>
       </div>
@@ -586,61 +365,51 @@
 
         <header class="section-header reveal">
           <span class="section-tag">03 — Skills</span>
-          <h2 class="section-title">What I Build With</h2>
+          <h2 class="section-title">What I <span>build with.</span></h2>
         </header>
 
         <div class="skills__grid">
 
           <div class="skill-group reveal">
-            <div class="skill-group__head skill-group__head--emerald">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Frontend
+            <div class="skill-group__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
+            <h3 class="skill-group__title">Frontend</h3>
             <ul class="skill-group__list">
-              <li>React</li>
-              <li>React Native</li>
+              <li>React / Next.js</li>
               <li>TypeScript</li>
               <li>Tailwind CSS</li>
+              <li>React Native / Expo</li>
               <li>Vite</li>
-              <li>Expo</li>
-              <li>React Router</li>
               <li>i18next</li>
             </ul>
           </div>
 
           <div class="skill-group reveal reveal--delay">
-            <div class="skill-group__head skill-group__head--indigo">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Backend
+            <div class="skill-group__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
+            <h3 class="skill-group__title">Backend</h3>
             <ul class="skill-group__list">
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>MongoDB</li>
-              <li>PostgreSQL</li>
-              <li>Mongoose</li>
-              <li>Prisma</li>
+              <li>Node.js / Express</li>
+              <li>MongoDB / Mongoose</li>
+              <li>PostgreSQL / Prisma</li>
               <li>Supabase</li>
-              <li>JWT</li>
-              <li>Socket.io</li>
-              <li>WebRTC</li>
-              <li>REST APIs</li>
+              <li>Socket.io / WebRTC</li>
+              <li>JWT Authentication</li>
             </ul>
           </div>
 
           <div class="skill-group reveal reveal--delay-2">
-            <div class="skill-group__head skill-group__head--violet">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              DevOps &amp; Tools
+            <div class="skill-group__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
+            <h3 class="skill-group__title">DevOps &amp; Tools</h3>
             <ul class="skill-group__list">
-              <li>Docker</li>
-              <li>Kubernetes</li>
-              <li>Helm</li>
-              <li>GitHub Actions</li>
-              <li>Prometheus</li>
-              <li>Grafana</li>
-              <li>Firebase</li>
+              <li>Docker / Kubernetes</li>
+              <li>GitHub Actions / CI/CD</li>
+              <li>Prometheus / Grafana</li>
+              <li>Firebase / FCM</li>
               <li>Cloudinary</li>
               <li>Git</li>
             </ul>
@@ -658,8 +427,7 @@
           <span class="section-tag">04 — Contact</span>
 
           <h2 class="contact__heading">
-            Let's build<br>
-            <em>something great.</em>
+            Let's build<br><em>something great.</em>
           </h2>
 
           <p class="contact__desc">
@@ -669,12 +437,20 @@
 
           <div class="contact__actions">
             <a href="mailto:ademhmerchaaa@gmail.com" class="btn btn--primary magnetic">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Send Email
+              <span>Send Email</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="btn btn--outline magnetic">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              GitHub
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <div class="contact__socials">
+            <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="contact__social" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="mailto:ademhmerchaaa@gmail.com" class="contact__social" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </a>
           </div>
 
@@ -687,37 +463,37 @@
   <!-- ━━ FOOTER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <footer class="footer">
     <div class="container footer__inner">
-      <span class="footer__logo">AH.</span>
-      <p class="footer__copy">© 2026 Adem Hmercha. All rights reserved.</p>
-      <a href="#hero" class="footer__top">Back to top ↑</a>
+      <p class="footer__copy">© 2026 Adem Hmercha</p>
+      <a href="#hero" class="footer__top">
+        Back to top
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
     </div>
   </footer>
 
-
-  
   <!-- ━━ MOBILE BOTTOM NAV ━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="mobile-nav" aria-label="Mobile navigation" role="navigation">
     <a href="#hero" class="mobile-nav__item" data-section="hero" aria-label="Home">
       <div class="mobile-nav__icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       </div>
       <span>Home</span>
     </a>
     <a href="#projects" class="mobile-nav__item" data-section="projects" aria-label="Work">
       <div class="mobile-nav__icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       </div>
       <span>Work</span>
     </a>
     <a href="#skills" class="mobile-nav__item" data-section="skills" aria-label="Skills">
       <div class="mobile-nav__icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       </div>
       <span>Skills</span>
     </a>
     <a href="#contact" class="mobile-nav__item" data-section="contact" aria-label="Contact">
       <div class="mobile-nav__icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
       <span>Contact</span>
     </a>

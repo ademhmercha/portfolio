@@ -1,120 +1,60 @@
 /* ============================================================
-   Adem Hmercha — Portfolio (Light Theme, Senior Polish)
+   Adem Hmercha — Portfolio 2026
    main.js
    ============================================================ */
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ── Scroll progress bar ───────────────────────────────────── */
-(function initScrollProgress() {
+/* ── Custom Cursor ─────────────────────────────────────────── */
+(function initCursor() {
   if (reduced) return;
-  const bar = document.getElementById('scroll-progress');
-  if (!bar) return;
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        bar.style.width = progress + '%';
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-})();
-
-/* ── Custom cursor (desktop only) ──────────────────────────── */
-(function initCustomCursor() {
-  if (reduced) return;
-  if (window.innerWidth < 769) return;
   if ('ontouchstart' in window) return;
 
   const dot = document.querySelector('.cursor-dot');
   const ring = document.querySelector('.cursor-ring');
   if (!dot || !ring) return;
 
-  let mx = -100, my = -100, rx = -100, ry = -100;
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  let visible = false;
 
   document.addEventListener('mousemove', e => {
     mx = e.clientX;
     my = e.clientY;
-    dot.style.opacity = '1';
-    ring.style.opacity = '1';
+    if (!visible) {
+      visible = true;
+      dot.style.opacity = '1';
+      ring.style.opacity = '1';
+    }
   }, { passive: true });
 
-  document.addEventListener('mousedown', () => ring.classList.add('clicking'));
-  document.addEventListener('mouseup', () => ring.classList.remove('clicking'));
-
   document.addEventListener('mouseleave', () => {
+    visible = false;
     dot.style.opacity = '0';
     ring.style.opacity = '0';
   });
 
-  const hoverTargets = 'a, button, .btn, .pcard, .tech-chip, .skill-group, .edu__item';
+  document.addEventListener('mousedown', () => ring.classList.add('clicking'));
+  document.addEventListener('mouseup', () => ring.classList.remove('clicking'));
+
   document.addEventListener('mouseover', e => {
-    if (e.target.closest(hoverTargets)) {
+    if (e.target.closest('a, button, .btn, .pcard, .tech-chip, .skill-group')) {
       ring.classList.add('hovering');
     } else {
       ring.classList.remove('hovering');
     }
   }, { passive: true });
 
-  function animateCursor() {
-    rx += (mx - rx) * 0.15;
-    ry += (my - ry) * 0.15;
-    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateCursor);
+  function animate() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    dot.style.transform = `translate(${mx - 3}px, ${my - 3}px)`;
+    ring.style.transform = `translate(${rx - 20}px, ${ry - 20}px)`;
+    requestAnimationFrame(animate);
   }
-  animateCursor();
+  animate();
 })();
 
-/* ── Parallax on hero rings ────────────────────────────────── */
-(function initParallax() {
-  if (reduced) return;
-  const rings = document.querySelector('.hero__rings');
-  if (!rings) return;
-
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
-        if (scrollY < window.innerHeight * 1.5) {
-          rings.style.transform = `translateY(${scrollY * 0.15}px)`;
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-})();
-
-/* ── 3D tilt on project cards ─────────────────────────────── */
-(function initCardTilt() {
-  if (reduced) return;
-  if (window.innerWidth < 769) return;
-  if ('ontouchstart' in window) return;
-
-  document.querySelectorAll('.pcard').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      const tiltX = (y - 0.5) * 8;
-      const tiltY = (x - 0.5) * -8;
-      card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
-})();
-
-/* ── Typing animation ────────────────────────────────────────── */
+/* ── Typing Animation ────────────────────────────────────────── */
 (function initTyping() {
   const el = document.querySelector('.hero__role-text');
   if (!el) return;
@@ -128,10 +68,10 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduced) { el.textContent = roles[0]; return; }
 
-  const SPEED_TYPE   = 70;
+  const SPEED_TYPE = 70;
   const SPEED_DELETE = 35;
-  const PAUSE_AFTER  = 2500;
-  const PAUSE_EMPTY  = 380;
+  const PAUSE_AFTER = 2200;
+  const PAUSE_EMPTY = 350;
 
   let rIdx = 0, cIdx = 0, deleting = false;
 
@@ -154,27 +94,24 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     setTimeout(tick, delay);
   }
 
-  setTimeout(tick, 1000);
+  setTimeout(tick, 1500);
 })();
 
-/* ── Navbar scroll + active section tracking ───────────────── */
+/* ── Navbar ─────────────────────────────────────────────────── */
 (function initNavbar() {
-  const nav    = document.querySelector('.nav');
+  const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.nav__toggle');
-  const links  = document.querySelector('.nav__links');
+  const links = document.querySelector('.nav__links');
   if (!nav) return;
 
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  /* Scroll state */
+  let lastScroll = 0;
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
-  function closeMenu() {
-    toggle.classList.remove('open');
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-
+  /* Mobile toggle */
   if (toggle && links) {
     toggle.addEventListener('click', () => {
       const open = toggle.classList.toggle('open');
@@ -183,39 +120,45 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       document.body.style.overflow = open ? 'hidden' : '';
     });
 
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', closeMenu);
-    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }));
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeMenu();
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
     });
   }
 
-  /* Active section tracking in desktop nav */
+  /* Active section tracking */
   const sections = ['hero', 'about', 'projects', 'skills', 'contact'];
-  const navAnchors = links ? links.querySelectorAll('a[href^="#"]') : [];
+  const anchors = links ? links.querySelectorAll('a[href^="#"]') : [];
+  if (!anchors.length || !('IntersectionObserver' in window)) return;
 
-  if (navAnchors.length > 0 && !('IntersectionObserver' in window)) return;
-
-  const observer = new IntersectionObserver(entries => {
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        navAnchors.forEach(a => {
-          const href = a.getAttribute('href');
-          a.classList.toggle('active', href === '#' + e.target.id);
+        anchors.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
         });
       }
     });
-  }, { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' });
+  }, { threshold: 0.25, rootMargin: '-15% 0px -70% 0px' });
 
   sections.forEach(id => {
     const el = document.getElementById(id);
-    if (el) observer.observe(el);
+    if (el) obs.observe(el);
   });
 })();
 
-/* ── Scroll reveal ───────────────────────────────────────────── */
+/* ── Scroll Reveal ───────────────────────────────────────────── */
 (function initReveal() {
   if (reduced) {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
@@ -233,12 +176,12 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 })();
 
-/* ── Skill list stagger ──────────────────────────────────────── */
+/* ── Skill List Stagger ──────────────────────────────────────── */
 (function initSkillStagger() {
   if (reduced || !('IntersectionObserver' in window)) return;
 
@@ -248,7 +191,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   groups.forEach(g => {
     g.querySelectorAll('li').forEach(li => {
       li.style.opacity = '0';
-      li.style.transform = 'translateX(-6px)';
+      li.style.transform = 'translateX(-8px)';
     });
   });
 
@@ -257,44 +200,43 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!e.isIntersecting) return;
       e.target.querySelectorAll('li').forEach((li, i) => {
         setTimeout(() => {
-          li.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
-          li.style.opacity    = '1';
-          li.style.transform  = 'translateX(0)';
-        }, i * 45);
+          li.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          li.style.opacity = '1';
+          li.style.transform = 'translateX(0)';
+        }, i * 50);
       });
       obs.unobserve(e.target);
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.2 });
 
   groups.forEach(g => obs.observe(g));
 })();
 
-/* ── Magnetic buttons ────────────────────────────────────────── */
+/* ── Magnetic Buttons ────────────────────────────────────────── */
 (function initMagnetic() {
   if (reduced) return;
 
   document.querySelectorAll('.magnetic').forEach(el => {
     el.addEventListener('mousemove', e => {
-      const r  = el.getBoundingClientRect();
-      const dx = (e.clientX - r.left - r.width  / 2) * 0.2;
-      const dy = (e.clientY - r.top  - r.height / 2) * 0.2;
+      const r = el.getBoundingClientRect();
+      const dx = (e.clientX - r.left - r.width / 2) * 0.15;
+      const dy = (e.clientY - r.top - r.height / 2) * 0.15;
       el.style.transform = `translate(${dx}px, ${dy}px)`;
     });
     el.addEventListener('mouseleave', () => {
       el.style.transform = '';
+      el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      setTimeout(() => el.style.transition = '', 400);
     });
   });
 })();
 
-/* ── Smooth scroll for anchor links ─────────────────────────── */
+/* ── Smooth Scroll ──────────────────────────────────────────── */
 (function initSmoothScroll() {
-  const NAV_H = parseInt(
-    getComputedStyle(document.documentElement).getPropertyValue('--nav-h') || '68', 10
-  );
-
+  const NAV_H = 72;
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const href   = a.getAttribute('href');
+      const href = a.getAttribute('href');
       const target = href === '#' ? null : document.querySelector(href);
       if (!target) return;
       e.preventDefault();
@@ -304,7 +246,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   });
 })();
 
-/* ── Pause marquee on hover ──────────────────────────────────── */
+/* ── Marquee Pause on Hover ──────────────────────────────────── */
 (function initMarquee() {
   const track = document.querySelector('.marquee__track');
   if (!track) return;
@@ -312,17 +254,17 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
 })();
 
-/* ── Mobile bottom nav active state ─────────────────────────── */
+/* ── Mobile Bottom Nav ─────────────────────────────────────── */
 (function initMobileNav() {
-  const navItems = document.querySelectorAll('.mobile-nav__item');
-  if (!navItems.length) return;
+  const items = document.querySelectorAll('.mobile-nav__item');
+  if (!items.length) return;
 
-  const sections = ['hero', 'projects', 'skills', 'contact'].map(id =>
-    document.getElementById(id)
-  ).filter(Boolean);
+  const sections = ['hero', 'projects', 'skills', 'contact']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
 
   function setActive(id) {
-    navItems.forEach(item => {
+    items.forEach(item => {
       item.classList.toggle('active', item.dataset.section === id);
     });
   }
@@ -335,46 +277,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     entries.forEach(e => {
       if (e.isIntersecting) setActive(e.target.id);
     });
-  }, { threshold: 0.4, rootMargin: '-10% 0px -50% 0px' });
+  }, { threshold: 0.35, rootMargin: '-10% 0px -55% 0px' });
 
   sections.forEach(s => obs.observe(s));
-
-  navItems.forEach(item => {
-    item.addEventListener('touchstart', () => {
-      item.style.opacity = '0.7';
-    }, { passive: true });
-    item.addEventListener('touchend', () => {
-      item.style.opacity = '';
-    }, { passive: true });
-  });
-})();
-
-/* ── Tech chip stagger ───────────────────────────────────────── */
-(function initTechStagger() {
-  if (reduced || !('IntersectionObserver' in window)) return;
-
-  const grid = document.querySelector('.tech__grid');
-  if (!grid) return;
-
-  const chips = Array.from(grid.querySelectorAll('.tech-chip'));
-  chips.forEach(c => {
-    c.style.opacity = '0';
-    c.style.transform = 'translateY(10px)';
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      chips.forEach((c, i) => {
-        setTimeout(() => {
-          c.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-          c.style.opacity    = '1';
-          c.style.transform  = 'translateY(0)';
-        }, i * 50);
-      });
-      obs.unobserve(e.target);
-    });
-  }, { threshold: 0.2 });
-
-  obs.observe(grid);
 })();
