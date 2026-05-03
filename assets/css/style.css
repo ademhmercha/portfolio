@@ -870,11 +870,11 @@ section { padding: 10rem 0; }
 .detail-item:hover { border-color: var(--border-3); }
 
 /* Experience items have a left accent border */
-.detail-group:last-child .detail-item {
+.detail-group--experience .detail-item {
   position: relative;
   padding-left: 1rem;
 }
-.detail-group:last-child .detail-item::before {
+.detail-group--experience .detail-item::before {
   content: '';
   position: absolute;
   left: 0;
