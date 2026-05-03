@@ -758,6 +758,24 @@ section { padding: 10rem 0; }
 .detail-item:first-child { border-top: 1px solid var(--border); }
 .detail-item:hover { border-color: var(--border-3); }
 
+/* Experience items have a left accent border */
+.detail-group:last-child .detail-item {
+  position: relative;
+  padding-left: 1rem;
+}
+.detail-group:last-child .detail-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  width: 2px;
+  background: var(--accent-1);
+  border-radius: 1px;
+  opacity: 0.3;
+}
+.detail-group:last-child .detail-item:hover::before { opacity: 0.8; }
+
 .detail-item__icon {
   width: 40px; height: 40px;
   border-radius: var(--r);
