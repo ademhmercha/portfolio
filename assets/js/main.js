@@ -23,6 +23,29 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   });
 })();
 
+/* ── Project Filters ──────────────────────────────────────── */
+(function initFilters() {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.pcard');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      cards.forEach(card => {
+        const category = card.dataset.category;
+        if (filter === 'all' || category === filter) {
+          card.classList.remove('filtered');
+        } else {
+          card.classList.add('filtered');
+        }
+      });
+    });
+  });
+})();
+
 /* ── Custom Cursor ─────────────────────────────────────────── */
 (function initCursor() {
   if (reduced) return;
