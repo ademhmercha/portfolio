@@ -319,6 +319,110 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
 })();
 
+/* ── Project Preview Panel ─────────────────────────────────── */
+(function initProjectPreview() {
+  const preview = document.querySelector('.projects__preview');
+  if (!preview) return;
+
+  const imgEl          = preview.querySelector('.preview__img');
+  const skeletonEl     = preview.querySelector('.preview__skeleton');
+  const placeholderEl  = preview.querySelector('.preview__placeholder');
+  const urlText        = preview.querySelector('.preview__url-text');
+  const metaTitle      = preview.querySelector('.preview__meta-title');
+  const placeholderNum = preview.querySelector('.preview__placeholder-num');
+
+  const cards = document.querySelectorAll('.pcard[data-screenshot]');
+  const cache = new Map();
+  let currentCard = null;
+
+  async function fetchScreenshot(url) {
+    if (cache.has(url)) return cache.get(url);
+    try {
+      const res = await fetch(
+        `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false`
+      );
+      if (!res.ok) throw new Error('bad response');
+      const json = await res.json();
+      const imgUrl = json?.data?.screenshot?.url || null;
+      cache.set(url, imgUrl);
+      return imgUrl;
+    } catch {
+      cache.set(url, null);
+      return null;
+    }
+  }
+
+  function showCard(card) {
+    if (card === currentCard) return;
+    currentCard = card;
+
+    const liveUrl = card.dataset.screenshot;
+    const title   = card.querySelector('.pcard__title')?.textContent || '';
+    const num     = card.querySelector('.pcard__num')?.textContent || '';
+
+    metaTitle.textContent = title;
+
+    if (!liveUrl) {
+      urlText.textContent = 'no live demo';
+      placeholderNum.textContent = num;
+      imgEl.classList.remove('loaded');
+      skeletonEl.classList.add('hidden');
+      placeholderEl.classList.add('visible');
+      return;
+    }
+
+    urlText.textContent = liveUrl.replace('https://', '');
+    placeholderEl.classList.remove('visible');
+
+    if (cache.has(liveUrl)) {
+      const imgUrl = cache.get(liveUrl);
+      if (imgUrl) {
+        imgEl.src = imgUrl;
+        imgEl.classList.add('loaded');
+        skeletonEl.classList.add('hidden');
+      } else {
+        imgEl.classList.remove('loaded');
+        skeletonEl.classList.add('hidden');
+        placeholderNum.textContent = num;
+        placeholderEl.classList.add('visible');
+      }
+      return;
+    }
+
+    imgEl.classList.remove('loaded');
+    skeletonEl.classList.remove('hidden');
+
+    fetchScreenshot(liveUrl).then(imgUrl => {
+      if (currentCard !== card) return;
+      if (imgUrl) {
+        const tmp = new Image();
+        tmp.onload = () => {
+          if (currentCard !== card) return;
+          imgEl.src = imgUrl;
+          imgEl.classList.add('loaded');
+          skeletonEl.classList.add('hidden');
+        };
+        tmp.src = imgUrl;
+      } else {
+        skeletonEl.classList.add('hidden');
+        placeholderNum.textContent = num;
+        placeholderEl.classList.add('visible');
+      }
+    });
+  }
+
+  if (cards.length) showCard(cards[0]);
+
+  cards.forEach(card => {
+    const url = card.dataset.screenshot;
+    if (url) fetchScreenshot(url);
+  });
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => showCard(card));
+  });
+})();
+
 /* ── Mobile Bottom Nav ─────────────────────────────────────── */
 (function initMobileNav() {
   const items = document.querySelectorAll('.mobile-nav__item');

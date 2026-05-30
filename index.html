@@ -258,10 +258,11 @@
           </div>
         </header>
 
-        <div class="projects__list">
+        <div class="projects__body">
+          <div class="projects__list">
 
           <!-- 01: DRAPE -->
-          <article class="pcard reveal" data-category="web" aria-label="DRAPE project">
+          <article class="pcard reveal" data-category="web" data-screenshot="https://drape-cloth-shop.vercel.app" aria-label="DRAPE project">
             <span class="pcard__num">01</span>
             <div class="pcard__info">
               <h3 class="pcard__title">DRAPE</h3>
@@ -280,7 +281,7 @@
           </article>
 
           <!-- 02: Telnet Test Manager -->
-          <article class="pcard reveal reveal--delay" data-category="devops,web" aria-label="Telnet Test Manager project">
+          <article class="pcard reveal reveal--delay" data-category="devops,web" data-screenshot="" aria-label="Telnet Test Manager project">
             <span class="pcard__num">02</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Telnet Test Manager</h3>
@@ -298,7 +299,7 @@
           </article>
 
           <!-- 03: AutoReview Agent -->
-          <article class="pcard reveal" data-category="ai,web" aria-label="GitHub AutoReview Agent project">
+          <article class="pcard reveal" data-category="ai,web" data-screenshot="https://github-auto-review.vercel.app/" aria-label="GitHub AutoReview Agent project">
             <span class="pcard__num">03</span>
             <div class="pcard__info">
               <h3 class="pcard__title">AutoReview Agent</h3>
@@ -317,7 +318,7 @@
           </article>
 
           <!-- 04: Matchy -->
-          <article class="pcard reveal reveal--delay" data-category="web" aria-label="Matchy project">
+          <article class="pcard reveal reveal--delay" data-category="web" data-screenshot="https://matchy-delta.vercel.app/" aria-label="Matchy project">
             <span class="pcard__num">04</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Matchy</h3>
@@ -336,7 +337,7 @@
           </article>
 
           <!-- 05: Immobilier -->
-          <article class="pcard reveal" data-category="web" aria-label="Immobilier project">
+          <article class="pcard reveal" data-category="web" data-screenshot="" aria-label="Immobilier project">
             <span class="pcard__num">05</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Immobilier</h3>
@@ -354,7 +355,7 @@
           </article>
 
           <!-- 06: Auto-Scaling -->
-          <article class="pcard reveal reveal--delay" data-category="devops" aria-label="Kubernetes Auto-Scaling project">
+          <article class="pcard reveal reveal--delay" data-category="devops" data-screenshot="" aria-label="Kubernetes Auto-Scaling project">
             <span class="pcard__num">06</span>
             <div class="pcard__info">
               <h3 class="pcard__title">K8s Auto-Scaling App</h3>
@@ -372,7 +373,7 @@
           </article>
 
           <!-- 07: Safeguard -->
-          <article class="pcard reveal" data-category="web" aria-label="Safeguard project">
+          <article class="pcard reveal" data-category="web" data-screenshot="https://safeguard-frontend.vercel.app" aria-label="Safeguard project">
             <span class="pcard__num">07</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Safeguard</h3>
@@ -391,7 +392,7 @@
           </article>
 
           <!-- 08: Weather News App -->
-          <article class="pcard reveal reveal--delay" data-category="web" aria-label="Weather News App project">
+          <article class="pcard reveal reveal--delay" data-category="web" data-screenshot="https://weather-news-app-gray.vercel.app/" aria-label="Weather News App project">
             <span class="pcard__num">08</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Weather News App</h3>
@@ -409,6 +410,31 @@
             </div>
           </article>
 
+          </div>
+
+          <aside class="projects__preview" aria-hidden="true">
+            <div class="preview__frame">
+              <div class="preview__bar">
+                <span class="preview__dot"></span>
+                <span class="preview__dot"></span>
+                <span class="preview__dot"></span>
+                <div class="preview__url-bar">
+                  <span class="preview__url-text"></span>
+                </div>
+              </div>
+              <div class="preview__screen">
+                <img class="preview__img" src="" alt="Project preview" loading="lazy" />
+                <div class="preview__skeleton"></div>
+                <div class="preview__placeholder">
+                  <span class="preview__placeholder-num"></span>
+                  <span class="preview__placeholder-label">No live demo</span>
+                </div>
+              </div>
+            </div>
+            <div class="preview__meta">
+              <span class="preview__meta-title"></span>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
