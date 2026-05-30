@@ -1,313 +1,279 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Adem Hmercha — Curriculum Vitae</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <title>Adem Hmercha — Resume</title>
   <style>
-    :root {
-      --accent:       #c76b4c;
-      --accent-light: #f5ede6;
-      --text:         #1a1512;
-      --text-2:       #4a3f38;
-      --text-3:       #9a8e87;
-      --border:       #e8ddd6;
-    }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: #e0d8d2;
-      font-size: 8.5pt;
-      line-height: 1.55;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #d6cfc9;
       -webkit-font-smoothing: antialiased;
     }
 
     a { color: inherit; text-decoration: none; }
 
-    /* ── Print button (screen only) ─────────────────── */
-    .print-btn {
+    /* ── Print button ───────────────────────────────── */
+    .print-bar {
+      width: 8.5in;
+      margin: 16px auto 10px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 210mm;
-      margin: 18px auto 10px;
-      padding: 11px;
-      background: var(--accent);
+      gap: 10px;
+    }
+    .print-btn {
+      flex: 1;
+      padding: 10px 16px;
+      background: #1a1512;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
+      border-radius: 7px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       letter-spacing: 0.01em;
     }
-    .print-btn:hover { background: #b5604a; }
+    .print-btn:hover { background: #2e2520; }
+    .print-note {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #6b5e57;
+      display: flex;
+      align-items: center;
+    }
 
     /* ── Page ───────────────────────────────────────── */
     .page {
-      width: 210mm;
-      background: white;
+      width: 8.5in;
+      min-height: 11in;
+      background: #ffffff;
       margin: 0 auto 30px;
-      box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+      padding: 0.55in 0.65in 0.55in;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
     }
 
     /* ── Header ─────────────────────────────────────── */
     .cv-header {
-      background: #1a1512;
-      padding: 22px 26px 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #1a1512;
+      margin-bottom: 11px;
     }
 
     .cv-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 25pt;
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      color: #ffffff;
+      font-size: 26pt;
+      font-weight: 700;
+      color: #1a1512;
+      letter-spacing: -0.025em;
       line-height: 1;
       margin-bottom: 3px;
     }
 
-    .cv-title {
-      font-size: 9.5pt;
-      color: var(--accent);
+    .cv-tagline {
+      font-size: 10pt;
       font-weight: 500;
-      letter-spacing: 0.03em;
-      margin-bottom: 13px;
-    }
-
-    .cv-contacts {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
+      color: #c76b4c;
+      letter-spacing: 0.02em;
+      margin-bottom: 7px;
     }
 
     .cv-contact {
       display: flex;
+      flex-wrap: wrap;
+      gap: 4px 0;
+      font-size: 8.5pt;
+      color: #4a3f38;
+      line-height: 1.6;
+    }
+
+    .cv-contact-item {
+      display: flex;
       align-items: center;
-      gap: 5px;
-      font-size: 7.5pt;
-      color: rgba(255,255,255,0.65);
-    }
-    .cv-contact a { color: rgba(255,255,255,0.8); }
-    .cv-contact::before {
-      content: '';
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
     }
 
-    /* ── Body grid ──────────────────────────────────── */
-    .cv-body {
-      display: grid;
-      grid-template-columns: 62% 38%;
-    }
-
-    /* ── Columns ────────────────────────────────────── */
-    .cv-left {
-      padding: 18px 20px 18px 26px;
-      border-right: 1px solid var(--border);
-    }
-
-    .cv-right {
-      padding: 18px 22px 18px 18px;
+    .cv-contact-item + .cv-contact-item::before {
+      content: '|';
+      margin: 0 8px;
+      color: #c4bab0;
     }
 
     /* ── Section ────────────────────────────────────── */
-    .cv-section { margin-bottom: 16px; }
-    .cv-section:last-child { margin-bottom: 0; }
-
-    .cv-section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 6.5pt;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 9px;
-      padding-bottom: 4px;
-      border-bottom: 1.5px solid var(--accent);
+    .cv-section {
+      margin-bottom: 10px;
     }
 
-    /* ── Experience / Education entries ─────────────── */
-    .cv-entry { margin-bottom: 11px; }
+    .cv-section-title {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1a1512;
+      padding-bottom: 3px;
+      border-bottom: 1.5px solid #1a1512;
+      margin-bottom: 8px;
+    }
+
+    /* ── Summary ────────────────────────────────────── */
+    .cv-summary {
+      font-size: 9.5pt;
+      color: #3a3028;
+      line-height: 1.65;
+    }
+
+    /* ── Experience entries ─────────────────────────── */
+    .cv-entry {
+      margin-bottom: 9px;
+    }
     .cv-entry:last-child { margin-bottom: 0; }
 
-    .cv-entry-top {
+    .cv-entry-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 1px;
     }
 
     .cv-entry-title {
-      font-weight: 600;
-      font-size: 9pt;
-      color: var(--text);
-      line-height: 1.3;
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1a1512;
     }
 
     .cv-entry-date {
-      font-size: 7pt;
-      color: var(--text-3);
+      font-size: 8pt;
+      font-weight: 500;
+      color: #8a7e73;
       white-space: nowrap;
       flex-shrink: 0;
-      margin-top: 2px;
-      font-weight: 500;
     }
 
     .cv-entry-org {
-      font-size: 8pt;
-      color: var(--accent);
+      font-size: 9pt;
       font-weight: 600;
-      margin: 2px 0 5px;
+      color: #c76b4c;
+      margin-bottom: 4px;
     }
 
     .cv-bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 2.5px;
+      padding-left: 0;
     }
 
     .cv-bullets li {
-      font-size: 8pt;
-      color: var(--text-2);
-      padding-left: 10px;
+      font-size: 9pt;
+      color: #3a3028;
+      padding-left: 12px;
       position: relative;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .cv-bullets li::before {
-      content: '›';
+      content: '•';
       position: absolute;
       left: 0;
-      color: var(--accent);
+      color: #c76b4c;
+      font-size: 9pt;
+      line-height: 1.55;
       font-weight: 700;
-      font-size: 10pt;
-      line-height: 1.2;
-    }
-
-    /* ── Projects ───────────────────────────────────── */
-    .project-entry { margin-bottom: 9px; }
-    .project-entry:last-child { margin-bottom: 0; }
-
-    .project-top {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 6px;
-      margin-bottom: 1px;
-    }
-
-    .project-name {
-      font-weight: 700;
-      font-size: 8.5pt;
-      color: var(--text);
-    }
-
-    .project-links {
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .project-links a {
-      font-size: 7pt;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .project-stack {
-      font-size: 7pt;
-      color: var(--text-3);
-      margin-bottom: 2px;
-    }
-
-    .project-desc {
-      font-size: 7.5pt;
-      color: var(--text-2);
-      line-height: 1.5;
     }
 
     /* ── Skills ─────────────────────────────────────── */
-    .skills-list {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .skill-row {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .skill-cat {
-      font-size: 7pt;
-      font-weight: 700;
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3px;
-    }
-
-    .skill-tag {
-      font-size: 7pt;
-      color: var(--text-2);
-      background: var(--accent-light);
-      padding: 1px 5px;
-      border-radius: 3px;
-      white-space: nowrap;
-    }
-
-    /* ── Languages ──────────────────────────────────── */
-    .lang-list {
+    .skills-table {
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
 
-    .lang-item {
+    .skill-row {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+      font-size: 9pt;
+      line-height: 1.5;
+    }
+
+    .skill-cat {
+      font-weight: 700;
+      color: #1a1512;
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-width: 115px;
+    }
+
+    .skill-val {
+      color: #3a3028;
+    }
+
+    /* ── Education ──────────────────────────────────── */
+    .edu-entry {
+      margin-bottom: 6px;
+    }
+    .edu-entry:last-child { margin-bottom: 0; }
+
+    .edu-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
     }
 
-    .lang-name {
+    .edu-degree {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #1a1512;
+    }
+
+    .edu-date {
       font-size: 8pt;
-      font-weight: 600;
-      color: var(--text);
+      font-weight: 500;
+      color: #8a7e73;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .lang-level {
-      font-size: 7.5pt;
-      color: var(--text-3);
+    .edu-school {
+      font-size: 9pt;
+      font-weight: 500;
+      color: #c76b4c;
+    }
+
+    /* ── Projects ───────────────────────────────────── */
+    .project-entry {
+      margin-bottom: 5px;
+      font-size: 9pt;
+      line-height: 1.55;
+      color: #3a3028;
+    }
+    .project-entry:last-child { margin-bottom: 0; }
+
+    .project-name {
+      font-weight: 700;
+      color: #1a1512;
+    }
+
+    .project-links {
+      font-size: 8pt;
+      color: #c76b4c;
+      font-weight: 600;
+      margin-left: 4px;
     }
 
     /* ── Print ──────────────────────────────────────── */
     @media print {
       body { background: white; }
-      .print-btn { display: none !important; }
+      .print-bar { display: none !important; }
       .page {
         margin: 0;
         box-shadow: none;
         width: 100%;
+        padding: 0.5in 0.65in;
       }
       @page {
-        size: A4;
+        size: Letter;
         margin: 0;
       }
     }
@@ -315,216 +281,154 @@
 </head>
 <body>
 
-  <button class="print-btn" onclick="window.print()">
-    ⬇ &nbsp;Enregistrer en PDF — Fichier › Imprimer › Enregistrer en PDF
-  </button>
+  <div class="print-bar">
+    <button class="print-btn" onclick="window.print()">⬇ &nbsp;Save as PDF — File › Print › Save as PDF</button>
+    <span class="print-note">&nbsp;&nbsp;Replace assets/cv.pdf with the saved file to update the portfolio download link.</span>
+  </div>
 
   <div class="page">
 
-    <!-- ── Header ────────────────────────────────────── -->
+    <!-- ── Header ─────────────────────────────────── -->
     <header class="cv-header">
       <div class="cv-name">Adem Hmercha</div>
-      <div class="cv-title">Développeur Full Stack</div>
-      <div class="cv-contacts">
-        <span class="cv-contact"><a href="mailto:ademhmerchaaa@gmail.com">ademhmerchaaa@gmail.com</a></span>
-        <span class="cv-contact"><a href="https://github.com/ademhmercha">github.com/ademhmercha</a></span>
-        <span class="cv-contact"><a href="https://ademhmercha.vercel.app">ademhmercha.vercel.app</a></span>
-        <span class="cv-contact">Tunisie</span>
+      <div class="cv-tagline">Full Stack Developer</div>
+      <div class="cv-contact">
+        <span class="cv-contact-item"><a href="mailto:ademhmerchaaa@gmail.com">ademhmerchaaa@gmail.com</a></span>
+        <span class="cv-contact-item">+216 [XX XXX XXX]</span>
+        <span class="cv-contact-item">Tunis, Tunisia</span>
+        <span class="cv-contact-item"><a href="https://linkedin.com/in/[your-linkedin]">[LinkedIn URL]</a></span>
+        <span class="cv-contact-item"><a href="https://github.com/ademhmercha">github.com/ademhmercha</a></span>
+        <span class="cv-contact-item"><a href="https://ademhmercha.vercel.app">ademhmercha.vercel.app</a></span>
       </div>
     </header>
 
-    <div class="cv-body">
+    <!-- ── Professional Summary ───────────────────── -->
+    <div class="cv-section">
+      <div class="cv-section-title">Professional Summary</div>
+      <p class="cv-summary">
+        Full Stack Developer with hands-on industry experience delivering production-grade web applications, real-time systems,
+        and cloud-native infrastructure. Currently pursuing a Software Engineering degree at ESPRIT, Tunis, with two completed
+        internships building enterprise platforms using the MERN stack, Docker, and Kubernetes. Proven ability to work across
+        the full development lifecycle — from responsive React interfaces and RESTful Node.js backends to CI/CD pipelines and
+        Kubernetes auto-scaling. Experienced in real-time communication (Socket.io, WebRTC), AI-powered tooling, and DevOps
+        automation. Passionate about writing clean, scalable code and shipping products that solve real-world problems.
+      </p>
+    </div>
 
-      <!-- ── LEFT ──────────────────────────────────────── -->
-      <div class="cv-left">
+    <!-- ── Experience ────────────────────────────── -->
+    <div class="cv-section">
+      <div class="cv-section-title">Experience</div>
 
-        <!-- Expérience -->
-        <div class="cv-section">
-          <h2 class="cv-section-title">Expérience Professionnelle</h2>
-
-          <div class="cv-entry">
-            <div class="cv-entry-top">
-              <div class="cv-entry-title">Stage PFE — Génie Logiciel & DevOps</div>
-              <div class="cv-entry-date">6 mois · 2026</div>
-            </div>
-            <div class="cv-entry-org">Sagemcom · Ezzahra</div>
-            <ul class="cv-bullets">
-              <li>Développement de <strong>Telnet Test Manager</strong> — plateforme d'automatisation des tests d'équipements réseau pour équipes multi-services</li>
-              <li>Mises à jour temps réel via WebSocket, contrôle d'accès RBAC, gestion granulaire des permissions</li>
-              <li>Pipeline CI/CD complet sur Docker & Kubernetes · surveillance Prometheus + Grafana</li>
-            </ul>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-top">
-              <div class="cv-entry-title">Stage Ingénieur — Développement Logiciel</div>
-              <div class="cv-entry-date">2 mois · 2025</div>
-            </div>
-            <div class="cv-entry-org">Standard Sharing Software · Tunisie</div>
-            <ul class="cv-bullets">
-              <li>Déploiement d'une API Node.js en production sur Kubernetes avec auto-scaling horizontal (HPA 2→10 pods)</li>
-              <li>Dockerfile multi-stage, exécution non-root, arrêt gracieux et scripts de test de charge PowerShell</li>
-              <li>Intégration du Metrics Server pour le scaling dynamique basé sur l'utilisation CPU en temps réel</li>
-            </ul>
-          </div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">PFE Internship — Software &amp; DevOps Engineering</div>
+          <div class="cv-entry-date">6 Months · 2026</div>
         </div>
-
-        <!-- Projets -->
-        <div class="cv-section">
-          <h2 class="cv-section-title">Projets Sélectionnés</h2>
-
-          <div class="project-entry">
-            <div class="project-top">
-              <span class="project-name">Safeguard</span>
-              <div class="project-links">
-                <a href="https://safeguard-frontend.vercel.app">Live ↗</a>
-                <a href="https://github.com/ademhmercha/safeguard">GitHub ↗</a>
-              </div>
-            </div>
-            <div class="project-stack">React · React Native · Node.js · PostgreSQL · Prisma · Supabase · Firebase</div>
-            <div class="project-desc">Plateforme de contrôle parental avec tableau de bord web et application mobile. Blocage de sites, verrouillage d'appareil, gestion du temps d'écran et alertes push Firebase temps réel.</div>
-          </div>
-
-          <div class="project-entry">
-            <div class="project-top">
-              <span class="project-name">AutoReview Agent</span>
-              <div class="project-links">
-                <a href="https://github-auto-review.vercel.app">Live ↗</a>
-                <a href="https://github.com/ademhmercha/Github-Auto-Review">GitHub ↗</a>
-              </div>
-            </div>
-            <div class="project-stack">React · Vite · Groq API · Llama 3.3 70B · GitHub API</div>
-            <div class="project-desc">Auditeur de code IA avec 5 agents spécialisés (qualité, sécurité, architecture, docs, performance). Fonctionne entièrement côté client, sans backend ni infrastructure.</div>
-          </div>
-
-          <div class="project-entry">
-            <div class="project-top">
-              <span class="project-name">Matchy</span>
-              <div class="project-links">
-                <a href="https://matchy-delta.vercel.app">Live ↗</a>
-                <a href="https://github.com/ademhmercha/matchy">GitHub ↗</a>
-              </div>
-            </div>
-            <div class="project-stack">React · Node.js · MongoDB · Socket.io · WebRTC · i18next</div>
-            <div class="project-desc">Application de rencontre temps réel — chat live Socket.io, messages vocaux, appels vidéo P2P WebRTC. Dashboard admin avec analytics, gestion utilisateurs et journaux d'audit. Multilingue EN/FR.</div>
-          </div>
-
-          <div class="project-entry">
-            <div class="project-top">
-              <span class="project-name">DRAPE</span>
-              <div class="project-links">
-                <a href="https://drape-cloth-shop.vercel.app">Live ↗</a>
-                <a href="https://github.com/ademhmercha/drape-cloth-shop-">GitHub ↗</a>
-              </div>
-            </div>
-            <div class="project-stack">React · Node.js · MongoDB · Tailwind · Cloudinary · WhatsApp API</div>
-            <div class="project-desc">E-commerce mode full-stack avec authentification JWT, gestion d'images Cloudinary et notifications de commande WhatsApp automatisées via Whapi.Cloud.</div>
-          </div>
-
-        </div>
+        <div class="cv-entry-org">Sagemcom · Ezzahra, Tunisia</div>
+        <ul class="cv-bullets">
+          <li>Architected and developed <strong>Telnet Test Manager</strong>, an enterprise-grade platform for automating the testing and monitoring of network equipment, serving multiple cross-functional teams across the organization</li>
+          <li>Implemented bidirectional WebSocket communication to deliver live test execution updates and status changes in real time, eliminating manual polling and improving operational efficiency for test engineers</li>
+          <li>Designed a comprehensive Role-Based Access Control (RBAC) system with granular, department-level permissions, enabling secure and structured multi-team collaboration on shared test infrastructure</li>
+          <li>Built and maintained a complete CI/CD pipeline using GitHub Actions, Docker, and Kubernetes, enabling automated testing, container builds, and zero-downtime deployments to production</li>
+          <li>Integrated Prometheus and Grafana for end-to-end observability, delivering dashboards and alerting rules that monitor API latency, pipeline health, and infrastructure resource utilization</li>
+        </ul>
       </div>
 
-      <!-- ── RIGHT ─────────────────────────────────────── -->
-      <div class="cv-right">
-
-        <!-- Formation -->
-        <div class="cv-section">
-          <h2 class="cv-section-title">Formation</h2>
-
-          <div class="cv-entry">
-            <div class="cv-entry-top">
-              <div class="cv-entry-title">Cycle Ingénieur<br>Génie Logiciel</div>
-              <div class="cv-entry-date">2023 – présent</div>
-            </div>
-            <div class="cv-entry-org">ESPRIT · Tunis</div>
-          </div>
-
-          <div class="cv-entry">
-            <div class="cv-entry-top">
-              <div class="cv-entry-title">Classes Préparatoires<br>Mathématiques · Physique</div>
-              <div class="cv-entry-date">2021 – 2023</div>
-            </div>
-            <div class="cv-entry-org">IPEiM · Monastir</div>
-          </div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Engineering Internship — Software Development</div>
+          <div class="cv-entry-date">2 Months · 2025</div>
         </div>
-
-        <!-- Compétences -->
-        <div class="cv-section">
-          <h2 class="cv-section-title">Compétences Techniques</h2>
-          <div class="skills-list">
-            <div class="skill-row">
-              <span class="skill-cat">Frontend</span>
-              <div class="skill-tags">
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Next.js</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">Tailwind CSS</span>
-                <span class="skill-tag">React Native</span>
-                <span class="skill-tag">Vite</span>
-              </div>
-            </div>
-            <div class="skill-row">
-              <span class="skill-cat">Backend</span>
-              <div class="skill-tags">
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Express</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">Prisma</span>
-                <span class="skill-tag">Supabase</span>
-                <span class="skill-tag">Socket.io</span>
-                <span class="skill-tag">WebRTC</span>
-                <span class="skill-tag">JWT</span>
-              </div>
-            </div>
-            <div class="skill-row">
-              <span class="skill-cat">DevOps</span>
-              <div class="skill-tags">
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">GitHub Actions</span>
-                <span class="skill-tag">CI/CD</span>
-                <span class="skill-tag">Prometheus</span>
-                <span class="skill-tag">Grafana</span>
-              </div>
-            </div>
-            <div class="skill-row">
-              <span class="skill-cat">Outils</span>
-              <div class="skill-tags">
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Firebase</span>
-                <span class="skill-tag">Cloudinary</span>
-                <span class="skill-tag">Vercel</span>
-                <span class="skill-tag">Railway</span>
-                <span class="skill-tag">EAS</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Langues -->
-        <div class="cv-section">
-          <h2 class="cv-section-title">Langues</h2>
-          <div class="lang-list">
-            <div class="lang-item">
-              <span class="lang-name">Arabe</span>
-              <span class="lang-level">Langue maternelle</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-name">Français</span>
-              <span class="lang-level">Courant</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-name">Anglais</span>
-              <span class="lang-level">Professionnel</span>
-            </div>
-          </div>
-        </div>
-
+        <div class="cv-entry-org">Standard Sharing Software · Tunisia</div>
+        <ul class="cv-bullets">
+          <li>Deployed and managed a production-ready Node.js REST API on a Kubernetes cluster, configuring Horizontal Pod Autoscaler (HPA) to dynamically scale from 2 to 10 pods based on real-time CPU utilization metrics</li>
+          <li>Optimized containerization using multi-stage Dockerfiles with non-root execution and graceful shutdown handling, reducing image size, hardening security posture, and ensuring clean process termination under load</li>
+          <li>Configured Kubernetes Metrics Server and HPA policies to enable precise CPU-threshold scaling, balancing application responsiveness with cost-efficient resource usage during traffic spikes</li>
+          <li>Authored PowerShell load-testing scripts and automated setup/teardown procedures to simulate production load, validate scaling behavior, and document system performance benchmarks</li>
+        </ul>
       </div>
     </div>
 
-  </div>
+    <!-- ── Skills ────────────────────────────────── -->
+    <div class="cv-section">
+      <div class="cv-section-title">Technical Skills</div>
+      <div class="skills-table">
+        <div class="skill-row">
+          <span class="skill-cat">Frontend:</span>
+          <span class="skill-val">React, Next.js, TypeScript, Tailwind CSS, React Native, Expo, Vite, i18next</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">Backend:</span>
+          <span class="skill-val">Node.js, Express.js, MongoDB, PostgreSQL, Prisma, Supabase, Socket.io, WebRTC, JWT Authentication, REST APIs</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">DevOps &amp; Cloud:</span>
+          <span class="skill-val">Docker, Kubernetes, HPA, GitHub Actions, CI/CD Pipelines, Prometheus, Grafana, Vercel, Railway</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">Tools &amp; Services:</span>
+          <span class="skill-val">Git, Firebase (FCM), Cloudinary, Whapi.Cloud, EAS, Figma, Postman</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Education ─────────────────────────────── -->
+    <div class="cv-section">
+      <div class="cv-section-title">Education</div>
+
+      <div class="edu-entry">
+        <div class="edu-header">
+          <div class="edu-degree">Cycle Ingénieur — Software Engineering (Génie Logiciel)</div>
+          <div class="edu-date">2023 – Present</div>
+        </div>
+        <div class="edu-school">ESPRIT · Tunis, Tunisia</div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-header">
+          <div class="edu-degree">Classe Préparatoire — Mathematics &amp; Physics</div>
+          <div class="edu-date">2021 – 2023</div>
+        </div>
+        <div class="edu-school">IPEiM · Monastir, Tunisia</div>
+      </div>
+    </div>
+
+    <!-- ── Projects ──────────────────────────────── -->
+    <div class="cv-section">
+      <div class="cv-section-title">Projects</div>
+
+      <div class="project-entry">
+        <span class="project-name">Safeguard</span> —
+        Full-stack parental monitoring platform with React web dashboard and React Native mobile app; remote device lock/unlock, website blocking, screen time scheduling, and real-time Firebase push alerts. <em>React · Node.js · PostgreSQL · Supabase · Firebase</em>
+        <span class="project-links"><a href="https://safeguard-frontend.vercel.app">Live</a> · <a href="https://github.com/ademhmercha/safeguard">GitHub</a></span>
+      </div>
+
+      <div class="project-entry">
+        <span class="project-name">AutoReview Agent</span> —
+        Browser-based AI code auditor with 5 specialized agents (quality, security, architecture, docs, performance) powered by Groq/Llama 3.3 70B; fully client-side with no backend infrastructure, PDF export. <em>React · Vite · Groq API</em>
+        <span class="project-links"><a href="https://github-auto-review.vercel.app">Live</a> · <a href="https://github.com/ademhmercha/Github-Auto-Review">GitHub</a></span>
+      </div>
+
+      <div class="project-entry">
+        <span class="project-name">Matchy</span> —
+        Real-time dating app with swipe matching, Socket.io live chat, WebRTC peer-to-peer video calls, voice messages, and an admin dashboard with analytics and audit logging. Multilingual EN/FR. <em>React · Node.js · MongoDB · Socket.io · WebRTC</em>
+        <span class="project-links"><a href="https://matchy-delta.vercel.app">Live</a> · <a href="https://github.com/ademhmercha/matchy">GitHub</a></span>
+      </div>
+
+      <div class="project-entry">
+        <span class="project-name">DRAPE</span> —
+        Full-stack luxury fashion e-commerce with JWT auth, Cloudinary image management across 4 product categories, cart system, and automated WhatsApp order notifications via Whapi.Cloud. <em>React · Node.js · MongoDB · Tailwind</em>
+        <span class="project-links"><a href="https://drape-cloth-shop.vercel.app">Live</a> · <a href="https://github.com/ademhmercha/drape-cloth-shop-">GitHub</a></span>
+      </div>
+
+      <div class="project-entry">
+        <span class="project-name">Immobilier</span> —
+        MERN real estate listing platform with Socket.IO live notifications, role-based auth, math-challenge spam protection, and a trilingual UI in Arabic, French, and English. <em>React · Node.js · MongoDB · Socket.IO</em>
+        <span class="project-links"><a href="https://github.com/ademhmercha/immobilier">GitHub</a></span>
+      </div>
+    </div>
+
+  </div><!-- .page -->
 
 </body>
 </html>
