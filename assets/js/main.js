@@ -363,13 +363,13 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     metaTitle.textContent = title;
 
     if (!liveUrl) {
-      urlText.textContent = 'no live demo';
-      placeholderNum.textContent = num;
-      imgEl.classList.remove('loaded');
-      skeletonEl.classList.add('hidden');
-      placeholderEl.classList.add('visible');
+      preview.style.visibility = 'hidden';
+      preview.style.opacity = '0';
       return;
     }
+
+    preview.style.visibility = '';
+    preview.style.opacity = '';
 
     urlText.textContent = liveUrl.replace('https://', '');
     placeholderEl.classList.remove('visible');

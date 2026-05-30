@@ -1605,6 +1605,7 @@ section { padding: 10rem 0; }
     display: block;
     position: sticky;
     top: calc(var(--nav-h) + 3rem);
+    transition: opacity 0.3s var(--ease-out), visibility 0.3s;
   }
 }
 
