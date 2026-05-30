@@ -319,6 +319,34 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
 })();
 
+/* ── Expandable Project Cards ───────────────────────────────── */
+(function initExpandCards() {
+  const cards = document.querySelectorAll('.pcard');
+
+  cards.forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
+
+      const expand = card.querySelector('.pcard__expand');
+      const inner  = card.querySelector('.pcard__expand-inner');
+      if (!expand || !inner) return;
+
+      const isExpanded = card.classList.contains('expanded');
+
+      cards.forEach(c => {
+        c.classList.remove('expanded');
+        const exp = c.querySelector('.pcard__expand');
+        if (exp) exp.style.maxHeight = '0';
+      });
+
+      if (!isExpanded) {
+        card.classList.add('expanded');
+        expand.style.maxHeight = (inner.scrollHeight + 32) + 'px';
+      }
+    });
+  });
+})();
+
 /* ── Project Preview Panel ─────────────────────────────────── */
 (function initProjectPreview() {
   const preview = document.querySelector('.projects__preview');

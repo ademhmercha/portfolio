@@ -1586,6 +1586,74 @@ section { padding: 10rem 0; }
 }
 
 /* ══════════════════════════════════════════════════════════════
+   EXPANDABLE CARD PANELS
+══════════════════════════════════════════════════════════════ */
+.pcard__expand {
+  grid-column: 1 / -1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--ease-out);
+}
+
+.pcard__expand-inner {
+  padding: 1.75rem 0 0.75rem;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.pcard__expand-about {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+
+.pcard__expand-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pcard__expand-list li {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+.pcard__expand-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-1);
+  font-size: 0.78rem;
+  top: 1px;
+}
+
+.pcard__expand-list li:hover { color: var(--text-2); }
+
+.pcard.expanded .pcard__arrow {
+  background: var(--accent-1);
+  border-color: var(--accent-1);
+  color: var(--bg);
+  transform: rotate(90deg);
+}
+
+[data-theme="dark"] .pcard__expand-inner { border-top-color: var(--border-2); }
+[data-theme="dark"] .pcard.expanded .pcard__arrow { color: #fff; }
+
+@media (max-width: 768px) {
+  .pcard__expand-inner {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
    PROJECT PREVIEW PANEL
 ══════════════════════════════════════════════════════════════ */
 .projects__body {
