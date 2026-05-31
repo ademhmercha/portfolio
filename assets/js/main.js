@@ -162,6 +162,42 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   setTimeout(tick, 1500);
 })();
 
+/* ── Hero Text Scramble ──────────────────────────────────────── */
+(function initScramble() {
+  if (reduced) return;
+
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$!%&?';
+  const FPS   = 22;
+  const MS    = 1000 / FPS;
+  const TOTAL = Math.round(1400 / MS);
+
+  function scramble(el, finalText) {
+    let frame = 0;
+    const tick = setInterval(() => {
+      const progress = frame / TOTAL;
+      el.textContent = finalText.split('').map((char, i) => {
+        if (char === ' ') return ' ';
+        if (progress >= (i / finalText.length) + 0.35) return char;
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+      }).join('');
+      if (++frame > TOTAL) {
+        clearInterval(tick);
+        el.textContent = finalText;
+      }
+    }, MS);
+  }
+
+  /* line 1 reveal: 0.6s delay + 0.9s anim = 1.5s
+     line 2 reveal: 0.75s delay + 0.9s anim = 1.65s
+     start scramble just after both have landed            */
+  setTimeout(() => {
+    const line1 = document.querySelector('.hero__name .line:nth-child(1) .line-inner');
+    const line2 = document.querySelector('.hero__name .line:nth-child(2) .line-inner em');
+    if (line1) scramble(line1, 'Adem');
+    if (line2) setTimeout(() => scramble(line2, 'Hmercha'), 150);
+  }, 1750);
+})();
+
 /* ── Navbar ─────────────────────────────────────────────────── */
 (function initNavbar() {
   const nav = document.querySelector('.nav');
