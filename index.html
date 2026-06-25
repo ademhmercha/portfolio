@@ -699,14 +699,14 @@
             </div>
           </article>
 
-          <!-- 16: User Entity -->
-          <article class="pcard reveal reveal--delay" data-category="devops" data-screenshot="" aria-label="User Entity project">
+          <!-- 16: GitOps K8s ArgoCD -->
+          <article class="pcard reveal reveal--delay" data-category="devops" data-screenshot="" aria-label="GitOps ArgoCD project">
             <span class="pcard__num">16</span>
             <div class="pcard__info">
-              <h3 class="pcard__title">User Entity</h3>
-              <p class="pcard__subtitle">Full-stack auth system deployed on Kubernetes with GitOps. ArgoCD auto-sync, Kustomize overlays, and GitHub Actions CI/CD.</p>
+              <h3 class="pcard__title">GitOps K8s ArgoCD</h3>
+              <p class="pcard__subtitle">Full GitOps delivery pipeline on Kubernetes with ArgoCD auto-sync, Kustomize overlays, and GitHub Actions CI/CD.</p>
               <div class="pcard__tags">
-                <span>React</span><span>Node.js</span><span>MongoDB</span><span>Kubernetes</span><span>ArgoCD</span><span>Kustomize</span><span>GitHub Actions</span>
+                <span>Kubernetes</span><span>ArgoCD</span><span>Kustomize</span><span>GitHub Actions</span><span>Docker</span><span>Nginx</span>
               </div>
               <div class="pcard__links">
                 <a href="https://github.com/ademhmercha/user-entity-REACT-NODE-JS-" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
@@ -717,12 +717,12 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Production-grade user authentication system (register, login, email verification, password reset) with full GitOps delivery pipeline on Kubernetes.</p>
+                <p class="pcard__expand-about">End-to-end GitOps delivery pipeline for a full-stack app on Kubernetes — ArgoCD watches Git, auto-syncs, prunes, and self-heals the cluster with zero manual intervention.</p>
                 <ul class="pcard__expand-list">
-                  <li>JWT httpOnly cookies · email verification via Nodemailer · input validation</li>
-                  <li>Kustomize base + dev/prod overlays · Nginx reverse proxy (SPA + API)</li>
-                  <li>ArgoCD automated sync, prune, and self-heal · GitHub Actions build & deploy</li>
+                  <li>ArgoCD automated sync, prune, and self-heal · GitHub Actions build, push, manifest update</li>
+                  <li>Kustomize base + dev/prod overlays · Nginx reverse proxy for SPA + API</li>
                   <li>Docker Compose for local dev · multi-stage Dockerfiles for frontend & backend</li>
+                  <li>Express API with JWT auth, email verification, and MongoDB persistence</li>
                 </ul>
               </div>
             </div>
