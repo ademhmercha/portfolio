@@ -1086,6 +1086,13 @@ section { padding: 10rem 0; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.pcard[data-favorite] .pcard__title::after {
+  content: ' ★';
+  color: var(--accent-1);
+  font-size: 0.55em;
+  vertical-align: super;
+  -webkit-text-fill-color: var(--accent-1);
+}
 
 .pcard__subtitle {
   font-size: 0.9rem;

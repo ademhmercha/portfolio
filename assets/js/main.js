@@ -319,6 +319,22 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
 })();
 
+/* ── Favorites Sort ────────────────────────────────────────── */
+(function initFavoritesSort() {
+  const list = document.querySelector('.projects__list');
+  if (!list) return;
+  const cards = Array.from(list.querySelectorAll('.pcard'));
+  const sorted = [
+    ...cards.filter(c => c.dataset.favorite === 'true'),
+    ...cards.filter(c => c.dataset.favorite !== 'true')
+  ];
+  sorted.forEach((card, i) => {
+    const num = card.querySelector('.pcard__num');
+    if (num) num.textContent = String(i + 1).padStart(2, '0');
+    list.appendChild(card);
+  });
+})();
+
 /* ── Expandable Project Cards ───────────────────────────────── */
 (function initExpandCards() {
   const cards = document.querySelectorAll('.pcard');
