@@ -22,12 +22,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Flash-free reveal: independent of main.js so a slow/blocked script never
+       leaves the page permanently invisible. Hard timeout is the safety net. -->
+  <script>
+    (function () {
+      var reveal = function () { document.documentElement.classList.add('is-ready'); };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', reveal);
+      } else {
+        reveal();
+      }
+      setTimeout(reveal, 1500);
+    })();
+  </script>
+  <noscript><style>body { opacity: 1 !important; }</style></noscript>
 </head>
 <body>
 
+  <!-- ━━ SCROLL PROGRESS ━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- ━━ CURSOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span class="cursor-label"></span></div>
 
   <!-- ━━ NOISE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <div class="noise" aria-hidden="true"></div>

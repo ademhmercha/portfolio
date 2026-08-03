@@ -7,16 +7,29 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ── Theme Toggle ──────────────────────────────────────────── */
 (function initTheme() {
+  const META_DARK = '#0a0a0b';
+  const META_LIGHT = '#faf5f0';
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+  const syncMetaColor = (theme) => {
+    if (themeColorMeta) themeColorMeta.setAttribute('content', theme === 'dark' ? META_DARK : META_LIGHT);
+  };
+
   const stored = localStorage.getItem('theme');
-  if (stored === 'dark') {
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = stored || (prefersDark ? 'dark' : 'light');
+
+  if (initial === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
+  syncMetaColor(initial);
 
   const toggleTheme = () => {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next === 'light' ? '' : next);
     localStorage.setItem('theme', next);
+    syncMetaColor(next);
   };
 
   document.querySelectorAll('.nav__theme, .mobile-nav__theme').forEach(btn => {
@@ -77,6 +90,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const dot = document.querySelector('.cursor-dot');
   const ring = document.querySelector('.cursor-ring');
+  const label = ring ? ring.querySelector('.cursor-label') : null;
   if (!dot || !ring) return;
 
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -102,10 +116,17 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.addEventListener('mouseup', () => ring.classList.remove('clicking'));
 
   document.addEventListener('mouseover', e => {
-    if (e.target.closest('a, button, .btn, .pcard, .tech-chip, .skill-group')) {
-      ring.classList.add('hovering');
+    const card = e.target.closest('.pcard');
+    if (card && label && !e.target.closest('a')) {
+      ring.classList.add('hovering', 'labeled');
+      label.textContent = card.dataset.screenshot ? 'View' : 'Details';
     } else {
-      ring.classList.remove('hovering');
+      ring.classList.remove('labeled');
+      if (e.target.closest('a, button, .btn, .pcard, .tech-chip, .skill-group')) {
+        ring.classList.add('hovering');
+      } else {
+        ring.classList.remove('hovering');
+      }
     }
   }, { passive: true });
 
@@ -169,10 +190,35 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const links = document.querySelector('.nav__links');
   if (!nav) return;
 
-  /* Scroll state */
-  let lastScroll = 0;
+  /* Scroll state: glass background + hide-on-scroll-down / reveal-on-scroll-up */
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const updateNav = () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+
+    const menuOpen = links && links.classList.contains('open');
+    if (!reduced && !menuOpen) {
+      const scrollingDown = y > lastScrollY;
+      if (scrollingDown && y > nav.offsetHeight * 2) {
+        nav.classList.add('nav--hidden');
+      } else if (!scrollingDown) {
+        nav.classList.remove('nav--hidden');
+      }
+    } else {
+      nav.classList.remove('nav--hidden');
+    }
+
+    lastScrollY = y;
+    ticking = false;
+  };
+
   const onScroll = () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
+    if (!ticking) {
+      requestAnimationFrame(updateNav);
+      ticking = true;
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -221,6 +267,58 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const el = document.getElementById(id);
     if (el) obs.observe(el);
   });
+})();
+
+/* ── Scroll Progress Bar ─────────────────────────────────────── */
+(function initScrollProgress() {
+  const bar = document.querySelector('.scroll-progress');
+  if (!bar) return;
+
+  let ticking = false;
+  const update = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = scrollable > 0 ? window.scrollY / scrollable : 0;
+    bar.style.transform = `scaleX(${Math.min(1, Math.max(0, pct))})`;
+    ticking = false;
+  };
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+
+/* ── Hero Cursor-Reactive Glow ───────────────────────────────── */
+(function initHeroParallax() {
+  if (reduced) return;
+  if ('ontouchstart' in window) return;
+  if (!window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  let ticking = false;
+  let mx = 0.5, my = 0.35;
+
+  const apply = () => {
+    document.documentElement.style.setProperty('--mx', mx.toFixed(3));
+    document.documentElement.style.setProperty('--my', my.toFixed(3));
+    ticking = false;
+  };
+
+  hero.addEventListener('mousemove', e => {
+    const r = hero.getBoundingClientRect();
+    mx = (e.clientX - r.left) / r.width;
+    my = (e.clientY - r.top) / r.height;
+    if (!ticking) {
+      requestAnimationFrame(apply);
+      ticking = true;
+    }
+  }, { passive: true });
 })();
 
 /* ── Scroll Reveal ───────────────────────────────────────────── */

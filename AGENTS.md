@@ -4,7 +4,7 @@
 
 Static single-page portfolio site (Adem Hmercha). No build system, no dependencies. Pure HTML/CSS/vanilla JS deployed to Vercel.
 
-**Design**: Premium dark theme with custom cursor, scroll-reveal animations, magnetic buttons, and text-split hero.
+**Design**: Premium light (peach) + dark theme toggle, defaults to the visitor's OS `prefers-color-scheme` on first visit. Custom cursor with contextual "View"/"Details" label over project cards, scroll-reveal animations, magnetic buttons, text-split hero with a cursor-reactive gradient glow, scroll-progress bar, and a hide-on-scroll-down navbar.
 
 ## File structure
 
