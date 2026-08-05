@@ -124,7 +124,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       label.textContent = card.dataset.screenshot ? words.view : words.details;
     } else {
       ring.classList.remove('labeled');
-      if (e.target.closest('a, button, .btn, .pcard, .tech-chip, .skill-group')) {
+      if (e.target.closest('a, button, .btn, .pcard, .skill-group')) {
         ring.classList.add('hovering');
       } else {
         ring.classList.remove('hovering');

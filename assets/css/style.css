@@ -194,7 +194,6 @@
 [data-theme="dark"] .section-title span { color: var(--text-3); }
 [data-theme="dark"] .section-header { margin-bottom: 5rem; }
 [data-theme="dark"] .detail-group__title { color: var(--text-4); }
-[data-theme="dark"] .tech__label { color: var(--text-4); }
 [data-theme="dark"] .skill-group { background: var(--bg-2); border-color: var(--border-2); }
 [data-theme="dark"] .skill-group:hover { border-color: var(--border-3); box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
 [data-theme="dark"] .skill-group__icon { background: var(--bg); border-color: var(--border); }
@@ -206,7 +205,6 @@
 [data-theme="dark"] .detail-item__icon { background: var(--bg); border-color: var(--border-2); }
 [data-theme="dark"] .detail-group:last-child .detail-item::before { opacity: 0.5; }
 [data-theme="dark"] .detail-group:last-child .detail-item:hover::before { opacity: 1; }
-[data-theme="dark"] .tech-chip { background: var(--bg); border-color: var(--border-2); color: var(--text-2); font-weight: 500; }
 [data-theme="dark"] .nav__theme { border-color: var(--border-2); }
 [data-theme="dark"] .nav__theme:hover { background: var(--bg-2); border-color: var(--border-3); }
 [data-theme="dark"] .contact__social { border-color: var(--border-2); }
@@ -1042,43 +1040,6 @@ section { padding: 10rem 0; }
   margin-top: 0.4rem;
   letter-spacing: 0.04em;
 }
-
-/* Tech stack */
-.about__tech { margin-top: 2rem; }
-.tech__label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-4);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.tech__grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.tech-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid var(--border);
-  border-radius: var(--r-pill);
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: var(--text-2);
-  background: var(--bg-2);
-  transition: all 0.25s var(--ease-out);
-}
-.tech-chip:hover {
-  border-color: var(--accent-1);
-  color: var(--accent-1);
-  background: var(--accent-glow);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.15);
-}
-.tech-chip img { flex-shrink: 0; }
 
 /* ══════════════════════════════════════════════════════════════
    PROJECTS — Stacked cards with hover reveal
