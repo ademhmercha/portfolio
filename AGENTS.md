@@ -14,7 +14,7 @@ Static single-page portfolio site (Adem Hmercha). No build system, no dependenci
 | `assets/css/style.css` | All styles (dark theme, responsive at 1024/768/390px) |
 | `assets/js/i18n.js` | EN/FR dictionary + language switcher — must load before `main.js` |
 | `assets/js/main.js` | Vanilla JS IIFEs: cursor, typing, navbar, scroll reveal, magnetic buttons, smooth scroll, marquee, mobile bottom nav |
-| `assets/cv.pdf` | Downloadable CV |
+| `assets/CV_Adem_Hmercha_EN.pdf` / `_FR.pdf` | Downloadable CVs, linked from the hero buttons |
 | `vercel.json` | Vercel config: SPA rewrites, security headers |
 
 ## How to work on it
