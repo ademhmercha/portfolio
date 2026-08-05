@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Adem Hmercha — Full Stack Developer from Tunisia. MERN stack, real-time systems, DevOps pipelines, and AI-powered tools." />
+  <meta name="description" content="Adem Hmercha — Software Engineer from Tunisia. MERN stack, real-time systems, DevOps pipelines, and AI-powered tools." data-i18n="meta.description" data-i18n-attr="content" />
   <meta name="author" content="Adem Hmercha" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a0b" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ademhmercha.vercel.app" />
-  <meta property="og:title" content="Adem Hmercha — Full Stack Developer" />
-  <meta property="og:description" content="Full Stack Developer passionate about building real-world web applications." />
+  <meta property="og:title" content="Adem Hmercha — Software Engineer" data-i18n="meta.ogTitle" data-i18n-attr="content" />
+  <meta property="og:description" content="Software Engineer passionate about building real-world web applications." data-i18n="meta.ogDescription" data-i18n-attr="content" />
 
-  <title>Adem Hmercha — Full Stack Developer</title>
+  <title data-i18n="meta.title">Adem Hmercha — Software Engineer</title>
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 
@@ -58,16 +58,20 @@
     <div class="container nav__inner">
       <a href="#hero" class="nav__logo">Adem</a>
       <ul class="nav__links" role="list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav__actions">
         <span class="nav__status">
           <span class="nav__status-dot" aria-hidden="true"></span>
-          Available
+          <span data-i18n="nav.status">Available</span>
         </span>
+        <div class="nav__lang" role="group" aria-label="Language switcher">
+          <button type="button" class="nav__lang-btn" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button type="button" class="nav__lang-btn" data-lang-btn="fr" aria-pressed="false">FR</button>
+        </div>
       </div>
       <button class="nav__theme" aria-label="Toggle theme">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -85,7 +89,7 @@
     <section id="hero" class="hero">
       <div class="container hero__content">
 
-        <span class="hero__label">Full Stack Developer</span>
+        <span class="hero__label" data-i18n="hero.label">Software Engineer</span>
 
         <h1 class="hero__name" aria-label="Adem Hmercha">
           <span class="line"><span class="line-inner">Adem</span></span>
@@ -96,13 +100,13 @@
           <span class="hero__role-text"></span><span class="hero__cursor" aria-hidden="true">|</span>
         </p>
 
-        <p class="hero__desc">
+        <p class="hero__desc" data-i18n="hero.desc" data-i18n-html="true">
           I build <strong>scalable web applications</strong> and <strong>real-time systems</strong> from Tunisia. Specialized in MERN stack, DevOps, and AI-powered tools.
         </p>
 
         <div class="hero__actions">
           <a href="#projects" class="btn btn--primary magnetic">
-            <span>View my work</span>
+            <span data-i18n="hero.viewWork">View my work</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="assets/Adem_Hmercha_Resume.pdf" download="Adem_Hmercha_Resume.pdf" class="btn btn--outline magnetic">
@@ -119,7 +123,7 @@
 
       <!-- Scroll indicator -->
       <div class="hero__scroll" aria-hidden="true">
-        <span class="hero__scroll-text">Scroll</span>
+        <span class="hero__scroll-text" data-i18n="hero.scroll">Scroll</span>
         <span class="hero__scroll-line"></span>
       </div>
     </section>
@@ -164,17 +168,17 @@
       <div class="container">
 
         <header class="section-header reveal">
-          <span class="section-tag">01 — About</span>
-          <h2 class="section-title">A bit about <span>me.</span></h2>
+          <span class="section-tag" data-i18n="about.tag">01 — About</span>
+          <h2 class="section-title" data-i18n="about.title" data-i18n-html="true">A bit about <span>me.</span></h2>
         </header>
 
         <div class="about__grid">
 
           <div class="about__bio reveal">
-            <p>
-              I'm a Full Stack Developer from Tunisia with hands-on experience building products that solve real problems. I care about every layer of the stack — from a pixel-perfect UI to a well-architected backend.
+            <p data-i18n="about.bio1">
+              I'm a Software Engineer from Tunisia with hands-on experience building products that solve real problems. I care about every layer of the stack — from a pixel-perfect UI to a well-architected backend.
             </p>
-            <p>
+            <p data-i18n="about.bio2">
               My core is the MERN stack, extended with real-time systems, AI-powered tooling, and DevOps pipelines. Whether it's an e-commerce platform, an enterprise dashboard, or a cloud-deployed microservice, I ship work that is fast, scalable, and polished.
             </p>
             <div class="about__links">
@@ -189,7 +193,7 @@
             </div>
 
             <div class="about__tech">
-              <p class="tech__label">Tech Stack</p>
+              <p class="tech__label" data-i18n="about.techLabel">Tech Stack</p>
               <div class="tech__grid">
                 <span class="tech-chip">React</span>
                 <span class="tech-chip">TypeScript</span>
@@ -208,15 +212,15 @@
           <div class="about__details reveal reveal--delay">
 
             <div class="detail-group">
-              <p class="detail-group__title">Education</p>
+              <p class="detail-group__title" data-i18n="about.education">Education</p>
               <div class="detail-item">
                 <div class="detail-item__icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                 </div>
                 <div class="detail-item__body">
-                  <p class="detail-item__title">Cycle Ingenieur — Genie Logiciel</p>
+                  <p class="detail-item__title" data-i18n="about.edu1.title">Engineering Degree — Software Engineering</p>
                   <p class="detail-item__sub">ESPRIT — Tunis</p>
-                  <p class="detail-item__date">2023 – En cours</p>
+                  <p class="detail-item__date" data-i18n="about.edu1.date">2023 – 2026 · Graduated</p>
                 </div>
               </div>
               <div class="detail-item">
@@ -224,7 +228,7 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                 </div>
                 <div class="detail-item__body">
-                  <p class="detail-item__title">Classes Preparatoires — Math · Physique</p>
+                  <p class="detail-item__title" data-i18n="about.edu2.title">Preparatory Classes — Math · Physics</p>
                   <p class="detail-item__sub">IPEiM — Monastir</p>
                   <p class="detail-item__date">2021 – 2023</p>
                 </div>
@@ -232,20 +236,20 @@
             </div>
 
             <div class="detail-group detail-group--experience">
-              <p class="detail-group__title">Experience</p>
+              <p class="detail-group__title" data-i18n="about.experience">Experience</p>
               <div class="exp-filter-bar">
-                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
                 <button class="filter-btn" data-filter="devops">DevOps</button>
-                <button class="filter-btn" data-filter="software">Software</button>
+                <button class="filter-btn" data-filter="software" data-i18n="filter.software">Software</button>
               </div>
               <div class="detail-item" data-category="devops">
                 <div class="detail-item__icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                 </div>
                 <div class="detail-item__body">
-                  <p class="detail-item__title">PFE Internship — Software and Devops Engineering</p>
+                  <p class="detail-item__title" data-i18n="about.exp1.title">PFE Internship — Software and DevOps Engineering</p>
                   <p class="detail-item__sub">Sagemcom — Ezzahra</p>
-                  <p class="detail-item__date">6 months · 2026</p>
+                  <p class="detail-item__date" data-i18n="about.exp1.date">6 months · 2026</p>
                 </div>
               </div>
               <div class="detail-item" data-category="software">
@@ -253,9 +257,9 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                 </div>
                 <div class="detail-item__body">
-                  <p class="detail-item__title">Engineering Internship — Software Development</p>
-                  <p class="detail-item__sub">Standard Sharing Software — Tunisie</p>
-                  <p class="detail-item__date">2 months · 2025</p>
+                  <p class="detail-item__title" data-i18n="about.exp2.title">Engineering Internship — Software Development</p>
+                  <p class="detail-item__sub">Standard Sharing Software — Tunisia</p>
+                  <p class="detail-item__date" data-i18n="about.exp2.date">2 months · 2025</p>
                 </div>
               </div>
             </div>
@@ -271,13 +275,13 @@
       <div class="container">
 
         <header class="section-header reveal">
-          <span class="section-tag">02 — Projects</span>
-          <h2 class="section-title">Selected <span>work.</span></h2>
+          <span class="section-tag" data-i18n="projects.tag">02 — Projects</span>
+          <h2 class="section-title" data-i18n="projects.title" data-i18n-html="true">Selected <span>work.</span></h2>
           <div class="filter-bar">
-            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
             <button class="filter-btn" data-filter="web">Web</button>
             <button class="filter-btn" data-filter="devops">DevOps</button>
-            <button class="filter-btn" data-filter="ai">AI</button>
+            <button class="filter-btn" data-filter="ai" data-i18n="filter.ai">AI</button>
           </div>
         </header>
 
@@ -289,13 +293,13 @@
             <span class="pcard__num">01</span>
             <div class="pcard__info">
               <h3 class="pcard__title">DRAPE</h3>
-              <p class="pcard__subtitle">Luxury fashion e-commerce with JWT auth, Cloudinary image management, and automated WhatsApp order notifications.</p>
+              <p class="pcard__subtitle" data-i18n="proj1.subtitle">Luxury fashion e-commerce with JWT auth, Cloudinary image management, and automated WhatsApp order notifications.</p>
               <div class="pcard__tags">
                 <span>React</span><span>Node.js</span><span>MongoDB</span><span>Tailwind</span><span>WhatsApp API</span>
               </div>
               <div class="pcard__links">
-                <a href="https://drape-cloth-shop.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/drape-cloth-shop-" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://drape-cloth-shop.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/drape-cloth-shop-" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -303,11 +307,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Full-stack MERN fashion e-commerce for a Tunisian luxury brand — product catalog, cart system, and complete order management.</p>
+                <p class="pcard__expand-about" data-i18n="proj1.about">Full-stack MERN fashion e-commerce for a Tunisian luxury brand — product catalog, cart system, and complete order management.</p>
                 <ul class="pcard__expand-list">
-                  <li>JWT auth · Cloudinary image management across 4 product categories</li>
-                  <li>Automated WhatsApp order notifications via Whapi.Cloud — zero client setup</li>
-                  <li>Frontend on Vercel · backend on Railway · seeded demo data ready</li>
+                  <li data-i18n="proj1.li1">JWT auth · Cloudinary image management across 4 product categories</li>
+                  <li data-i18n="proj1.li2">Automated WhatsApp order notifications via Whapi.Cloud — zero client setup</li>
+                  <li data-i18n="proj1.li3">Frontend on Vercel · backend on Railway · seeded demo data ready</li>
                 </ul>
               </div>
             </div>
@@ -318,12 +322,12 @@
             <span class="pcard__num">02</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Telnet Test Manager</h3>
-              <p class="pcard__subtitle">Enterprise DevOps platform for network equipment testing. WebSocket live updates, RBAC, and full CI/CD pipeline.</p>
+              <p class="pcard__subtitle" data-i18n="proj2.subtitle">Enterprise DevOps platform for network equipment testing. WebSocket live updates, RBAC, and full CI/CD pipeline.</p>
               <div class="pcard__tags">
                 <span>React</span><span>TypeScript</span><span>WebSocket</span><span>Docker</span><span>Kubernetes</span><span>Prometheus</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -331,11 +335,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Enterprise DevOps platform built during PFE internship at Sagemcom — manages and monitors network equipment test pipelines end-to-end.</p>
+                <p class="pcard__expand-about" data-i18n="proj2.about">Enterprise DevOps platform built during PFE internship at Sagemcom — manages and monitors network equipment test pipelines end-to-end.</p>
                 <ul class="pcard__expand-list">
-                  <li>WebSocket real-time test execution updates with RBAC access control</li>
-                  <li>Full CI/CD pipeline · Docker + Kubernetes · Prometheus monitoring</li>
-                  <li>Multi-team architecture with granular permission management</li>
+                  <li data-i18n="proj2.li1">WebSocket real-time test execution updates with RBAC access control</li>
+                  <li data-i18n="proj2.li2">Full CI/CD pipeline · Docker + Kubernetes · Prometheus monitoring</li>
+                  <li data-i18n="proj2.li3">Multi-team architecture with granular permission management</li>
                 </ul>
               </div>
             </div>
@@ -346,13 +350,13 @@
             <span class="pcard__num">03</span>
             <div class="pcard__info">
               <h3 class="pcard__title">AutoReview Agent</h3>
-              <p class="pcard__subtitle">AI-powered code auditor powered by Llama 3.3 70B. Five specialized agents analyze any public GitHub repo.</p>
+              <p class="pcard__subtitle" data-i18n="proj3.subtitle">AI-powered code auditor powered by Llama 3.3 70B. Five specialized agents analyze any public GitHub repo.</p>
               <div class="pcard__tags">
                 <span>React</span><span>Vite</span><span>Groq API</span><span>Llama 3.3</span><span>GitHub API</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github-auto-review.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/Github-Auto-Review" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github-auto-review.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/Github-Auto-Review" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -360,11 +364,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Browser-based AI code auditor using 5 sequential specialized agents — no backend, zero infrastructure cost, runs entirely client-side.</p>
+                <p class="pcard__expand-about" data-i18n="proj3.about">Browser-based AI code auditor using 5 sequential specialized agents — no backend, zero infrastructure cost, runs entirely client-side.</p>
                 <ul class="pcard__expand-list">
-                  <li>5 agents: code quality, security, architecture, documentation, performance</li>
-                  <li>Powered by Groq API (Llama 3.3 70B) · completely free to run</li>
-                  <li>Outputs quality scores, bug reports by severity, and exportable PDF audits</li>
+                  <li data-i18n="proj3.li1">5 agents: code quality, security, architecture, documentation, performance</li>
+                  <li data-i18n="proj3.li2">Powered by Groq API (Llama 3.3 70B) · completely free to run</li>
+                  <li data-i18n="proj3.li3">Outputs quality scores, bug reports by severity, and exportable PDF audits</li>
                 </ul>
               </div>
             </div>
@@ -375,13 +379,13 @@
             <span class="pcard__num">04</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Matchy</h3>
-              <p class="pcard__subtitle">Real-time dating app with swipe matching, live chat, voice messages, and peer-to-peer WebRTC video calls.</p>
+              <p class="pcard__subtitle" data-i18n="proj4.subtitle">Real-time dating app with swipe matching, live chat, voice messages, and peer-to-peer WebRTC video calls.</p>
               <div class="pcard__tags">
                 <span>React</span><span>Socket.io</span><span>WebRTC</span><span>MongoDB</span><span>i18next</span>
               </div>
               <div class="pcard__links">
-                <a href="https://matchy-delta.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/matchy" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://matchy-delta.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/matchy" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -389,11 +393,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Real-time dating app with swipe-based matching, live chat, voice messages, and peer-to-peer video calls — no relay server needed.</p>
+                <p class="pcard__expand-about" data-i18n="proj4.about">Real-time dating app with swipe-based matching, live chat, voice messages, and peer-to-peer video calls — no relay server needed.</p>
                 <ul class="pcard__expand-list">
-                  <li>Socket.io live chat · WebRTC P2P video calls</li>
-                  <li>Admin dashboard with analytics, user management, and audit logging</li>
-                  <li>EN/FR multilingual · glassmorphism UI · Vercel + Render + MongoDB Atlas</li>
+                  <li data-i18n="proj4.li1">Socket.io live chat · WebRTC P2P video calls</li>
+                  <li data-i18n="proj4.li2">Admin dashboard with analytics, user management, and audit logging</li>
+                  <li data-i18n="proj4.li3">EN/FR multilingual · glassmorphism UI · Vercel + Render + MongoDB Atlas</li>
                 </ul>
               </div>
             </div>
@@ -404,12 +408,12 @@
             <span class="pcard__num">05</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Immobilier</h3>
-              <p class="pcard__subtitle">Full-stack real estate platform with real-time notifications, role-based auth, admin dashboard, and multilingual UI.</p>
+              <p class="pcard__subtitle" data-i18n="proj5.subtitle">Full-stack real estate platform with real-time notifications, role-based auth, admin dashboard, and multilingual UI.</p>
               <div class="pcard__tags">
                 <span>React</span><span>Node.js</span><span>MongoDB</span><span>Socket.IO</span><span>i18next</span><span>Vite</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/immobilier" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/immobilier" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -417,11 +421,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">MERN real estate platform for listing and browsing furnished and rental properties with real-time updates and multilingual support.</p>
+                <p class="pcard__expand-about" data-i18n="proj5.about">MERN real estate platform for listing and browsing furnished and rental properties with real-time updates and multilingual support.</p>
                 <ul class="pcard__expand-list">
-                  <li>Socket.IO live notifications on new listings with navbar badge updates</li>
-                  <li>JWT auth · math-challenge spam protection — no external API keys needed</li>
-                  <li>Multilingual UI in Arabic, French, and English</li>
+                  <li data-i18n="proj5.li1">Socket.IO live notifications on new listings with navbar badge updates</li>
+                  <li data-i18n="proj5.li2">JWT auth · math-challenge spam protection — no external API keys needed</li>
+                  <li data-i18n="proj5.li3">Multilingual UI in Arabic, French, and English</li>
                 </ul>
               </div>
             </div>
@@ -432,12 +436,12 @@
             <span class="pcard__num">06</span>
             <div class="pcard__info">
               <h3 class="pcard__title">K8s Auto-Scaling App</h3>
-              <p class="pcard__subtitle">Production Node.js API on Kubernetes with HPA scaling from 2 to 10 pods. Multi-stage Dockerfile, graceful shutdown.</p>
+              <p class="pcard__subtitle" data-i18n="proj6.subtitle">Production Node.js API on Kubernetes with HPA scaling from 2 to 10 pods. Multi-stage Dockerfile, graceful shutdown.</p>
               <div class="pcard__tags">
                 <span>Kubernetes</span><span>Docker</span><span>Node.js</span><span>HPA</span><span>Metrics Server</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/Auto-Scaling-Application" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/Auto-Scaling-Application" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -445,11 +449,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Production-grade Node.js API on Kubernetes demonstrating real-world horizontal auto-scaling from 2 to 10 pods under CPU load.</p>
+                <p class="pcard__expand-about" data-i18n="proj6.about">Production-grade Node.js API on Kubernetes demonstrating real-world horizontal auto-scaling from 2 to 10 pods under CPU load.</p>
                 <ul class="pcard__expand-list">
-                  <li>HPA scales pods 2→10 based on live CPU utilization via Metrics Server</li>
-                  <li>Multi-stage Dockerfile · non-root execution · graceful shutdown handling</li>
-                  <li>PowerShell load-test scripts and automated setup/teardown included</li>
+                  <li data-i18n="proj6.li1">HPA scales pods 2→10 based on live CPU utilization via Metrics Server</li>
+                  <li data-i18n="proj6.li2">Multi-stage Dockerfile · non-root execution · graceful shutdown handling</li>
+                  <li data-i18n="proj6.li3">PowerShell load-test scripts and automated setup/teardown included</li>
                 </ul>
               </div>
             </div>
@@ -460,13 +464,13 @@
             <span class="pcard__num">07</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Safeguard</h3>
-              <p class="pcard__subtitle">Full-stack parental monitoring platform. Device lock/unlock, website blocking, screen time tracking, and real-time alerts.</p>
+              <p class="pcard__subtitle" data-i18n="proj7.subtitle">Full-stack parental monitoring platform. Device lock/unlock, website blocking, screen time tracking, and real-time alerts.</p>
               <div class="pcard__tags">
                 <span>React</span><span>TypeScript</span><span>React Native</span><span>Prisma</span><span>Supabase</span><span>Firebase</span>
               </div>
               <div class="pcard__links">
-                <a href="https://safeguard-frontend.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/safeguard" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://safeguard-frontend.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/safeguard" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -474,11 +478,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Full-stack parental monitoring platform with a React web dashboard and React Native mobile app for real-time child device oversight.</p>
+                <p class="pcard__expand-about" data-i18n="proj7.about">Full-stack parental monitoring platform with a React web dashboard and React Native mobile app for real-time child device oversight.</p>
                 <ul class="pcard__expand-list">
-                  <li>Remote device lock/unlock · website blocking · screen time scheduling</li>
-                  <li>Real-time alerts via Supabase Realtime + Firebase FCM push notifications</li>
-                  <li>Mobile APK via EAS · backend on Railway · database on Supabase</li>
+                  <li data-i18n="proj7.li1">Remote device lock/unlock · website blocking · screen time scheduling</li>
+                  <li data-i18n="proj7.li2">Real-time alerts via Supabase Realtime + Firebase FCM push notifications</li>
+                  <li data-i18n="proj7.li3">Mobile APK via EAS · backend on Railway · database on Supabase</li>
                 </ul>
               </div>
             </div>
@@ -489,13 +493,13 @@
             <span class="pcard__num">08</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Weather News App</h3>
-              <p class="pcard__subtitle">Real-time weather and news dashboard. Live forecasts by location with integrated news feed for a unified daily briefing.</p>
+              <p class="pcard__subtitle" data-i18n="proj8.subtitle">Real-time weather and news dashboard. Live forecasts by location with integrated news feed for a unified daily briefing.</p>
               <div class="pcard__tags">
                 <span>React</span><span>OpenWeather API</span><span>News API</span><span>Tailwind CSS</span>
               </div>
               <div class="pcard__links">
-                <a href="https://weather-news-app-gray.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/Weather-News_App" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://weather-news-app-gray.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/Weather-News_App" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -503,11 +507,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">React app combining live weather forecasts and Tunisian news aggregation with smart tri-layer location detection — no API key required.</p>
+                <p class="pcard__expand-about" data-i18n="proj8.about">React app combining live weather forecasts and Tunisian news aggregation with smart tri-layer location detection — no API key required.</p>
                 <ul class="pcard__expand-list">
-                  <li>7-day forecast + AQI via Open-Meteo · server-side caching</li>
-                  <li>Smart location: browser geolocation → IP fallback → Tunis default</li>
-                  <li>Aggregates 8 Tunisian RSS feeds (Mosaique FM, Kapitalis…) with city filtering</li>
+                  <li data-i18n="proj8.li1">7-day forecast + AQI via Open-Meteo · server-side caching</li>
+                  <li data-i18n="proj8.li2">Smart location: browser geolocation → IP fallback → Tunis default</li>
+                  <li data-i18n="proj8.li3">Aggregates 8 Tunisian RSS feeds (Mosaique FM, Kapitalis…) with city filtering</li>
                 </ul>
               </div>
             </div>
@@ -518,13 +522,13 @@
             <span class="pcard__num">09</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Centre L'Espoir</h3>
-              <p class="pcard__subtitle">Bilingual FR/AR website for a Tunisian tutoring center — teacher directory, subjects, and Bac exam prep with WhatsApp booking.</p>
+              <p class="pcard__subtitle" data-i18n="proj9.subtitle">Bilingual FR/AR website for a Tunisian tutoring center — teacher directory, subjects, and Bac exam prep with WhatsApp booking.</p>
               <div class="pcard__tags">
                 <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>Framer Motion</span>
               </div>
               <div class="pcard__links">
-                <a href="https://espoir-school.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/espoir-school" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://espoir-school.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/espoir-school" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -532,11 +536,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Bilingual French/Arabic marketing site for a Tunisian private tutoring center, built with Next.js 14 App Router and animated with Framer Motion.</p>
+                <p class="pcard__expand-about" data-i18n="proj9.about">Bilingual French/Arabic marketing site for a Tunisian private tutoring center, built with Next.js 14 App Router and animated with Framer Motion.</p>
                 <ul class="pcard__expand-list">
-                  <li>Showcases 10 teachers across primary, middle, and Bac-prep levels</li>
-                  <li>WhatsApp-integrated registration and real-time parent communication</li>
-                  <li>Google Maps location embed · fully responsive Tailwind layout</li>
+                  <li data-i18n="proj9.li1">Showcases 10 teachers across primary, middle, and Bac-prep levels</li>
+                  <li data-i18n="proj9.li2">WhatsApp-integrated registration and real-time parent communication</li>
+                  <li data-i18n="proj9.li3">Google Maps location embed · fully responsive Tailwind layout</li>
                 </ul>
               </div>
             </div>
@@ -547,13 +551,13 @@
             <span class="pcard__num">10</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Aura Esthétique</h3>
-              <p class="pcard__subtitle">Luxury beauty salon landing page for a Paris spa — services, pricing, before/after gallery, and subscription packages.</p>
+              <p class="pcard__subtitle" data-i18n="proj10.subtitle">Luxury beauty salon landing page for a Paris spa — services, pricing, before/after gallery, and subscription packages.</p>
               <div class="pcard__tags">
                 <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>Framer Motion</span>
               </div>
               <div class="pcard__links">
-                <a href="https://aura-esth-tique-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/Aura-Esth-tique-landing-page" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://aura-esth-tique-landing-page.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/Aura-Esth-tique-landing-page" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -561,11 +565,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Production-ready landing page for a Parisian beauty & aesthetics center, built with Next.js 14, Tailwind CSS, and Framer Motion animations.</p>
+                <p class="pcard__expand-about" data-i18n="proj10.about">Production-ready landing page for a Parisian beauty & aesthetics center, built with Next.js 14, Tailwind CSS, and Framer Motion animations.</p>
                 <ul class="pcard__expand-list">
-                  <li>Six service categories with transparent pricing and three subscription tiers</li>
-                  <li>Before/after gallery and client testimonials build trust</li>
-                  <li>WhatsApp booking · bilingual French/Arabic · mobile-first design</li>
+                  <li data-i18n="proj10.li1">Six service categories with transparent pricing and three subscription tiers</li>
+                  <li data-i18n="proj10.li2">Before/after gallery and client testimonials build trust</li>
+                  <li data-i18n="proj10.li3">WhatsApp booking · bilingual French/Arabic · mobile-first design</li>
                 </ul>
               </div>
             </div>
@@ -576,13 +580,13 @@
             <span class="pcard__num">11</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Dar Zittouna</h3>
-              <p class="pcard__subtitle">Authentic Tunisian restaurant site with menu, gallery, and WhatsApp reservations celebrating family recipes since 2004.</p>
+              <p class="pcard__subtitle" data-i18n="proj11.subtitle">Authentic Tunisian restaurant site with menu, gallery, and WhatsApp reservations celebrating family recipes since 2004.</p>
               <div class="pcard__tags">
                 <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
               </div>
               <div class="pcard__links">
-                <a href="https://dar-zittouna.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/restaurant-landing-page" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://dar-zittouna.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/restaurant-landing-page" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -590,11 +594,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Restaurant marketing site for a traditional Tunisian eatery, presenting its menu and heritage story with a warm, food-forward design.</p>
+                <p class="pcard__expand-about" data-i18n="proj11.about">Restaurant marketing site for a traditional Tunisian eatery, presenting its menu and heritage story with a warm, food-forward design.</p>
                 <ul class="pcard__expand-list">
-                  <li>Full menu with pricing in Dinars across appetizers, mains, desserts, drinks</li>
-                  <li>Photo gallery and customer testimonials spotlighting signature dishes</li>
-                  <li>WhatsApp table reservations · trilingual FR/EN/AR navigation</li>
+                  <li data-i18n="proj11.li1">Full menu with pricing in Dinars across appetizers, mains, desserts, drinks</li>
+                  <li data-i18n="proj11.li2">Photo gallery and customer testimonials spotlighting signature dishes</li>
+                  <li data-i18n="proj11.li3">WhatsApp table reservations · trilingual FR/EN/AR navigation</li>
                 </ul>
               </div>
             </div>
@@ -605,13 +609,13 @@
             <span class="pcard__num">12</span>
             <div class="pcard__info">
               <h3 class="pcard__title">GuardCam</h3>
-              <p class="pcard__subtitle">Privacy-first PWA security camera with on-device AI object detection, night-vision filters, and local alert history.</p>
+              <p class="pcard__subtitle" data-i18n="proj12.subtitle">Privacy-first PWA security camera with on-device AI object detection, night-vision filters, and local alert history.</p>
               <div class="pcard__tags">
                 <span>React</span><span>TypeScript</span><span>Vite</span><span>TensorFlow.js</span><span>Tailwind CSS</span><span>PWA</span>
               </div>
               <div class="pcard__links">
-                <a href="https://guard-cam-rosy.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live">Live ↗</a>
-                <a href="https://github.com/ademhmercha/GuardCam" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://guard-cam-rosy.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/GuardCam" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -619,12 +623,12 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Installable Progressive Web App that turns any phone or laptop into an intelligent motion-detecting security camera — detection and AI run entirely on-device, nothing leaves the browser.</p>
+                <p class="pcard__expand-about" data-i18n="proj12.about">Installable Progressive Web App that turns any phone or laptop into an intelligent motion-detecting security camera — detection and AI run entirely on-device, nothing leaves the browser.</p>
                 <ul class="pcard__expand-list">
-                  <li>Real-time motion detection (~15fps) with on-device TensorFlow.js + COCO-SSD object classification</li>
-                  <li>Five night-vision filter modes — Auto, Twilight, Night, Military, Thermal — with brightness-based switching</li>
-                  <li>Instant snapshots and ~4s video clips, browsable IndexedDB alert history, optional Web3Forms email alerts</li>
-                  <li>Installable offline-first PWA · React 19 + Vite + Tailwind CSS v4</li>
+                  <li data-i18n="proj12.li1">Real-time motion detection (~15fps) with on-device TensorFlow.js + COCO-SSD object classification</li>
+                  <li data-i18n="proj12.li2">Five night-vision filter modes — Auto, Twilight, Night, Military, Thermal — with brightness-based switching</li>
+                  <li data-i18n="proj12.li3">Instant snapshots and ~4s video clips, browsable IndexedDB alert history, optional Web3Forms email alerts</li>
+                  <li data-i18n="proj12.li4">Installable offline-first PWA · React 19 + Vite + Tailwind CSS v4</li>
                 </ul>
               </div>
             </div>
@@ -635,12 +639,12 @@
             <span class="pcard__num">13</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Discord Bot</h3>
-              <p class="pcard__subtitle">All-in-one Discord bot with moderation, economy, leveling, and music — built on discord.js v14 with persistent queues.</p>
+              <p class="pcard__subtitle" data-i18n="proj13.subtitle">All-in-one Discord bot with moderation, economy, leveling, and music — built on discord.js v14 with persistent queues.</p>
               <div class="pcard__tags">
                 <span>Node.js</span><span>discord.js v14</span><span>JavaScript</span><span>yt-dlp</span><span>ffmpeg</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/discordBot" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/discordBot" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -648,12 +652,12 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Full-featured Discord server bot built with discord.js v14 — moderation, economy, leveling, games, and music in one package, with zero external database.</p>
+                <p class="pcard__expand-about" data-i18n="proj13.about">Full-featured Discord server bot built with discord.js v14 — moderation, economy, leveling, games, and music in one package, with zero external database.</p>
                 <ul class="pcard__expand-list">
-                  <li>Moderation suite — ban, kick, timeout, mute, warn, bulk-delete — with numbered case logging</li>
-                  <li>XP &amp; leveling with level-up announcements, coin economy, daily rewards, and unlockable badges</li>
-                  <li>YouTube music playback via yt-dlp + ffmpeg with queues that persist across restarts</li>
-                  <li>Trivia, rock-paper-scissors, slot machines, memes &amp; roasts · JSON-based persistence</li>
+                  <li data-i18n="proj13.li1">Moderation suite — ban, kick, timeout, mute, warn, bulk-delete — with numbered case logging</li>
+                  <li data-i18n="proj13.li2">XP &amp; leveling with level-up announcements, coin economy, daily rewards, and unlockable badges</li>
+                  <li data-i18n="proj13.li3">YouTube music playback via yt-dlp + ffmpeg with queues that persist across restarts</li>
+                  <li data-i18n="proj13.li4">Trivia, rock-paper-scissors, slot machines, memes &amp; roasts · JSON-based persistence</li>
                 </ul>
               </div>
             </div>
@@ -664,12 +668,12 @@
             <span class="pcard__num">14</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Telegram Summarize Bot</h3>
-              <p class="pcard__subtitle">AI Telegram bot that summarizes YouTube videos, PDFs, Word docs, articles, and voice messages with Google Gemini.</p>
+              <p class="pcard__subtitle" data-i18n="proj14.subtitle">AI Telegram bot that summarizes YouTube videos, PDFs, Word docs, articles, and voice messages with Google Gemini.</p>
               <div class="pcard__tags">
                 <span>Node.js</span><span>Telegraf</span><span>Google Gemini API</span><span>pdf-parse</span><span>Mammoth</span><span>Cheerio</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/telegram-summarize-bot" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/telegram-summarize-bot" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -677,12 +681,12 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Telegram bot built with Telegraf and Google Gemini that auto-detects content type and replies with structured summaries in the source language.</p>
+                <p class="pcard__expand-about" data-i18n="proj14.about">Telegram bot built with Telegraf and Google Gemini that auto-detects content type and replies with structured summaries in the source language.</p>
                 <ul class="pcard__expand-list">
-                  <li>Summarizes YouTube transcripts, PDFs, Word docs, web articles, voice messages, and plain text</li>
-                  <li>Interactive buttons to regenerate, condense, translate, ask follow-up questions, and export</li>
-                  <li>Translates into 8 languages · group chat support via /resume · personal Gemini key via /setkey</li>
-                  <li>Disk-cached results for instant repeats · automatic retry with model fallback on quota limits</li>
+                  <li data-i18n="proj14.li1">Summarizes YouTube transcripts, PDFs, Word docs, web articles, voice messages, and plain text</li>
+                  <li data-i18n="proj14.li2">Interactive buttons to regenerate, condense, translate, ask follow-up questions, and export</li>
+                  <li data-i18n="proj14.li3">Translates into 8 languages · group chat support via /resume · personal Gemini key via /setkey</li>
+                  <li data-i18n="proj14.li4">Disk-cached results for instant repeats · automatic retry with model fallback on quota limits</li>
                 </ul>
               </div>
             </div>
@@ -693,12 +697,12 @@
             <span class="pcard__num">15</span>
             <div class="pcard__info">
               <h3 class="pcard__title">Wasel <span style="font-size:0.75em;opacity:0.6;">واصل</span></h3>
-              <p class="pcard__subtitle">Secure inter-city carpooling platform with real-time chat, RBAC, encrypted data, and bilingual FR/AR interface.</p>
+              <p class="pcard__subtitle" data-i18n="proj15.subtitle">Secure inter-city carpooling platform with real-time chat, RBAC, encrypted data, and bilingual FR/AR interface.</p>
               <div class="pcard__tags">
                 <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span><span>Socket.IO</span><span>Docker</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/covoiturage_app" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/covoiturage_app" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -706,12 +710,12 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Full-stack inter-city carpooling platform for Tunisia — JWT RS256 auth, role-based access control, real-time notifications, and zero tolerance for security flaws with full OWASP coverage.</p>
+                <p class="pcard__expand-about" data-i18n="proj15.about">Full-stack inter-city carpooling platform for Tunisia — JWT RS256 auth, role-based access control, real-time notifications, and zero tolerance for security flaws with full OWASP coverage.</p>
                 <ul class="pcard__expand-list">
-                  <li>JWT RS256 + refresh token rotation · account lockout after 5 failed attempts · httpOnly cookies</li>
-                  <li>Real-time Socket.IO chat with per-user rate limiting · Bull queue for booking & departure notifications</li>
-                  <li>Phone numbers encrypted AES-256-GCM · geolocation proxied server-side · 58 Jest + Supertest tests</li>
-                  <li>Docker Compose · GitHub Actions CI · target deployment on Azure · bilingual FR/AR with RTL</li>
+                  <li data-i18n="proj15.li1">JWT RS256 + refresh token rotation · account lockout after 5 failed attempts · httpOnly cookies</li>
+                  <li data-i18n="proj15.li2">Real-time Socket.IO chat with per-user rate limiting · Bull queue for booking & departure notifications</li>
+                  <li data-i18n="proj15.li3">Phone numbers encrypted AES-256-GCM · geolocation proxied server-side · 58 Jest + Supertest tests</li>
+                  <li data-i18n="proj15.li4">Docker Compose · GitHub Actions CI · target deployment on Azure · bilingual FR/AR with RTL</li>
                 </ul>
               </div>
             </div>
@@ -722,12 +726,12 @@
             <span class="pcard__num">16</span>
             <div class="pcard__info">
               <h3 class="pcard__title">GitOps K8s ArgoCD</h3>
-              <p class="pcard__subtitle">Full GitOps delivery pipeline on Kubernetes with ArgoCD auto-sync, Kustomize overlays, and GitHub Actions CI/CD.</p>
+              <p class="pcard__subtitle" data-i18n="proj16.subtitle">Full GitOps delivery pipeline on Kubernetes with ArgoCD auto-sync, Kustomize overlays, and GitHub Actions CI/CD.</p>
               <div class="pcard__tags">
                 <span>Kubernetes</span><span>ArgoCD</span><span>Kustomize</span><span>GitHub Actions</span><span>Docker</span><span>Nginx</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/user-entity-REACT-NODE-JS-" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/user-entity-REACT-NODE-JS-" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -735,12 +739,12 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">End-to-end GitOps delivery pipeline for a full-stack app on Kubernetes — ArgoCD watches Git, auto-syncs, prunes, and self-heals the cluster with zero manual intervention.</p>
+                <p class="pcard__expand-about" data-i18n="proj16.about">End-to-end GitOps delivery pipeline for a full-stack app on Kubernetes — ArgoCD watches Git, auto-syncs, prunes, and self-heals the cluster with zero manual intervention.</p>
                 <ul class="pcard__expand-list">
-                  <li>ArgoCD automated sync, prune, and self-heal · GitHub Actions build, push, manifest update</li>
-                  <li>Kustomize base + dev/prod overlays · Nginx reverse proxy for SPA + API</li>
-                  <li>Docker Compose for local dev · multi-stage Dockerfiles for frontend & backend</li>
-                  <li>Express API with JWT auth, email verification, and MongoDB persistence</li>
+                  <li data-i18n="proj16.li1">ArgoCD automated sync, prune, and self-heal · GitHub Actions build, push, manifest update</li>
+                  <li data-i18n="proj16.li2">Kustomize base + dev/prod overlays · Nginx reverse proxy for SPA + API</li>
+                  <li data-i18n="proj16.li3">Docker Compose for local dev · multi-stage Dockerfiles for frontend & backend</li>
+                  <li data-i18n="proj16.li4">Express API with JWT auth, email verification, and MongoDB persistence</li>
                 </ul>
               </div>
             </div>
@@ -751,12 +755,12 @@
             <span class="pcard__num">17</span>
             <div class="pcard__info">
               <h3 class="pcard__title">GitHub → Discord Bot</h3>
-              <p class="pcard__subtitle">n8n workflow that forwards GitHub webhook events as rich Discord embed notifications — push and PR events in real time.</p>
+              <p class="pcard__subtitle" data-i18n="proj17.subtitle">n8n workflow that forwards GitHub webhook events as rich Discord embed notifications — push and PR events in real time.</p>
               <div class="pcard__tags">
                 <span>n8n</span><span>JavaScript</span><span>GitHub Webhooks</span><span>Discord API</span><span>REST API</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/n8n-github-discord-workfow" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/n8n-github-discord-workfow" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -764,12 +768,12 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Production-ready n8n workflow connecting GitHub and Discord through automated webhook processing — push and pull request events are parsed and posted as color-coded embed notifications.</p>
+                <p class="pcard__expand-about" data-i18n="proj17.about">Production-ready n8n workflow connecting GitHub and Discord through automated webhook processing — push and pull request events are parsed and posted as color-coded embed notifications.</p>
                 <ul class="pcard__expand-list">
-                  <li>Event filter discards non-push/PR noise — only high-signal events hit Discord</li>
-                  <li>Dynamic embed colors: green (opened), red (closed), purple (merged), yellow (synchronize)</li>
-                  <li>Environment variable config for Discord webhook — no hardcoded secrets</li>
-                  <li>Import the workflow JSON, configure two webhooks, activate — done in 5 minutes</li>
+                  <li data-i18n="proj17.li1">Event filter discards non-push/PR noise — only high-signal events hit Discord</li>
+                  <li data-i18n="proj17.li2">Dynamic embed colors: green (opened), red (closed), purple (merged), yellow (synchronize)</li>
+                  <li data-i18n="proj17.li3">Environment variable config for Discord webhook — no hardcoded secrets</li>
+                  <li data-i18n="proj17.li4">Import the workflow JSON, configure two webhooks, activate — done in 5 minutes</li>
                 </ul>
               </div>
             </div>
@@ -780,12 +784,12 @@
             <span class="pcard__num">18</span>
             <div class="pcard__info">
               <h3 class="pcard__title">NexusAI Chatbot</h3>
-              <p class="pcard__subtitle">AI-powered chatbot with n8n + Google Gemini 2.5 Flash — glassmorphism UI, typewriter effect, message history, and rate-limit handling.</p>
+              <p class="pcard__subtitle" data-i18n="proj18.subtitle">AI-powered chatbot with n8n + Google Gemini 2.5 Flash — glassmorphism UI, typewriter effect, message history, and rate-limit handling.</p>
               <div class="pcard__tags">
                 <span>HTML5</span><span>CSS3</span><span>Vanilla JS</span><span>n8n</span><span>Gemini API</span><span>Docker</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/n8n-workflow-chatbot" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/n8n-workflow-chatbot" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -793,12 +797,12 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">AI-powered chatbot interface built with vanilla HTML/CSS/JS, connected to a Dockerized n8n backend orchestrating Google Gemini 2.5 Flash API calls via ngrok tunnel — no framework, no build step, just clean frontend code.</p>
+                <p class="pcard__expand-about" data-i18n="proj18.about">AI-powered chatbot interface built with vanilla HTML/CSS/JS, connected to a Dockerized n8n backend orchestrating Google Gemini 2.5 Flash API calls via ngrok tunnel — no framework, no build step, just clean frontend code.</p>
                 <ul class="pcard__expand-list">
-                  <li>Glassmorphism UI with animated gradient orbs and frosted glass design</li>
-                  <li>Typewriter effect for bot replies · message history persisted in localStorage (last 5)</li>
-                  <li>Rate-limit handling with auto-retry up to 3 times and exponential backoff</li>
-                  <li>n8n workflow with 4 nodes: Webhook → HTTP Request (Gemini) → Code (extract) → Respond</li>
+                  <li data-i18n="proj18.li1">Glassmorphism UI with animated gradient orbs and frosted glass design</li>
+                  <li data-i18n="proj18.li2">Typewriter effect for bot replies · message history persisted in localStorage (last 5)</li>
+                  <li data-i18n="proj18.li3">Rate-limit handling with auto-retry up to 3 times and exponential backoff</li>
+                  <li data-i18n="proj18.li4">n8n workflow with 4 nodes: Webhook → HTTP Request (Gemini) → Code (extract) → Respond</li>
                 </ul>
               </div>
             </div>
@@ -809,12 +813,12 @@
             <span class="pcard__num">19</span>
             <div class="pcard__info">
               <h3 class="pcard__title">RAG Chat</h3>
-              <p class="pcard__subtitle">Fully local Retrieval-Augmented Generation chat app with ChatGPT-style UI. Uses Ollama — no API key needed, runs entirely via Docker Compose.</p>
+              <p class="pcard__subtitle" data-i18n="proj19.subtitle">Fully local Retrieval-Augmented Generation chat app with ChatGPT-style UI. Uses Ollama — no API key needed, runs entirely via Docker Compose.</p>
               <div class="pcard__tags">
                 <span>React</span><span>Node.js</span><span>Docker</span><span>MongoDB</span><span>ChromaDB</span><span>Ollama</span><span>Redis</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/RAG-CHAT-" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/RAG-CHAT-" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -822,11 +826,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Fully local, free Retrieval-Augmented Generation (RAG) chat application with a ChatGPT-style UI, running on Ollama and Docker Compose — no OpenAI key needed, everything runs on your machine.</p>
+                <p class="pcard__expand-about" data-i18n="proj19.about">Fully local, free Retrieval-Augmented Generation (RAG) chat application with a ChatGPT-style UI, running on Ollama and Docker Compose — no OpenAI key needed, everything runs on your machine.</p>
                 <ul class="pcard__expand-list">
-                  <li>Upload documents (PDF, DOCX, TXT, CSV, HTML, MD) — chunk, embed, store, retrieve, answer pipeline</li>
-                  <li>Conversation history with auto-titling, search, and deletion — async upload with background ingestion</li>
-                  <li>6 Docker services: Node.js API, React SPA (Nginx), MongoDB, ChromaDB, Redis, Ollama</li>
+                  <li data-i18n="proj19.li1">Upload documents (PDF, DOCX, TXT, CSV, HTML, MD) — chunk, embed, store, retrieve, answer pipeline</li>
+                  <li data-i18n="proj19.li2">Conversation history with auto-titling, search, and deletion — async upload with background ingestion</li>
+                  <li data-i18n="proj19.li3">6 Docker services: Node.js API, React SPA (Nginx), MongoDB, ChromaDB, Redis, Ollama</li>
                 </ul>
               </div>
             </div>
@@ -837,12 +841,12 @@
             <span class="pcard__num">20</span>
             <div class="pcard__info">
               <h3 class="pcard__title">n8n Order Processing</h3>
-              <p class="pcard__subtitle">Order processing automation with n8n, Express.js, and Supabase PostgreSQL. Thin API layer routes orders to n8n where all business logic lives.</p>
+              <p class="pcard__subtitle" data-i18n="proj20.subtitle">Order processing automation with n8n, Express.js, and Supabase PostgreSQL. Thin API layer routes orders to n8n where all business logic lives.</p>
               <div class="pcard__tags">
                 <span>Express.js</span><span>React</span><span>n8n</span><span>Supabase</span><span>PostgreSQL</span><span>Docker</span>
               </div>
               <div class="pcard__links">
-                <a href="https://github.com/ademhmercha/n8n-order-processing" target="_blank" rel="noopener noreferrer" class="pcard__link">Code ↗</a>
+                <a href="https://github.com/ademhmercha/n8n-order-processing" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
               </div>
             </div>
             <div class="pcard__arrow" aria-hidden="true">
@@ -850,11 +854,11 @@
             </div>
             <div class="pcard__expand">
               <div class="pcard__expand-inner">
-                <p class="pcard__expand-about">Full-stack order processing pipeline where Express handles auth and routing while n8n manages all business logic — stock validation, inventory, invoicing, warehouse tasks, and notifications via a linear workflow with conditional branching.</p>
+                <p class="pcard__expand-about" data-i18n="proj20.about">Full-stack order processing pipeline where Express handles auth and routing while n8n manages all business logic — stock validation, inventory, invoicing, warehouse tasks, and notifications via a linear workflow with conditional branching.</p>
                 <ul class="pcard__expand-list">
-                  <li>Thin Express API layer — authenticates users and routes orders to the n8n webhook</li>
-                  <li>n8n workflow: validates input, checks stock, reserves inventory, generates invoices, creates warehouse tasks, and sends notifications</li>
-                  <li>Docker Compose for local dev — Supabase PostgreSQL for persistence across all services</li>
+                  <li data-i18n="proj20.li1">Thin Express API layer — authenticates users and routes orders to the n8n webhook</li>
+                  <li data-i18n="proj20.li2">n8n workflow: validates input, checks stock, reserves inventory, generates invoices, creates warehouse tasks, and sends notifications</li>
+                  <li data-i18n="proj20.li3">Docker Compose for local dev — Supabase PostgreSQL for persistence across all services</li>
                 </ul>
               </div>
             </div>
@@ -877,7 +881,7 @@
                 <div class="preview__skeleton"></div>
                 <div class="preview__placeholder">
                   <span class="preview__placeholder-num"></span>
-                  <span class="preview__placeholder-label">No live demo</span>
+                  <span class="preview__placeholder-label" data-i18n="preview.noLiveDemo">No live demo</span>
                 </div>
               </div>
             </div>
@@ -894,8 +898,8 @@
       <div class="container">
 
         <header class="section-header reveal">
-          <span class="section-tag">03 — Skills</span>
-          <h2 class="section-title">Built <span>with.</span></h2>
+          <span class="section-tag" data-i18n="skills.tag">03 — Skills</span>
+          <h2 class="section-title" data-i18n="skills.title" data-i18n-html="true">Built <span>with.</span></h2>
         </header>
 
         <div class="skills__grid">
@@ -904,7 +908,7 @@
             <div class="skill-group__icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <h3 class="skill-group__title">Frontend</h3>
+            <h3 class="skill-group__title" data-i18n="skills.frontend">Frontend</h3>
             <ul class="skill-group__list">
               <li>React / Next.js</li>
               <li>Angular</li>
@@ -920,7 +924,7 @@
             <div class="skill-group__icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
-            <h3 class="skill-group__title">Backend</h3>
+            <h3 class="skill-group__title" data-i18n="skills.backend">Backend</h3>
             <ul class="skill-group__list">
               <li>Node.js / Express</li>
               <li>Spring Boot</li>
@@ -938,7 +942,7 @@
             <div class="skill-group__icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
-            <h3 class="skill-group__title">DevOps &amp; Tools</h3>
+            <h3 class="skill-group__title" data-i18n="skills.devops">DevOps &amp; Tools</h3>
             <ul class="skill-group__list">
               <li>Docker / Kubernetes</li>
               <li>ArgoCD</li>
@@ -960,20 +964,20 @@
       <div class="container">
         <div class="contact__inner reveal">
 
-          <span class="section-tag">04 — Contact</span>
+          <span class="section-tag" data-i18n="contact.tag">04 — Contact</span>
 
-          <h2 class="contact__heading">
+          <h2 class="contact__heading" data-i18n="contact.heading" data-i18n-html="true">
             Let's build<br><em>something great.</em>
           </h2>
 
-          <p class="contact__desc">
+          <p class="contact__desc" data-i18n="contact.desc">
             Open to full-time roles, freelance projects, and collaborations.
             I reply fast — let's talk.
           </p>
 
           <div class="contact__actions">
             <a href="mailto:ademhmerchaaa@gmail.com" class="btn btn--primary magnetic">
-              <span>Send Email</span>
+              <span data-i18n="contact.sendEmail">Send Email</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="https://github.com/ademhmercha" target="_blank" rel="noopener noreferrer" class="btn btn--outline magnetic">
@@ -1001,7 +1005,7 @@
     <div class="container footer__inner">
       <p class="footer__copy">© 2026 Adem Hmercha</p>
       <a href="#hero" class="footer__top">
-        Back to top
+        <span data-i18n="footer.backToTop">Back to top</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
       </a>
     </div>
@@ -1013,35 +1017,42 @@
       <div class="mobile-nav__icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       </div>
-      <span>Home</span>
+      <span data-i18n="mobile.home">Home</span>
     </a>
     <a href="#projects" class="mobile-nav__item" data-section="projects" aria-label="Work">
       <div class="mobile-nav__icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       </div>
-      <span>Work</span>
+      <span data-i18n="mobile.work">Work</span>
     </a>
     <a href="#skills" class="mobile-nav__item" data-section="skills" aria-label="Skills">
       <div class="mobile-nav__icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       </div>
-      <span>Skills</span>
+      <span data-i18n="mobile.skills">Skills</span>
     </a>
     <a href="#contact" class="mobile-nav__item" data-section="contact" aria-label="Contact">
       <div class="mobile-nav__icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
-      <span>Contact</span>
+      <span data-i18n="mobile.contact">Contact</span>
     </a>
     <button class="mobile-nav__item mobile-nav__theme" aria-label="Toggle theme">
       <div class="mobile-nav__icon">
         <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </div>
-      <span>Theme</span>
+      <span data-i18n="mobile.theme">Theme</span>
+    </button>
+    <button type="button" class="mobile-nav__item mobile-nav__lang" aria-label="Switch language" data-lang-btn-mobile>
+      <div class="mobile-nav__icon mobile-nav__lang-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <span class="mobile-nav__lang-label" data-lang-label-mobile>FR</span>
     </button>
   </nav>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

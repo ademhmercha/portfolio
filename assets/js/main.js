@@ -119,7 +119,9 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const card = e.target.closest('.pcard');
     if (card && label && !e.target.closest('a')) {
       ring.classList.add('hovering', 'labeled');
-      label.textContent = card.dataset.screenshot ? 'View' : 'Details';
+      const lang = window.i18n ? window.i18n.getLang() : 'en';
+      const words = lang === 'fr' ? { view: 'Voir', details: 'Détails' } : { view: 'View', details: 'Details' };
+      label.textContent = card.dataset.screenshot ? words.view : words.details;
     } else {
       ring.classList.remove('labeled');
       if (e.target.closest('a, button, .btn, .pcard, .tech-chip, .skill-group')) {
@@ -145,14 +147,16 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const el = document.querySelector('.hero__role-text');
   if (!el) return;
 
-  const roles = [
-    'Full Stack Developer',
-    'MERN Stack Engineer',
-    'Real-Time Systems Builder',
-    'DevOps Enthusiast',
-  ];
+  const getRoles = () => (window.i18n ? window.i18n.roles() : ['Software Engineer']);
 
-  if (reduced) { el.textContent = roles[0]; return; }
+  let roles = getRoles();
+  let timer = null;
+
+  if (reduced) {
+    el.textContent = roles[0];
+    document.addEventListener('langchange', () => { roles = getRoles(); el.textContent = roles[0]; });
+    return;
+  }
 
   const SPEED_TYPE = 70;
   const SPEED_DELETE = 35;
@@ -162,7 +166,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let rIdx = 0, cIdx = 0, deleting = false;
 
   function tick() {
-    const cur = roles[rIdx];
+    const cur = roles[rIdx] || '';
     cIdx = deleting ? cIdx - 1 : cIdx + 1;
     el.textContent = cur.slice(0, cIdx);
 
@@ -177,10 +181,18 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       delay = PAUSE_EMPTY;
     }
 
-    setTimeout(tick, delay);
+    timer = setTimeout(tick, delay);
   }
 
-  setTimeout(tick, 1500);
+  document.addEventListener('langchange', () => {
+    roles = getRoles();
+    rIdx = 0; cIdx = 0; deleting = false;
+    el.textContent = '';
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(tick, 400);
+  });
+
+  timer = setTimeout(tick, 1500);
 })();
 
 /* ── Navbar ─────────────────────────────────────────────────── */

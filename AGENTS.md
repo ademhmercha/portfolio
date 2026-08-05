@@ -12,6 +12,7 @@ Static single-page portfolio site (Adem Hmercha). No build system, no dependenci
 |------|---------|
 | `index.html` | Single page — all sections |
 | `assets/css/style.css` | All styles (dark theme, responsive at 1024/768/390px) |
+| `assets/js/i18n.js` | EN/FR dictionary + language switcher — must load before `main.js` |
 | `assets/js/main.js` | Vanilla JS IIFEs: cursor, typing, navbar, scroll reveal, magnetic buttons, smooth scroll, marquee, mobile bottom nav |
 | `assets/cv.pdf` | Downloadable CV |
 | `vercel.json` | Vercel config: SPA rewrites, security headers |
@@ -36,3 +37,4 @@ Static single-page portfolio site (Adem Hmercha). No build system, no dependenci
 - `vercel.json` rewrites all routes to `/index.html` (SPA behavior)
 - `.vercel/` is in `.gitignore` but `project.json` is tracked
 - Hero name uses `.line` + `.line-inner` pattern for staggered text reveal — don't flatten the markup without updating CSS animations
+- **i18n**: every translatable node in `index.html` carries `data-i18n="namespace.key"` (add `data-i18n-html="true"` if the value contains markup like `<strong>`/`<span>`, or `data-i18n-attr="content"` for `<meta>` tags). `assets/js/i18n.js` holds both EN and FR copy for every key — add new UI text there, in both languages, not just as raw HTML. Language auto-detects from `navigator.language` on first visit, then persists via `localStorage['lang']`; the hero's typing-role list and the project-card cursor label ("View"/"Details") also come from `i18n.js` rather than being hardcoded in `main.js`. Toggle buttons: `.nav__lang-btn[data-lang-btn]` (desktop) and `[data-lang-btn-mobile]` (mobile bottom nav).
