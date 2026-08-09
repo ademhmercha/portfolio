@@ -1098,6 +1098,10 @@ section { padding: 10rem 0; }
   max-height: 500px;
   transition: all 0.4s var(--ease-out);
 }
+.pcard.expanded:not(.filtered) {
+  /* Expanded content can exceed the 500px filter-transition cap above and overlap the next card */
+  max-height: none;
+}
 
 [data-theme="dark"] .filter-btn {
   background: var(--bg-2);
