@@ -196,6 +196,14 @@
         li2: "n8n workflow: validates input, checks stock, reserves inventory, generates invoices, creates warehouse tasks, and sends notifications",
         li3: "Docker Compose for local dev — Supabase PostgreSQL for persistence across all services",
       },
+      proj21: {
+        subtitle: "Multi-tenant SaaS inventory & invoicing platform for Tunisian SMEs, with a GitHub Actions → n8n → Kubernetes pipeline that auto-deploys on every push to main.",
+        about: "Full-stack SaaS inventory and invoicing platform replacing Excel for Tunisian retail, distribution, and light-manufacturing SMEs — native multi-tier VAT handling, backed by a fully automated GitOps-style CI/CD pipeline to Kubernetes.",
+        li1: "Multi-tenant architecture — every backend request scoped by enterpriseId, with dedicated tests proving data isolation between companies",
+        li2: "Native Tunisian VAT (19%/13%/7%) and fiscal stamp handling · Puppeteer-generated PDF invoices · draft → sent → paid workflow",
+        li3: "GitHub Actions builds & pushes Docker images to GHCR on push to main, then calls an n8n webhook that runs kubectl set image + rollout status against a 2-replica Kubernetes deployment",
+        li4: "52 Jest/Supertest backend tests + Vitest frontend tests · rate-limited auth · Kustomize overlays for staging/production",
+      },
     },
 
     fr: {
@@ -388,6 +396,14 @@
         li1: "Fine couche API Express — authentifie les utilisateurs et route les commandes vers le webhook n8n",
         li2: "Workflow n8n : valide les données, vérifie le stock, réserve l'inventaire, génère les factures, crée les tâches d'entrepôt et envoie les notifications",
         li3: "Docker Compose pour le développement local — Supabase PostgreSQL pour la persistance à travers tous les services",
+      },
+      proj21: {
+        subtitle: "Plateforme SaaS multi-tenant de gestion de stock et facturation pour PME tunisiennes, avec un pipeline GitHub Actions → n8n → Kubernetes qui déploie automatiquement à chaque push sur main.",
+        about: "Plateforme SaaS full-stack de gestion de stock et facturation remplaçant Excel pour les PME tunisiennes de la distribution, du commerce de détail et de la petite industrie — gestion native de la TVA à plusieurs taux, portée par un pipeline CI/CD automatisé façon GitOps vers Kubernetes.",
+        li1: "Architecture multi-tenant — chaque requête backend filtrée par enterpriseId, avec des tests dédiés prouvant l'isolation des données entre entreprises",
+        li2: "Gestion native de la TVA tunisienne (19 %/13 %/7 %) et du timbre fiscal · factures PDF générées via Puppeteer · workflow brouillon → envoyée → payée",
+        li3: "GitHub Actions build et pousse les images Docker vers GHCR à chaque push sur main, puis appelle un webhook n8n qui exécute kubectl set image + rollout status sur un déploiement Kubernetes à 2 réplicas",
+        li4: "52 tests Jest/Supertest côté backend + tests Vitest côté frontend · authentification à débit limité · overlays Kustomize pour staging/production",
       },
     },
   };

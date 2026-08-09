@@ -849,6 +849,35 @@
             </div>
           </article>
 
+          <!-- 21: StockFlow -->
+          <article class="pcard reveal" data-favorite="true" data-category="web,devops" data-screenshot="" aria-label="StockFlow project">
+            <span class="pcard__num">21</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">StockFlow</h3>
+              <p class="pcard__subtitle" data-i18n="proj21.subtitle">Multi-tenant SaaS inventory &amp; invoicing platform for Tunisian SMEs, with a GitHub Actions → n8n → Kubernetes pipeline that auto-deploys on every push to main.</p>
+              <div class="pcard__tags">
+                <span>React</span><span>TypeScript</span><span>Node.js</span><span>MongoDB</span><span>Kubernetes</span><span>n8n</span><span>Docker</span><span>GitHub Actions</span>
+              </div>
+              <div class="pcard__links">
+                <a href="https://github.com/ademhmercha/stockflow" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
+              </div>
+            </div>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <div class="pcard__expand">
+              <div class="pcard__expand-inner">
+                <p class="pcard__expand-about" data-i18n="proj21.about">Full-stack SaaS inventory and invoicing platform replacing Excel for Tunisian retail, distribution, and light-manufacturing SMEs — native multi-tier VAT handling, backed by a fully automated GitOps-style CI/CD pipeline to Kubernetes.</p>
+                <ul class="pcard__expand-list">
+                  <li data-i18n="proj21.li1">Multi-tenant architecture — every backend request scoped by enterpriseId, with dedicated tests proving data isolation between companies</li>
+                  <li data-i18n="proj21.li2">Native Tunisian VAT (19%/13%/7%) and fiscal stamp handling · Puppeteer-generated PDF invoices · draft → sent → paid workflow</li>
+                  <li data-i18n="proj21.li3">GitHub Actions builds &amp; pushes Docker images to GHCR on push to main, then calls an n8n webhook that runs kubectl set image + rollout status against a 2-replica Kubernetes deployment</li>
+                  <li data-i18n="proj21.li4">52 Jest/Supertest backend tests + Vitest frontend tests · rate-limited auth · Kustomize overlays for staging/production</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
           </div>
 
           <aside class="projects__preview" aria-hidden="true">
