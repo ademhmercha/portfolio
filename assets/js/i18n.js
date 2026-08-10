@@ -39,6 +39,7 @@
       projects: { tag: "02 — Projects", title: "Selected <span>work.</span>" },
       pcard: { live: "Live ↗", code: "Code ↗" },
       preview: { noLiveDemo: "No live demo" },
+      pagination: { prev: "Previous page", next: "Next page" },
       skills: { tag: "03 — Skills", title: "Built <span>with.</span>", frontend: "Frontend", backend: "Backend", devops: "DevOps & Tools" },
       contact: {
         tag: "04 — Contact",
@@ -240,6 +241,7 @@
       projects: { tag: "02 — Projets", title: "Travaux <span>sélectionnés.</span>" },
       pcard: { live: "Démo ↗", code: "Code ↗" },
       preview: { noLiveDemo: "Pas de démo en ligne" },
+      pagination: { prev: "Page précédente", next: "Page suivante" },
       skills: { tag: "03 — Compétences", title: "Construit <span>avec.</span>", frontend: "Frontend", backend: "Backend", devops: "DevOps & Outils" },
       contact: {
         tag: "04 — Contact",
