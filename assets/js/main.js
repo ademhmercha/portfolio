@@ -244,7 +244,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
   /* Active section tracking */
-  const sections = ['hero', 'about', 'projects', 'skills', 'contact'];
+  const sections = ['hero', 'about', 'projects', 'skills', 'certifications', 'contact'];
   const anchors = links ? links.querySelectorAll('a[href^="#"]') : [];
   if (!anchors.length || !('IntersectionObserver' in window)) return;
 
@@ -700,7 +700,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const items = document.querySelectorAll('.mobile-nav__item');
   if (!items.length) return;
 
-  const sections = ['hero', 'projects', 'skills', 'contact']
+  const sections = ['hero', 'projects', 'skills', 'certifications', 'contact']
     .map(id => document.getElementById(id))
     .filter(Boolean);
 

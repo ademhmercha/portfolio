@@ -12,7 +12,7 @@
         ogDescription: "Software Engineer passionate about building real-world web applications.",
         title: "Adem Hmercha — Software Engineer",
       },
-      nav: { about: "About", projects: "Projects", skills: "Skills", contact: "Contact", status: "Available" },
+      nav: { about: "About", projects: "Projects", skills: "Skills", certs: "Certifications", contact: "Contact", status: "Available" },
       hero: {
         label: "Software Engineer",
         desc: 'I build <strong>scalable web applications</strong> and <strong>real-time systems</strong> from Tunisia. Specialized in MERN stack, DevOps, and AI-powered tools.',
@@ -41,14 +41,15 @@
       preview: { noLiveDemo: "No live demo" },
       pagination: { prev: "Previous page", next: "Next page" },
       skills: { tag: "03 — Skills", title: "Built <span>with.</span>", frontend: "Frontend", backend: "Backend", devops: "DevOps & Tools" },
+      certs: { tag: "04 — Certifications", title: "Verified <span>credentials.</span>", issuer: "Anthropic Education", verified: "Verified" },
       contact: {
-        tag: "04 — Contact",
+        tag: "05 — Contact",
         heading: "Let's build<br><em>something great.</em>",
         desc: "Open to full-time roles, freelance projects, and collaborations. I reply fast — let's talk.",
         sendEmail: "Send Email",
       },
       footer: { backToTop: "Back to top" },
-      mobile: { home: "Home", work: "Work", skills: "Skills", contact: "Contact", theme: "Theme" },
+      mobile: { home: "Home", work: "Work", skills: "Skills", certs: "Certs", contact: "Contact", theme: "Theme" },
 
       proj1: {
         subtitle: "Luxury fashion e-commerce with JWT auth, Cloudinary image management, and automated WhatsApp order notifications.",
@@ -214,7 +215,7 @@
         ogDescription: "Ingénieur Logiciel passionné par la création d'applications web concrètes.",
         title: "Adem Hmercha — Ingénieur Logiciel",
       },
-      nav: { about: "À propos", projects: "Projets", skills: "Compétences", contact: "Contact", status: "Disponible" },
+      nav: { about: "À propos", projects: "Projets", skills: "Compétences", certs: "Certifications", contact: "Contact", status: "Disponible" },
       hero: {
         label: "Ingénieur Logiciel",
         desc: "Je conçois des <strong>applications web scalables</strong> et des <strong>systèmes temps réel</strong> depuis la Tunisie. Spécialisé en stack MERN, DevOps et outils propulsés par l'IA.",
@@ -243,14 +244,15 @@
       preview: { noLiveDemo: "Pas de démo en ligne" },
       pagination: { prev: "Page précédente", next: "Page suivante" },
       skills: { tag: "03 — Compétences", title: "Construit <span>avec.</span>", frontend: "Frontend", backend: "Backend", devops: "DevOps & Outils" },
+      certs: { tag: "04 — Certifications", title: "Identifiants <span>vérifiés.</span>", issuer: "Anthropic Education", verified: "Vérifié" },
       contact: {
-        tag: "04 — Contact",
+        tag: "05 — Contact",
         heading: "Construisons<br><em>quelque chose de grand.</em>",
         desc: "Ouvert aux postes à temps plein, projets freelance et collaborations. Je réponds vite — discutons.",
         sendEmail: "Envoyer un Email",
       },
       footer: { backToTop: "Retour en haut" },
-      mobile: { home: "Accueil", work: "Travaux", skills: "Compétences", contact: "Contact", theme: "Thème" },
+      mobile: { home: "Accueil", work: "Travaux", skills: "Compétences", certs: "Certs", contact: "Contact", theme: "Thème" },
 
       proj1: {
         subtitle: "E-commerce de mode de luxe avec authentification JWT, gestion d'images Cloudinary et notifications de commande WhatsApp automatisées.",
