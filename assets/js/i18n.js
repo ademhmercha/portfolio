@@ -206,6 +206,14 @@
         li3: "GitHub Actions builds & pushes Docker images to GHCR on push to main, then calls an n8n webhook that runs kubectl set image + rollout status against a 2-replica Kubernetes deployment",
         li4: "52 Jest/Supertest backend tests + Vitest frontend tests · rate-limited auth · Kustomize overlays for staging/production",
       },
+      proj22: {
+        subtitle: "Lead generation tool for freelancers — finds local businesses without websites using Geoapify API, with weekly alerts, CRM pipeline, and full IaC on Kubernetes.",
+        about: "Full-stack lead generation tool for freelancers and web agencies — discovers local businesses (restaurants, cafés, salons…) without a website or with only a Facebook/Instagram page, then tracks them through a CRM pipeline.",
+        li1: "Geoapify Places API discovers businesses by category + zone · 7-day Upstash Redis cache saves API quota",
+        li2: "Supabase Postgres CRM with lead status pipeline (new → contacted → interested → converted) + CSV export",
+        li3: "Weekly QStash cron re-scans saved zones and sends Resend email alerts on new leads · Supabase keepalive pings",
+        li4: "Docker multi-stage build · Helm chart on Minikube · GitHub Actions CI/CD with self-hosted runner · Terraform IaC for Vercel + Upstash across 3 environments",
+      },
     },
 
     fr: {
@@ -408,6 +416,14 @@
         li2: "Gestion native de la TVA tunisienne (19 %/13 %/7 %) et du timbre fiscal · factures PDF générées via Puppeteer · workflow brouillon → envoyée → payée",
         li3: "GitHub Actions build et pousse les images Docker vers GHCR à chaque push sur main, puis appelle un webhook n8n qui exécute kubectl set image + rollout status sur un déploiement Kubernetes à 2 réplicas",
         li4: "52 tests Jest/Supertest côté backend + tests Vitest côté frontend · authentification à débit limité · overlays Kustomize pour staging/production",
+      },
+      proj22: {
+        subtitle: "Outil de prospection pour freelances — trouve les établissements locaux sans site web via l'API Geoapify, avec alertes hebdomadaires, pipeline CRM et IaC complet sur Kubernetes.",
+        about: "Outil de prospection full-stack pour freelances et agences web — découvre les établissements locaux (restaurants, cafés, salons…) sans site web ou avec seulement une page Facebook/Instagram, puis les suit via un pipeline CRM.",
+        li1: "L'API Geoapify Places découvre les établissements par catégorie + zone · cache Redis Upstash de 7 jours économise le quota API",
+        li2: "CRM Supabase Postgres avec pipeline de statut (nouveau → contacté → intéressé → converti) + export CSV",
+        li3: "Cron QStash hebdomadaire re-scannent les zones sauvegardées et envoie des alertes email via Resend · pings keepalive Supabase",
+        li4: "Docker build multi-étapes · Helm chart sur Minikube · GitHub Actions CI/CD avec runner self-hosted · Terraform IaC pour Vercel + Upstash sur 3 environnements",
       },
     },
   };

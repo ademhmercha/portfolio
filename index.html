@@ -879,6 +879,36 @@
             </div>
           </article>
 
+          <!-- 22: LeadSpot -->
+          <article class="pcard reveal reveal--delay" data-favorite="true" data-category="devops,web" data-screenshot="https://lead-spot.vercel.app/" aria-label="LeadSpot project">
+            <span class="pcard__num">22</span>
+            <div class="pcard__info">
+              <h3 class="pcard__title">LeadSpot</h3>
+              <p class="pcard__subtitle" data-i18n="proj22.subtitle">Lead generation tool for freelancers — finds local businesses without websites using Geoapify API, with weekly alerts, CRM pipeline, and full IaC on Kubernetes.</p>
+              <div class="pcard__tags">
+                <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>Supabase</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>GitHub Actions</span>
+              </div>
+              <div class="pcard__links">
+                <a href="https://lead-spot.vercel.app/" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--live" data-i18n="pcard.live">Live ↗</a>
+                <a href="https://github.com/ademhmercha/LeadSpot" target="_blank" rel="noopener noreferrer" class="pcard__link" data-i18n="pcard.code">Code ↗</a>
+              </div>
+            </div>
+            <div class="pcard__arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <div class="pcard__expand">
+              <div class="pcard__expand-inner">
+                <p class="pcard__expand-about" data-i18n="proj22.about">Full-stack lead generation tool for freelancers and web agencies — discovers local businesses (restaurants, cafés, salons…) without a website or with only a Facebook/Instagram page, then tracks them through a CRM pipeline.</p>
+                <ul class="pcard__expand-list">
+                  <li data-i18n="proj22.li1">Geoapify Places API discovers businesses by category + zone · 7-day Upstash Redis cache saves API quota</li>
+                  <li data-i18n="proj22.li2">Supabase Postgres CRM with lead status pipeline (new → contacted → interested → converted) + CSV export</li>
+                  <li data-i18n="proj22.li3">Weekly QStash cron re-scans saved zones and sends Resend email alerts on new leads · Supabase keepalive pings</li>
+                  <li data-i18n="proj22.li4">Docker multi-stage build · Helm chart on Minikube · GitHub Actions CI/CD with self-hosted runner · Terraform IaC for Vercel + Upstash across 3 environments</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
           </div>
 
           <aside class="projects__preview" aria-hidden="true">
@@ -973,6 +1003,8 @@
               <li>ArgoCD</li>
               <li>GitHub Actions / CI/CD</li>
               <li>Prometheus / Grafana</li>
+              <li>Terraform</li>
+              <li>Helm</li>
               <li>n8n</li>
               <li>Firebase / FCM</li>
               <li>Cloudinary</li>
