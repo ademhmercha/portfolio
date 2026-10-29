@@ -276,13 +276,16 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   links.appendChild(bar);
   links.classList.add('nav__links--indicator');
 
+  // classList.add/remove queue a mutation record even when nothing changes, which would
+  // re-trigger the MutationObserver below forever — so only touch the class on a real change.
+  const setOn = (on) => { if (bar.classList.contains('is-on') !== on) bar.classList.toggle('is-on', on); };
   const place = (a) => {
-    if (!a || !desktop.matches) { bar.classList.remove('is-on'); return; }
+    if (!a || !desktop.matches) { setOn(false); return; }
     const lr = links.getBoundingClientRect();
     const ar = a.getBoundingClientRect();
     bar.style.setProperty('--ind-x', (ar.left - lr.left) + 'px');
     bar.style.setProperty('--ind-w', ar.width);
-    bar.classList.add('is-on');
+    setOn(true);
   };
   const activeLink = () => links.querySelector('a.active');
   const restore = () => place(activeLink());
@@ -294,7 +297,8 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   links.addEventListener('mouseleave', restore);
 
   // Follow the section observer's .active class changes
-  new MutationObserver(restore).observe(links, { attributes: true, subtree: true, attributeFilter: ['class'] });
+  const mo = new MutationObserver(restore);
+  links.querySelectorAll('a').forEach(a => mo.observe(a, { attributes: true, attributeFilter: ['class'] }));
   window.addEventListener('resize', restore, { passive: true });
   document.addEventListener('langchange', () => requestAnimationFrame(restore));
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(restore);
