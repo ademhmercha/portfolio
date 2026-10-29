@@ -264,6 +264,72 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   });
 })();
 
+/* ── Nav Sliding Indicator ───────────────────────────────────── */
+(function initNavIndicator() {
+  const links = document.querySelector('.nav__links');
+  if (!links) return;
+  const desktop = window.matchMedia('(min-width: 769px)');
+
+  const bar = document.createElement('span');
+  bar.className = 'nav__indicator';
+  bar.setAttribute('aria-hidden', 'true');
+  links.appendChild(bar);
+  links.classList.add('nav__links--indicator');
+
+  const place = (a) => {
+    if (!a || !desktop.matches) { bar.classList.remove('is-on'); return; }
+    const lr = links.getBoundingClientRect();
+    const ar = a.getBoundingClientRect();
+    bar.style.setProperty('--ind-x', (ar.left - lr.left) + 'px');
+    bar.style.setProperty('--ind-w', ar.width);
+    bar.classList.add('is-on');
+  };
+  const activeLink = () => links.querySelector('a.active');
+  const restore = () => place(activeLink());
+
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('mouseenter', () => place(a));
+    a.addEventListener('focus', () => place(a));
+  });
+  links.addEventListener('mouseleave', restore);
+
+  // Follow the section observer's .active class changes
+  new MutationObserver(restore).observe(links, { attributes: true, subtree: true, attributeFilter: ['class'] });
+  window.addEventListener('resize', restore, { passive: true });
+  document.addEventListener('langchange', () => requestAnimationFrame(restore));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(restore);
+  restore();
+})();
+
+/* ── Hero Scroll Easing + Card Spotlight ─────────────────────── */
+(function initDepthEffects() {
+  if (reduced) return;
+
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    let ticking = false;
+    const update = () => {
+      const p = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight * 0.8)));
+      hero.style.setProperty('--hero-p', p.toFixed(3));
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  }
+
+  if (window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.pcard').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--px', (e.clientX - r.left + 24) + 'px');
+        card.style.setProperty('--py', (e.clientY - r.top) + 'px');
+      }, { passive: true });
+    });
+  }
+})();
+
 /* ── Scroll Progress Bar ─────────────────────────────────────── */
 (function initScrollProgress() {
   const bar = document.querySelector('.scroll-progress');
