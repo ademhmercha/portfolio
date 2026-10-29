@@ -214,6 +214,22 @@
         li3: "Weekly QStash cron re-scans saved zones and sends Resend email alerts on new leads · Supabase keepalive pings",
         li4: "Docker multi-stage build · Helm chart on Minikube · GitHub Actions CI/CD with self-hosted runner · Terraform IaC for Vercel + Upstash across 3 environments",
       },
+      proj23: {
+        subtitle: "Practice platform for the TCF Tout public French exam — timed mock tests, detailed corrections, and estimated CEFR levels. Installable offline-ready PWA.",
+        about: "Full-stack exam-preparation platform for the TCF Tout public — 20 full mock exams under real test conditions (70 questions, score out of 699, CEFR estimate), plus listening and writing practice from A1 to C2.",
+        li1: "Server-side timer and grading · client answer queue survives network drops · interrupted attempts can be resumed",
+        li2: "8 listening series with transcripts (edge-tts audio) · 30 writing prompts from B2 to C2 with timer and self-assessment checklist",
+        li3: "Auth.js v5 (email/password + Google OAuth) · attempt history · admin area · Zod validation · Vitest unit tests",
+        li4: "Installable PWA with offline public pages · Prisma on SQLite (dev) / Supabase PostgreSQL (prod) · auto-deployed on Vercel",
+      },
+      proj24: {
+        subtitle: "Internal company messaging app — real-time chat, groups, file and voice sharing, and WebRTC audio/video calls, with an admin dashboard.",
+        about: "Internal messaging platform for company employees — staff directory, private conversations, admin-managed groups, and 1-to-1 audio/video calls, built on a Clean Architecture ASP.NET Core backend.",
+        li1: "SignalR real-time messaging · file and voice-message sharing · WebRTC calls with SignalR signaling and STUN/TURN (coturn)",
+        li2: "ASP.NET Core Identity · JWT with refresh-token rotation · Google sign-in · account deactivation revokes tokens and ends live sessions",
+        li3: "Admin dashboard (active users, 7-day activity, top groups) · user invitations, roles, and group management",
+        li4: "Angular 21 (standalone + signals) · EF Core/PostgreSQL · HybridCache with Redis backplane · xUnit/Testcontainers · Docker + GitHub Actions CI",
+      },
     },
 
     fr: {
@@ -424,6 +440,22 @@
         li2: "CRM Supabase Postgres avec pipeline de statut (nouveau → contacté → intéressé → converti) + export CSV",
         li3: "Cron QStash hebdomadaire re-scannent les zones sauvegardées et envoie des alertes email via Resend · pings keepalive Supabase",
         li4: "Docker build multi-étapes · Helm chart sur Minikube · GitHub Actions CI/CD avec runner self-hosted · Terraform IaC pour Vercel + Upstash sur 3 environnements",
+      },
+      proj23: {
+        subtitle: "Plateforme d'entraînement au TCF Tout public — examens blancs chronométrés, corrections détaillées et niveaux CECRL estimés. PWA installable, utilisable hors ligne.",
+        about: "Plateforme full-stack de préparation au TCF Tout public — 20 examens blancs complets en conditions réelles (70 questions, score sur 699, estimation du niveau CECRL), plus des entraînements de compréhension orale et d'expression écrite de A1 à C2.",
+        li1: "Chronomètre et correction côté serveur · file d'attente des réponses côté client résistante aux coupures réseau · reprise des tentatives interrompues",
+        li2: "8 séries d'écoute avec transcriptions (audio edge-tts) · 30 sujets d'expression écrite de B2 à C2 avec minuteur et grille d'auto-évaluation",
+        li3: "Auth.js v5 (email/mot de passe + Google OAuth) · historique des tentatives · espace admin · validation Zod · tests unitaires Vitest",
+        li4: "PWA installable avec pages publiques hors ligne · Prisma sur SQLite (dev) / PostgreSQL Supabase (prod) · déploiement automatique sur Vercel",
+      },
+      proj24: {
+        subtitle: "Application de messagerie interne d'entreprise — chat temps réel, groupes, partage de fichiers et de messages vocaux, appels audio/vidéo WebRTC, avec tableau de bord admin.",
+        about: "Plateforme de messagerie interne pour les employés — annuaire, conversations privées, groupes gérés par les admins et appels audio/vidéo 1-à-1, construite sur un backend ASP.NET Core en Clean Architecture.",
+        li1: "Messagerie temps réel SignalR · partage de fichiers et messages vocaux · appels WebRTC avec signalisation SignalR et STUN/TURN (coturn)",
+        li2: "ASP.NET Core Identity · JWT avec rotation des refresh tokens · connexion Google · la désactivation d'un compte révoque les tokens et coupe les sessions actives",
+        li3: "Tableau de bord admin (utilisateurs actifs, activité sur 7 jours, groupes les plus actifs) · invitations, rôles et gestion des groupes",
+        li4: "Angular 21 (standalone + signals) · EF Core/PostgreSQL · HybridCache avec backplane Redis · xUnit/Testcontainers · Docker + CI GitHub Actions",
       },
     },
   };
