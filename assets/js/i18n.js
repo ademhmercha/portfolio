@@ -41,7 +41,7 @@
       preview: { noLiveDemo: "No live demo" },
       pagination: { prev: "Previous page", next: "Next page" },
       skills: { tag: "03 — Skills", title: "Built <span>with.</span>", frontend: "Frontend", backend: "Backend", devops: "DevOps & Tools" },
-      certs: { tag: "04 — Certifications", title: "Verified <span>credentials.</span>", issuer: "Anthropic Education", verified: "Verified", viewPdf: "View PDF" },
+      certs: { tag: "04 — Certifications", title: "Verified <span>credentials.</span>", issuer: "Anthropic Education", verified: "Verified", viewPdf: "View PDF", viewCert: "View certificate" },
       contact: {
         tag: "05 — Contact",
         heading: "Let's build<br><em>something great.</em>",
@@ -268,7 +268,7 @@
       preview: { noLiveDemo: "Pas de démo en ligne" },
       pagination: { prev: "Page précédente", next: "Page suivante" },
       skills: { tag: "03 — Compétences", title: "Construit <span>avec.</span>", frontend: "Frontend", backend: "Backend", devops: "DevOps & Outils" },
-      certs: { tag: "04 — Certifications", title: "Identifiants <span>vérifiés.</span>", issuer: "Anthropic Education", verified: "Vérifié", viewPdf: "Voir le PDF" },
+      certs: { tag: "04 — Certifications", title: "Identifiants <span>vérifiés.</span>", issuer: "Anthropic Education", verified: "Vérifié", viewPdf: "Voir le PDF", viewCert: "Voir le certificat" },
       contact: {
         tag: "05 — Contact",
         heading: "Construisons<br><em>quelque chose de grand.</em>",
